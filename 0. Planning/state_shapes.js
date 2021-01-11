@@ -1,4 +1,5 @@
-{
+// delete 'const a ='
+const a = {
     entities: {
         users: {
             1: {
@@ -23,7 +24,8 @@
         // if you need a popup form that covers up the entire page (sign up forms)
         modal: true/false,
         // if you have any videos or music playing
-        currentMedia: "",
+        currentMedia: 2,
+        currentTime: 201
     },
 
     errors: {
