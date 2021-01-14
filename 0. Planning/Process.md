@@ -4,3 +4,5 @@
 3. Complete Normalizing State Shapes
 4. Complete Backend Routes
 5. 
+6. Create Routes
+7. Frontend Auth

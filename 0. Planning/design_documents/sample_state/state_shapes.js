@@ -1,5 +1,3 @@
-
-
 // delete 'const a ='
 const a = {
     entities: {
