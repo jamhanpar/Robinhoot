@@ -82,18 +82,11 @@ const a = {
     },
 
     ui: {
-        // if you need to load anything
         loading: true/false,
-        // if you need a popup form that covers up the entire page (sign up forms)
         modal: true/false,
-        // if you have any videos or music playing
-        currentMedia: 2,
-        currentTime: 201
     },
 
     errors: {
-        // one error slice (aka login: [""]) per page
-        // multiple errors should be in 1 array
         login: ["⚠️ Unable to log in with provided credentials."],
         trade: ["Not Enough Buying Power."],
         search: ["We were unable to find any results for your search."]
