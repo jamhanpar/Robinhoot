@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './frontend/entry.jsx',
+  entry: './frontend/merakitrades.jsx',
   output: {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
     filename: 'bundle.js'
@@ -13,7 +13,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['env', 'react']
+          presets: ['@babel/env', '@babel/react']
         }
       }
     ]
@@ -23,3 +23,4 @@ module.exports = {
     extensions: ['.js', '.jsx', '*'],
   }
 };
+
