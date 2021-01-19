@@ -18,6 +18,7 @@ html, body {
 
 .login-side-img-container img {
     width: 100%;
+    height: 100%;
 }
 
 .login-form-container {
@@ -48,13 +49,13 @@ input {
     color: #00C810;
 }
 
-/* .username-input-container, .password-input-container {
-    border: 1px solid lightgrey;
+.username-input-container:hover, .password-input-container:hover {
+    border: 1px solid #00C810;
     width: 99%;
     height: 36px;
     display: block;
     border-radius: 4px;
-} */
+}
 
 .welcome {
     margin-top: 12px;
