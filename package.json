@@ -11,35 +11,28 @@
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
-    "webpack": "4.44.2",
-  },
-  "devDependencies": {
-    "webpack-cli": "^4.4.0"
+    "redux-thunk": "^2.3.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.3.1"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --watch --mode=development",
     "postinstall": "webpack"
   },
   "engines": {
     "node": "10.13.0",
     "npm": "6.4.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jamhanpar/Robinhood.git"
-  },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jamhanpar/Robinhood/issues"
-  },
-  "homepage": "https://github.com/jamhanpar/Robinhood#readme"
+  "license": "ISC"
 }

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createNewUser } from '../../actions/session';
+import { createNewUser } from '../../../0. Projects/Robinhood - MerakiTrades/frontend/actions/session';
 import SignupForm from './signup_form';
 
 const mStP = (state, ownProps) => ({
