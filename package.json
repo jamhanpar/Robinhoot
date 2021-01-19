@@ -11,7 +11,9 @@
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
-    "webpack": "^5.16.0",
+    "webpack": "4.44.2",
+  },
+  "devDependencies": {
     "webpack-cli": "^4.4.0"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
