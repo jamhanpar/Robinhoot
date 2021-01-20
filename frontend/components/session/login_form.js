@@ -1,10 +1,10 @@
 import React from 'react';
 
-class SignupForm extends React.Component {
+class LoginForm extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = { email: '', username: '', password: ''}
+        this.state = { username: '', password: ''}
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -31,13 +31,6 @@ class SignupForm extends React.Component {
                         <p className="welcome">Welcome to MerakiTrades</p>
                     </header>
 
-                    <div className="email-label">
-                        <label htmlFor="email">Email</label>
-                    </div>
-                    <div className="email-input-container">
-                        <input className="email" type="text" autoComplete="current-email" value={this.state.email} onChange={this.update('email')}/>
-                    </div>
-
                     <div className="username-label">
                         <label htmlFor="username">Username</label>
                     </div>
@@ -52,11 +45,15 @@ class SignupForm extends React.Component {
                         <input className="password" type="password" autoComplete="current-password" value={this.state.password} onChange={this.update('password')}/>
                     </div>
 
-                    <button className="login-submit-btn" type="submit">Sign Up</button>
+                    <div className="forgot-password-container">
+                        <a className="forgot-password-link" href="#">Forgot your username or password?</a>
+                    </div>
+
+                    <button className="login-submit-btn" type="submit">Login</button>
                 </form>
             </div>
         )
     }
 }
 
-export default SignupForm;
+export default LoginForm;

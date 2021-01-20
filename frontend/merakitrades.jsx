@@ -4,7 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 // TESTING
-import { signup, login, logout } from './util/session_api_util'
+import { signup, login, logout } from './util/session_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById('root');
@@ -18,5 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.logout = logout;
     // DELETE
     
-    ReactDOM.render(<div>React is working</div>, root)
+    // ReactDOM.render(<div>React is working</div>, root)
+    ReactDOM.render(<Root store={store}/>, root)
 })

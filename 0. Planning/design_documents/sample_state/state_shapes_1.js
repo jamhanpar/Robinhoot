@@ -232,6 +232,7 @@ const a = {
 
     ui: {
         // if you need to load anything
+        // used for loading images
         loading: true/false,
         // if you need a popup form that covers up the entire page (sign up forms)
         modal: true/false,

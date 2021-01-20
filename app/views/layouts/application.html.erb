@@ -2,13 +2,15 @@
 <html>
   <head>
     <%= csrf_meta_tags %>
+    <%= csp_meta_tag%>
+    
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <title>MerakiTrades</title>
   </head>
 
   <body>
-    <h2>Hello, this is the application.html.erb file</h2>
+    <h2>Welcome to MerakiTrades</h2>
     <%= yield %>
   </body>
 </html>

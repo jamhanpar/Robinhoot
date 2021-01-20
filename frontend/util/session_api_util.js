@@ -6,17 +6,17 @@ export const signup = user => {
     })
 }
 
-export const login = user => (
+export const login = user => {
     $.ajax({
         url: '/api/session',
         method: 'POST',
         data: { user }
     })
-)
+}
 
-export const logout = () => (
+export const logout = () => {
     $.ajax({
         url: '/api/session',
         method: 'DELETE'
     })
-)
+}
