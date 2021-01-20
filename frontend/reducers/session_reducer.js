@@ -6,7 +6,7 @@ const _nullSession = {
 
 export default (state = _nullSession, action) => {
     Object.freeze(state);
-    newState = Object.assign({}, { currentUser: action.user })
+    let newState = Object.assign({}, { currentUser: action.user })
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
             return newState;    
