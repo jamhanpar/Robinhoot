@@ -28,8 +28,8 @@ class User < ApplicationRecord
         self.session_token
     end
 
-    def self.find_by_credentials(email, password)
-        user = User.find_by(email: email)
+    def self.find_by_credentials(username, password)
+        user = User.find_by(username: username)
 
         return nil unless user
         
