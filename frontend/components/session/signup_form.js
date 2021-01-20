@@ -19,8 +19,7 @@ class SignupForm extends React.Component {
         e.preventDefault();
 
         // instead of chirps replace with something else
-        this.props.createNewUser(this.state)
-            .then(() => this.props.history.push('/chirps'));
+        this.props.signup(this.state)
     }
 
     render() {

@@ -20,7 +20,7 @@ class LoginForm extends React.Component {
 
         // instead of chirps replace with something else
         this.props.createNewUser(this.state)
-            .then(() => this.props.history.push('/chirps'));
+            // .then(() => this.props.history.push('/chirps'));
     }
 
     render() {
