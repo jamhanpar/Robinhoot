@@ -6,13 +6,13 @@ const _nullSession = {
 
 export default (state = _nullSession, action) => {
     Object.freeze(state);
+    newState = Object.assign({}, { currentUser: action.user })
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            return Object.assign({}, { currentUser: action.user });    
+            return newState;    
         case LOGOUT_CURRENT_USER:
             return _nullSession;
         default:
             return state;
     }
 };
-
