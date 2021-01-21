@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+ div {
+    font-family: 'Montserrat', sans-serif;
+ }

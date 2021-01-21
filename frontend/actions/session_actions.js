@@ -33,30 +33,6 @@ export const logout = () => dispatch => (
         .then(() => (dispatch(logoutCurrentUser())))
 );
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // testing 
 // export const signup = formUser => dispatch => (
 //     SessionAPIUtil.signup(formUser)
