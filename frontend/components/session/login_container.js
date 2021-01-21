@@ -9,7 +9,7 @@ const mStP = ({ errors }) => ({
         password: '',
     },
     errors: errors.session,
-    formType: 'Login'
+    formType: 'Sign In'
 });
 
 const mDtP = dispatch => ({

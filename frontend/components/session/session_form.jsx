@@ -41,43 +41,56 @@ class SessionForm extends React.Component {
 
         const emailInput = (formType === "Sign Up") ? 
             <div className="email-input-container">
-                <div className="email-label">
-                    <label htmlFor="email">Email</label>
+                <div className="input-label">
+                    <label htmlFor="username">Email</label>
                 </div>
-                <div className="email-input">
-                    <input className="email" type="text" autoComplete="current-email" value={this.state.email} onChange={this.update('email')}/>
+                <div className="input-container">
+                    <input className="username" type="text" autoComplete="current-email" value={this.state.email} onChange={this.update('email')}/>
                 </div>
+            </div> :
+            null;
+
+        const forgotPassword = (formType === "Sign In") ? 
+            <div class="forgot-password-container">
+                <a class="forgot-password-link" href="#">Forgot your username or password?</a>
             </div> :
             null;
         
         
         return (
-            <div className="session-form-container">
-                <form className="session-form-box" onSubmit={this.handleSubmit}>
-                    <header>
-                        <p className="welcome">Welcome to MerakiTrades</p>
-                    </header>
+            <div className="session-page-container">
+                <div className="session-side-img-container">
+                    <img src="https://cdn.robinhood.com/assets/generated_assets/1e23d6b90f0d905b425ea289de345ab1.jpg"/>
+                </div>
+                <div className="session-form-container">
+                    <form className="session-form-box" onSubmit={this.handleSubmit}>
+                        <header>
+                            <p className="welcome">Welcome to MerakiTrades</p>
+                        </header>
 
-                    {emailInput}
+                        {emailInput}
 
-                    <div className="username-label">
-                        <label htmlFor="username">Username</label>
-                    </div>
-                    <div className="username-input-container">
-                        <input className="username" type="text" autoComplete="current-username" value={this.state.username} onChange={this.update('username')}/>
-                    </div>
+                        <div className="input-label">
+                            <label htmlFor="username">Username</label>
+                        </div>
+                        <div className="input-container">
+                            <input className="username" type="text" autoComplete="current-username" value={this.state.username} onChange={this.update('username')}/>
+                        </div>
 
-                    <div className="username-label">
-                        <label htmlFor="password">Password</label>
-                    </div>
-                    <div className="password-input-container">
-                        <input className="password" type="password" autoComplete="current-password" value={this.state.password} onChange={this.update('password')}/>
-                    </div>
+                        <div className="input-label">
+                            <label htmlFor="password">Password</label>
+                        </div>
+                        <div className="input-container">
+                            <input className="password" type="password" autoComplete="current-password" value={this.state.password} onChange={this.update('password')}/>
+                        </div>
 
-                    {this.renderErrors()}
+                        {forgotPassword}
 
-                    <button className="session-submit-btn" type="submit">{formType}</button>
-                </form>
+                        {this.renderErrors()}
+
+                        <button className="session-submit-btn" type="submit">{formType}</button>
+                    </form>
+                </div>
             </div>
         )
     }
