@@ -39,7 +39,7 @@ class Splash extends React.Component {
                                 </div>
                             </div>
                             <div className="image-container">
-                                <img className="img-1" src="https://pbs.twimg.com/profile_images/1267616128022351873/dZJpsWTD.jpg"/>
+                                <img className="img-1" src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"/>
                             </div>
                         </div>
                     </div>

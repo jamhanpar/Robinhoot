@@ -67,13 +67,16 @@
 .image-container {
     width: 55%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .img-1 {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
-    height: 100%;
-    margin-bottom: auto;
+    width: auto;
+    height: 75%;
 }
