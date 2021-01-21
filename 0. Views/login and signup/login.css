@@ -1,5 +1,5 @@
-html, body {
-    height: 100%
+/* html, body {
+    height: 100%;
 }
 
 .login-page-container {
@@ -12,7 +12,6 @@ html, body {
 }
 
 .login-side-img-container {
-    /* border: 1px solid black; */
     width: 50%;
 }
 
@@ -22,7 +21,7 @@ html, body {
 }
 
 .login-form-container {
-    /* border: 1px solid black; */
+
     width: 50%;
 }
 
@@ -75,7 +74,6 @@ input {
     width: 100%;
     padding-top: 12px;
     padding-bottom: 20px;
-    /* border: 1px solid lightgrey; */
     width: 100%;
 }
 
@@ -104,4 +102,4 @@ label {
     border: none;
     font-weight: bold;
     margin-top: 98px;
-}
+} */

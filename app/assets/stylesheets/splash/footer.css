@@ -1,0 +1,27 @@
+.footer-container {
+    background-color: black;
+    width: 100%;
+    height: auto;
+    color: #F7FFF7;
+    margin-bottom: -20px;
+}
+
+.financial-disclosure {
+    border-top: 1px solid grey;
+    border-top: 1px solid ;
+    padding: 40px 35px;
+}
+
+.financial-disclosure > p {
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.finra-link {
+    color: #00C810;
+    font-size: 14px;
+}
+
+.view-important-disclosures {
+    padding-bottom: 10px;
+}

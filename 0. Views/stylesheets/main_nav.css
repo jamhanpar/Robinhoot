@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 main {
     background-color: #C3F53C;
@@ -67,7 +67,6 @@ li, a, button, .login-btn {
 }
 
 .sign-up-btn {
-    /* border: 1px solid black; */
     border: none;
     border-radius: 24px;
     background-color: rgba(0, 180, 5, 0.8);
@@ -81,5 +80,4 @@ li, a, button, .login-btn {
 
 .sign-up-btn:hover {
     background-color: rgb(4, 122, 8);
-    /* transition: all 0.3s ease 0s; */
-}
+} */

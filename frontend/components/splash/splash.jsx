@@ -8,8 +8,8 @@ class Splash extends React.Component {
             <div>
                 <div className="main-nav-container">
                     <div className="main-logo">
-                        <a className="company-name" href="#">MerakiTrades</a>
-                        <a href="#"><img className="logo" src="https://pbs.twimg.com/profile_images/1267616128022351873/dZJpsWTD.jpg"/></a>
+                        <a className="company-name" href="/">MerakiTrades</a>
+                        <a href="/"><img className="logo" src="https://pbs.twimg.com/profile_images/1267616128022351873/dZJpsWTD.jpg"/></a>
                     </div>
                     <nav className="main-nav">
                         <ul className="nav-list">
@@ -92,8 +92,8 @@ class Splash extends React.Component {
                     <p>Our goal is to make investing in financial markets more affordable, more intuitive, and more fun, no matter how much experience you have (or don't have).</p>
                 </div>
 
-                <div className="footer-container">
-                    <div className="info-list-1">
+                <div className="info-container-6">
+                    <div className="info-list">
                         <ul>
                             <li>Stocks "&amp;"{"&amp;"} Funds</li>
                             <li>Options</li>
@@ -103,7 +103,7 @@ class Splash extends React.Component {
                         </ul>
                     </div>
 
-                    <div className="info-list-2">
+                    <div className="info-list">
                         <ul>
                             <li>Learn</li>
                             <li>Support</li>
@@ -111,7 +111,7 @@ class Splash extends React.Component {
                         </ul>
                     </div>
 
-                    <div className="info-list-3">
+                    <div className="info-list">
                         <ul>
                             <li>About us</li>
                             <li>Careers</li>
@@ -119,8 +119,8 @@ class Splash extends React.Component {
                         </ul>
                     </div>
 
-                    <div className="info-list-4">
-                        <h1>Robinhood Snacks</h1>
+                    <div className="info-list-2">
+                        <h1>MerakiTrades Snacks</h1>
                         <p>The 3-minute newsletter with fresh takes on the financial news you need to start your day.</p>
                         <form>
                             <input defaultValue="name@email.com" />
@@ -135,18 +135,20 @@ class Splash extends React.Component {
                             <li>Privacy</li>
                         </ul>
                     </div>
+                </div>
 
+                <div className="footer-container">
                     <div className="financial-disclosure">
                         <p>© 2021 MerakiTrades. All rights reserved.</p>
                         <br/>
-                        <p>Robinhood means Robinhood Markets and its in-application and web experiences with its family of wholly owned subsidiaries which includes Robinhood Financial, Robinhood Securities, and Robinhood Crypto.</p>
+                        <p>MerakiTrades means MerakiTrades Markets and its in-application and web experiences with its family of wholly owned subsidiaries which includes MerakiTrades Financial, MerakiTrades Securities, and MerakiTrades Crypto.</p>
                         <br/>
                         <p>All investments involve risks, including the possible loss of capital.</p>
                         <br/>
-                        <p>Securities trading is offered to self-directed customers by Robinhood Financial. Robinhood Financial is a member of the Financial Industry Regulatory Authority (FINRA).</p>
+                        <p>Securities trading is offered to self-directed customers by MerakiTrades Financial. MerakiTrades Financial is a member of the <a className="finra-link" href="https://www.finra.org/#/">Financial Industry Regulatory Authority (FINRA)</a>.</p>
                         <br/>
                         <div className="view-important-disclosures">
-                            <h1>View Important Disclosures</h1>
+                            <h1 className="general-disclosure">View Important Disclosures</h1>
                         </div>
                     </div>
                 </div>
