@@ -95,7 +95,7 @@ class Splash extends React.Component {
                 <div className="info-container-6">
                     <div className="info-list">
                         <ul>
-                            <li>Stocks "&amp;"{"&amp;"} Funds</li>
+                            <li>Stocks {"&"} Funds</li>
                             <li>Options</li>
                             <li>Gold</li>
                             <li>Cash Management</li>
