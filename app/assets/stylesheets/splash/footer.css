@@ -4,12 +4,15 @@
     height: auto;
     color: #F7FFF7;
     margin-bottom: -20px;
+    display: flex;
+    justify-content: center;
 }
 
 .financial-disclosure {
     border-top: 1px solid grey;
-    border-top: 1px solid ;
-    padding: 40px 35px;
+    margin: 30px 35px;
+    padding-top: 30px;
+    line-height: 20px;
 }
 
 .financial-disclosure > p {

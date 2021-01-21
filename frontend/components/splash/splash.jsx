@@ -86,69 +86,73 @@ class Splash extends React.Component {
                     </div>
                 </div>
 
-                <div className="info-container-4">
+                {/* <div className="info-container-4">
                     <img href="https://images.unsplash.com/photo-1611061614338-6ca5bed41ea3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1301&q=80"></img>
                     <h1>Learn As You Grow</h1>
                     <p>Our goal is to make investing in financial markets more affordable, more intuitive, and more fun, no matter how much experience you have (or don't have).</p>
-                </div>
+                </div> */}
 
                 <div className="info-container-6">
-                    <div className="info-list">
-                        <ul>
-                            <li>Stocks {"&"} Funds</li>
-                            <li>Options</li>
-                            <li>Gold</li>
-                            <li>Cash Management</li>
-                            <li>Crypto</li>
-                        </ul>
-                    </div>
+                    <div className="content-container-6">
+                        <div className="info-list">
+                            <ul>
+                                <li className="info-list-item">Stocks {"&"} Funds</li>
+                                <li className="info-list-item">Options</li>
+                                <li className="info-list-item">Gold</li>
+                                <li className="info-list-item">Cash Management</li>
+                                <li className="info-list-item">Crypto</li>
+                            </ul>
+                        </div>
 
-                    <div className="info-list">
-                        <ul>
-                            <li>Learn</li>
-                            <li>Support</li>
-                            <li>Snacks</li>
-                        </ul>
-                    </div>
+                        <div className="info-list">
+                            <ul>
+                                <li className="info-list-item">Learn</li>
+                                <li className="info-list-item">Support</li>
+                                <li className="info-list-item">Snacks</li>
+                            </ul>
+                        </div>
 
-                    <div className="info-list">
-                        <ul>
-                            <li>About us</li>
-                            <li>Careers</li>
-                            <li>Blog</li>
-                        </ul>
-                    </div>
+                        <div className="info-list">
+                            <ul>
+                                <li className="info-list-item">About us</li>
+                                <li className="info-list-item">Careers</li>
+                                <li className="info-list-item">Blog</li>
+                            </ul>
+                        </div>
 
-                    <div className="info-list-2">
-                        <h1>MerakiTrades Snacks</h1>
-                        <p>The 3-minute newsletter with fresh takes on the financial news you need to start your day.</p>
-                        <form>
-                            <input defaultValue="name@email.com" />
-                            <button>Subscribe</button>
-                        </form>
+                        <div className="info-list-2">
+                            <h1 className="info-title-6">MerakiTrades Snacks</h1>
+                            <p className="info-p-6">The 3-minute newsletter with fresh takes on the financial news you need to start your day.</p>
+                            <form className="email-subscribe-input">
+                                <input className="email-input-2" defaultValue="name@email.com" />
+                                <button className="subscribe-btn">Subscribe</button>
+                            </form>
 
-                        <ul>
-                            <li>Check the background of the firm on FINRA's BrokerCheck</li>
-                            <li>Brokerage Customer Relationship Summary</li>
-                            <li>MerakiTrades Terms "&amp;"{"&amp;"} Conditions</li>
-                            <li>Disclosure Library</li>
-                            <li>Privacy</li>
-                        </ul>
+                            <ul className="info-list-container">
+                                <li className="info-list-item-2">Check the background of the firm on FINRA's BrokerCheck</li>
+                                <li className="info-list-item-2">Brokerage Customer Relationship Summary</li>
+                                <li className="info-list-item-2">MerakiTrades Terms {"&"} Conditions</li>
+                                <li className="info-list-item-2">Disclosure Library</li>
+                                <li className="info-list-item-2">Privacy</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
                 <div className="footer-container">
-                    <div className="financial-disclosure">
-                        <p>© 2021 MerakiTrades. All rights reserved.</p>
-                        <br/>
-                        <p>MerakiTrades means MerakiTrades Markets and its in-application and web experiences with its family of wholly owned subsidiaries which includes MerakiTrades Financial, MerakiTrades Securities, and MerakiTrades Crypto.</p>
-                        <br/>
-                        <p>All investments involve risks, including the possible loss of capital.</p>
-                        <br/>
-                        <p>Securities trading is offered to self-directed customers by MerakiTrades Financial. MerakiTrades Financial is a member of the <a className="finra-link" href="https://www.finra.org/#/">Financial Industry Regulatory Authority (FINRA)</a>.</p>
-                        <br/>
-                        <div className="view-important-disclosures">
-                            <h1 className="general-disclosure">View Important Disclosures</h1>
+                    <div className="content-container">
+                        <div className="financial-disclosure">
+                            <p>© 2021 MerakiTrades. All rights reserved.</p>
+                            <br/>
+                            <p>MerakiTrades means MerakiTrades Markets and its in-application and web experiences with its family of wholly owned subsidiaries which includes MerakiTrades Financial, MerakiTrades Securities, and MerakiTrades Crypto.</p>
+                            <br/>
+                            <p>All investments involve risks, including the possible loss of capital.</p>
+                            <br/>
+                            <p>Securities trading is offered to self-directed customers by MerakiTrades Financial. MerakiTrades Financial is a member of the <a className="finra-link" href="https://www.finra.org/#/">Financial Industry Regulatory Authority (FINRA)</a>.</p>
+                            <br/>
+                            <div className="view-important-disclosures">
+                                <h1 className="general-disclosure">View Important Disclosures</h1>
+                            </div>
                         </div>
                     </div>
                 </div>
