@@ -8,7 +8,17 @@ import { signup, login, logout } from './util/session_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById('root');
-    const store = configureStore();
+    
+    let preloadedState = undefined;
+    if (window.currentUser) {
+        preloadedState = {
+            session: {
+                currentUser: window.currentUser
+            }
+        };
+    }
+    
+    const store = configureStore(preloadedState);
 
     // TESTING
     window.getState = store.getState;

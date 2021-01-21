@@ -20,31 +20,39 @@ class Splash extends React.Component {
                         </ul>
                     </nav>
                     <div className="sign-up-options">
-                        <span className="login-btn" href="#"><Link to='/login'>Log In</Link></span>
+                        <span className="login-btn"><Link to='/login'>Log In</Link></span>
                         <button className="sign-up-btn"><Link to='/signup'>Sign up</Link></button>
                     </div>
                 </div>
+
                 <div className="info-container">
-                    <h1>Investing for Everyone</h1>
-                    <p>Commission-free investing, plus the tools you need to put your money in motion. Sign up and get your first stock for free. Certain limitations.apply.</p>
-                    <button>
-                        <Link to='/signup'>Sign up</Link>
-                    </button>
-                    <div className="free-stock-disclosure">
-                        <h4>Free Stock Disclosure</h4>
+                    <div className="content-container">
+                        <div className="info-1">
+                            <h1 className="info-title-1">Investing for Everyone</h1>
+                            <p className="info-p-1">Commission-free investing, plus the tools you need to put your money in motion. Sign up and get your first stock for free. Certain limitations.apply.</p>
+                            <button className="sign-up-btn-2">
+                                <Link to='/signup'><span>Sign up</span></Link>
+                            </button>
+                            <div className="free-stock-disclosure">
+                                <h4>Free Stock Disclosure</h4>
+                            </div>
+                        </div>
+                        <div className="image-container">
+                            <img className="img-1" src="https://pbs.twimg.com/profile_images/1267616128022351873/dZJpsWTD.jpg"/>
+                        </div>
                     </div>
                 </div>
 
                 <div className="info-container-2">
-                    <h1>Break Free from Commission Fees</h1>
-                    <p>Make unlimited commission-free trades in stocks, ETFs, and options with MerakiTrades Financials, as well as buy and sell cryptocurrencies with MerakiTrades Crypto. See our fee schedule to learn more about cost.</p>
+                    <h1 className="info-title-2">Break Free from Commission Fees</h1>
+                    <p className="info-p-2">Make unlimited commission-free trades in stocks, ETFs, and options with MerakiTrades Financials, as well as buy and sell cryptocurrencies with MerakiTrades Crypto. See our fee schedule to learn more about cost.</p>
                     <div className="commissions-disclosure">
                         <h4>Commissions Disclosure</h4>
                     </div>
                 </div>
 
                 <div className="info-container-3">
-                    <h1>Introducing Fractional Shares</h1>
+                    <h1 className="info-title-2">Introducing Fractional Shares</h1>
                     <p>Invest in thousands of stocks with as little as $1.</p>
                     <div className="info-card-container">
                         <div className="info-card">

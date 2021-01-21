@@ -1,0 +1,30 @@
+.info-container-2 {
+    background-color: white;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-title-2 {
+    font-size: 30px;
+    padding-bottom: 30px;
+}
+
+.info-p-2 {
+    font-size: 18px;
+    font-weight: lighter;
+    line-height: 28px;
+    width: 598px;
+    text-align: center;
+}
+
+.commissions-disclosure {
+    padding-top: 45px;
+    font-weight: bold;
+    color: gray;
+}
