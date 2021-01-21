@@ -11,20 +11,21 @@
 }
 
 .info-title-2 {
-    font-size: 30px;
-    padding-bottom: 30px;
+    font-size: 32px;
+    padding-bottom: 25px;
 }
 
 .info-p-2 {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: lighter;
     line-height: 28px;
     width: 598px;
     text-align: center;
+    padding-bottom: 45px;
 }
 
-.commissions-disclosure {
-    padding-top: 45px;
+.general-disclosure {
+    font-size: 18px;
     font-weight: bold;
-    color: gray;
+    color: #6F787E;
 }

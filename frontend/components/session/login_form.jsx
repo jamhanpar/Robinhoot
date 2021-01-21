@@ -18,9 +18,8 @@ class LoginForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        // instead of chirps replace with something else
-        this.props.createNewUser(this.state)
-            // .then(() => this.props.history.push('/chirps'));
+        this.props.login(this.state)
+            .then(() => this.props.history.push('/dashboard'));
     }
 
     render() {

@@ -18,8 +18,8 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        // instead of chirps replace with something else
         this.props.signup(this.state)
+            .then(() => this.props.history.push('/dashboard'));
     }
 
     render() {

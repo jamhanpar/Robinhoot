@@ -18,41 +18,26 @@ const receiveErrors = errors => ({
     errors
 })
 
+
 export const signup = formUser => dispatch => (
     SessionAPIUtil.signup(formUser)
-        .then(user => dispatch(receiveCurrentUser(user)))
+        .then(
+            user => (dispatch(receiveCurrentUser(user))), 
+            error => (dispatch(receiveErrors(error.responseJSON)))
+        )
 );
 
 export const login = formUser => dispatch => ( 
     SessionAPIUtil.login(formUser)
-        .then(user => (dispatch(receiveCurrentUser(user))))
+        .then(
+            user => (dispatch(receiveCurrentUser(user))),
+            error => (dispatch(receiveErrors(error.responseJSON)))
+        )
 );
 
 export const logout = () => dispatch => (
     SessionAPIUtil.logout()
-        .then(() => (dispatch(logoutCurrentUser())))
+        .then(
+            () => (dispatch(logoutCurrentUser()))
+        )
 );
-
-// testing 
-// export const signup = formUser => dispatch => (
-//     SessionAPIUtil.signup(formUser)
-//         .then(
-//             user => (dispatch(receiveCurentUser(user))), 
-//             err => (dispatch(receiveErrors(err.responseJSON)))
-//         )
-// );
-
-// export const login = formUser => dispatch => ( 
-//     SessionAPIUtil.login(formUser)
-//         .then(
-//             user => (dispatch(receiveCurrentUser(user))),
-//             err => (dispatch(receiveErrors(err.responseJSON)))
-//         )
-// );
-
-// export const logout = () => dispatch => (
-//     SessionAPIUtil.logout()
-//         .then(
-//             () => (dispatch(logoutCurrentUser()))
-//         )
-// );

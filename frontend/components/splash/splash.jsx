@@ -27,18 +27,20 @@ class Splash extends React.Component {
 
                 <div className="info-container">
                     <div className="content-container">
-                        <div className="info-1">
-                            <h1 className="info-title-1">Investing for Everyone</h1>
-                            <p className="info-p-1">Commission-free investing, plus the tools you need to put your money in motion. Sign up and get your first stock for free. Certain limitations.apply.</p>
-                            <button className="sign-up-btn-2">
-                                <Link to='/signup'><span>Sign up</span></Link>
-                            </button>
-                            <div className="free-stock-disclosure">
-                                <h4>Free Stock Disclosure</h4>
+                        <div className="sub-content-container">
+                            <div className="info-1">
+                                <h1 className="info-title-1">Investing for Everyone</h1>
+                                <p className="info-p-1">Commission-free investing, plus the tools you need to put your money in motion. Sign up and get your first stock for free. Certain limitations apply.</p>
+                                <button className="sign-up-btn-2">
+                                    <Link to='/signup'><span>Sign up</span></Link>
+                                </button>
+                                <div className="free-stock-disclosure">
+                                    <h4>Free Stock Disclosure</h4>
+                                </div>
                             </div>
-                        </div>
-                        <div className="image-container">
-                            <img className="img-1" src="https://pbs.twimg.com/profile_images/1267616128022351873/dZJpsWTD.jpg"/>
+                            <div className="image-container">
+                                <img className="img-1" src="https://pbs.twimg.com/profile_images/1267616128022351873/dZJpsWTD.jpg"/>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -46,32 +48,41 @@ class Splash extends React.Component {
                 <div className="info-container-2">
                     <h1 className="info-title-2">Break Free from Commission Fees</h1>
                     <p className="info-p-2">Make unlimited commission-free trades in stocks, ETFs, and options with MerakiTrades Financials, as well as buy and sell cryptocurrencies with MerakiTrades Crypto. See our fee schedule to learn more about cost.</p>
-                    <div className="commissions-disclosure">
+                    <div className="general-disclosure">
                         <h4>Commissions Disclosure</h4>
                     </div>
                 </div>
 
                 <div className="info-container-3">
-                    <h1 className="info-title-2">Introducing Fractional Shares</h1>
-                    <p>Invest in thousands of stocks with as little as $1.</p>
-                    <div className="info-card-container">
-                        <div className="info-card">
-                            <h2>Invest Any Amount</h2>
-                            <p>Choose how much you want to invest, and we'll convert from dollars to parts of a whole share.</p>
-                        </div>
+                    <div className="content-container-3">
+                        <div className="info-subcontainer-3">
+                            <div className="info-card">
+                                <h1 className="info-title-2 info-title-3">Introducing Fractional Shares</h1>
+                                <p className="info-p-3">Invest in thousands of stocks with as little as $1.</p>
+                            </div>
+                            <div className="info-card-container">
+                                <div className="info-card-2">
+                                    <h2 className="info-card-title">Invest Any Amount</h2>
+                                    <p className="info-card-p">Choose how much you want to invest, and we'll convert from dollars to parts of a whole share.</p>
+                                </div>
 
-                        <div className="info-card">
-                            <h2>Build a Balanced Portfolio</h2>
-                            <p>Customize your portfolio with pieces of different companies and funds to help reduce risk.</p>
-                        </div>
+                                <div className="info-card-2">
+                                    <h2 className="info-card-title">Build a Balanced Portfolio</h2>
+                                    <p className="info-card-p">Customize your portfolio with pieces of different companies and funds to help reduce risk.</p>
+                                </div>
 
-                        <div className="info-card">
-                            <h2>Trade in Real Time</h2>
-                            <p>Trades placed during market hours are executed at that time, so you'll always know the share price.</p>
+                                <div className="info-card-2">
+                                    <h2 className="info-card-title">Trade in Real Time</h2>
+                                    <p className="info-card-p">Trades placed during market hours are executed at that time, so you'll always know the share price.</p>
+                                </div>
+                            </div>
+                            <div className="fractional-shares-disclosure">
+                                <h4 className="general-disclosure">Fractional Shares Disclosure</h4>
+                            </div>
                         </div>
-                    </div>
-                    <div className="fractional-shares-disclosure">
-                        <h4>Fractional Shares Disclosure</h4>
+                        <div className="image-container-3">
+                            <img className="image-3" src="https://images.unsplash.com/photo-1587822409067-d887373e7324?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzJ8fHdoaXRlJTIwYmFja2dyb3VuZHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
+                        </div>
                     </div>
                 </div>
 
