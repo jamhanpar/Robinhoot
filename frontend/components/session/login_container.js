@@ -1,9 +1,19 @@
 import { connect } from 'react-redux';
 import { login } from '../../actions/session_actions';
 import LoginForm from './login_form';
+import SessionForm from './session_form';
 
-const mDtP = dispatch => ({
-    login: formUser => dispatch(login(formUser))
+const mStP = ({ errors }) => ({
+    user: {
+        username: '',
+        password: '',
+    },
+    errors: errors.session,
+    formType: 'Login'
 });
 
-export default connect(null, mDtP)(LoginForm);
+const mDtP = dispatch => ({
+    processForm: formUser => dispatch(login(formUser))
+});
+
+export default connect(mStP, mDtP)(SessionForm);

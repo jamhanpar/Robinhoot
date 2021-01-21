@@ -123,7 +123,7 @@ class Splash extends React.Component {
                         <h1>Robinhood Snacks</h1>
                         <p>The 3-minute newsletter with fresh takes on the financial news you need to start your day.</p>
                         <form>
-                            <input value="name@email.com" />
+                            <input defaultValue="name@email.com" />
                             <button>Subscribe</button>
                         </form>
 
