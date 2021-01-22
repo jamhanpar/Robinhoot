@@ -30,6 +30,11 @@
     padding: 12px 0;
 }
 
+.info-list-item:hover {
+    color: rgb(0, 180, 5);
+    font-weight: bold;
+}
+
 .info-list-2 {
     width: 40%;
     height: 490px;
@@ -73,6 +78,10 @@
     line-height: 28px;
 }
 
+.email-input-2:focus {
+    outline: none;
+}
+
 .subscribe-btn {
     border: none;
     border-radius: 24px;
@@ -98,7 +107,15 @@
 
 .info-list-item-2 {
     color: white;
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: right;
+}
+
+.info-list-item-2:hover {
+    color: rgb(0, 180, 5);
+    font-size: 16px;
     font-weight: bold;
     line-height: 40px;
     text-align: right;

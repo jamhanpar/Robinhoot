@@ -5,9 +5,11 @@ import SessionForm from './session_form';
 
 const mStP = ({ errors }) => ({
     user: {
+        firstName: '',
+        lastName: '',
         username: '',
-        password: '',
         email: '',
+        password: '',
     },
     errors: errors.session,
     formType: 'Sign Up'
@@ -17,4 +19,4 @@ const mDtP = dispatch => ({
     processForm: formUser => dispatch(signup(formUser))
 });
 
-export default connect(mStP, mDtP)(SessionForm);
+export default connect(mStP, mDtP)(SignupForm);

@@ -17,6 +17,14 @@ demo = User.create!(
     email: 'demo@demo.com',
     password: 'password'
 )
+
+test = User.create!(
+    username: 'test',
+    first_name: 'John',
+    last_name: 'Smith',
+    email: 'test@test.com',
+    password: '123456'
+)
   
 # u2 = User.create!(
 #     username: 'username',

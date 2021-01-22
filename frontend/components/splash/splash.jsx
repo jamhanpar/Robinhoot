@@ -8,9 +8,7 @@ class Splash extends React.Component {
             <div>
                 <div className="main-nav-container">
                     <div className="main-logo">
-                        <a className="company-name" href="/">Robinhoot</a>
-                        {/* <a href="/"><img className="logo" src="favicon.jpeg"/></a> */}
-                        <a href="/"><img className="logo" src="https://pbs.twimg.com/profile_images/1267616128022351873/dZJpsWTD.jpg"/></a>
+                        <img src={window.robinhootLogo} />
                     </div>
                     <nav className="main-nav">
                         <ul className="nav-list">
@@ -125,7 +123,7 @@ class Splash extends React.Component {
                             <h1 className="info-title-6">Robinhoot Snacks</h1>
                             <p className="info-p-6">The 3-minute newsletter with fresh takes on the financial news you need to start your day.</p>
                             <form className="email-subscribe-input">
-                                <input className="email-input-2" defaultValue="name@email.com" />
+                                <input className="email-input-2" placeholder="name@email.com" />
                                 <button className="subscribe-btn">Subscribe</button>
                             </form>
 
