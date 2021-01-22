@@ -60,7 +60,7 @@ class SessionForm extends React.Component {
         return (
             <div className="session-page-container">
                 <div className="session-side-img-container">
-                    <img src="https://cdn.robinhood.com/assets/generated_assets/1e23d6b90f0d905b425ea289de345ab1.jpg"/>
+                    <img className="session-img" src="https://cdn.robinhood.com/assets/generated_assets/1e23d6b90f0d905b425ea289de345ab1.jpg"/>
                 </div>
                 <div className="session-form-container">
                     <form className="session-form-box" onSubmit={this.handleSubmit}>
