@@ -9,6 +9,7 @@ class Splash extends React.Component {
                 <div className="main-nav-container">
                     <div className="main-logo">
                         <a className="company-name" href="/">MerakiTrades</a>
+                        {/* <a href="/"><img className="logo" src="favicon.jpeg"/></a> */}
                         <a href="/"><img className="logo" src="https://pbs.twimg.com/profile_images/1267616128022351873/dZJpsWTD.jpg"/></a>
                     </div>
                     <nav className="main-nav">
