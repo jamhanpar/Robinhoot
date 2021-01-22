@@ -39,23 +39,23 @@ class SignupForm extends React.Component {
                                 </header>
 
                                 <div className="name-input-container">
-                                    <input className="first-name-input" type="text" placeholder="First name" value={this.state.firstName} onChange={this.update('firstName')}/>
-                                    <input className="last-name-input" type="text" placeholder="Last name" value={this.state.lastName} onChange={this.update('lastName')}/>
+                                    <input className="first-name-input" type="text" placeholder="First name" autoComplete="on" value={this.state.firstName} onChange={this.update('firstName')}/>
+                                    <input className="last-name-input" type="text" placeholder="Last name" autoComplete="on" value={this.state.lastName} onChange={this.update('lastName')}/>
                                 </div>
 
                                 <div className="email-input-container">
-                                    <input className="signup-email" type="text" placeholder="Email" value={this.state.email} onChange={this.update('email')}/>
+                                    <input className="signup-email" type="text" placeholder="Email" autoComplete="on" value={this.state.email} onChange={this.update('email')}/>
                                 </div>
 
                                 <div className="password-input-container">
-                                    <input className="signup-password" type="password" placeholder="Password (min. 10 characters)" value={this.state.password} onChange={this.update('password')}/>
+                                    <input className="signup-password" type="password" placeholder="Password (min. 6 characters)" autoComplete="on" value={this.state.password} onChange={this.update('password')}/>
                                 </div>
 
                                 <div className="submit-or-reroute">
                                     <button className="signup-submit-btn" type="submit">Continue</button>
                                     <div className="signup-reroutes">
-                                        <p class="already-started">Already started?</p>
-                                        <Link to="/login"><p class="signup-alternative">Log in to complete your application</p></Link>                                    </div>
+                                        <p className="already-started">Already started?</p>
+                                        <Link to="/login"><p className="signup-alternative">Log in to complete your application</p></Link>                                    </div>
                                 </div>
                             </form>
                         </div>

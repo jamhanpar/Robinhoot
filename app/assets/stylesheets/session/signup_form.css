@@ -1,12 +1,10 @@
 .signup-container {
-    border: 1px solid black;
     height: 1000px;
     display: flex;
     flex-direction: row;
 }
 
 .signup-subcontainer {
-    border: 1px solid black;
     width: 60%;
     display: flex;
     justify-content: center;
@@ -26,14 +24,14 @@
 .signup-logo-container img {
     width: auto;
     height: 35px;
-    margin-top: 45px;
+    margin-top: 35px;
     object-fit: contain;
 }
 
 .signup-form-container {
     width: 100%;
     height: 350px;
-    margin-bottom: 110px;
+    margin-bottom: 90px;
 }
 
 .signup-form-title {
@@ -63,9 +61,14 @@
     padding-left: 10px;
 }
 
+.signup-form-container input::placeholder{
+    color: #C3BDCD;
+}
+
 .first-name-input:hover, .last-name-input:hover {
     background-color: white;
     border: 1px solid lightgrey;
+    padding-left: 9px;
 }
 
 .first-name-input:focus, .last-name-input:focus {
@@ -97,6 +100,7 @@
 .signup-email:hover, .signup-password:hover {
     background-color: white;
     border: 1px solid lightgrey;
+    padding-left: 9px;
 }
 
 .signup-email:focus, .signup-password:focus {
