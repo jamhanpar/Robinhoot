@@ -51,8 +51,8 @@ class SessionForm extends React.Component {
             null;
 
         const forgotPassword = (formType === "Sign In") ? 
-            <div class="forgot-password-container">
-                <a class="forgot-password-link" href="#">Forgot your username or password?</a>
+            <div className="forgot-password-container">
+                <a className="forgot-password-link" href="#">Forgot your username or password?</a>
             </div> :
             null;
         
@@ -71,10 +71,10 @@ class SessionForm extends React.Component {
                         {emailInput}
 
                         <div className="input-label">
-                            <label htmlFor="username">Username</label>
+                            <label htmlFor="username">Email</label>
                         </div>
                         <div className="input-container">
-                            <input className="username" type="text" autoComplete="current-username" value={this.state.username} onChange={this.update('username')}/>
+                            <input className="username" type="text" autoComplete="current-email" value={this.state.email} onChange={this.update('email')}/>
                         </div>
 
                         <div className="input-label">
@@ -89,7 +89,7 @@ class SessionForm extends React.Component {
                         {this.renderErrors()}
 
                         <button className="session-submit-btn" type="submit">{formType}</button>
-                        <button className="session-submit-btn" type="submit" onClick={() => this.setState({ username: this.props.demo.username, password: this.props.demo.password })}>Demo</button>
+                        <button className="session-submit-btn" type="submit" onClick={() => this.setState({ email: this.props.demo.email, password: this.props.demo.password })}>Demo</button>
                     </form>
                 </div>
             </div>

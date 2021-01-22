@@ -7,7 +7,6 @@ const mStP = ({ errors }) => ({
     user: {
         first_name: '',
         last_name: '',
-        username: 'temp',
         email: '',
         password: '',
     },

@@ -11,15 +11,13 @@
 User.delete_all
 
 demo = User.create!(
-    username: 'demo',
     first_name: 'John',
     last_name: 'Smith',
-    email: 'demo@demo.com',
+    email: 'demo',
     password: 'password'
 )
 
 test = User.create!(
-    username: 'test',
     first_name: 'John',
     last_name: 'Smith',
     email: 'test@test.com',

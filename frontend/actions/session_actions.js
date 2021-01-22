@@ -20,7 +20,6 @@ const receiveErrors = errors => ({
 
 
 export const signup = formUser => dispatch => {
-    debugger
     return SessionAPIUtil.signup(formUser)
         .then(
             user => (dispatch(receiveCurrentUser(user))), 
