@@ -23,6 +23,20 @@ class SignupForm extends React.Component {
             .then(() => this.props.history.push('/dashboard'));
     }
 
+    renderErrors() {
+        const { errors } = this.props
+
+        return (
+            <div className="session-error-container">
+                {
+                    errors.map((error, i) => (
+                        <p key={`error-#${i}`}>{error}</p>
+                    ))
+                }
+            </div>
+        );
+    }
+
     render() {
         return (
             <div className="signup-container">
@@ -58,6 +72,8 @@ class SignupForm extends React.Component {
                                         <Link to="/login"><p className="signup-alternative">Log in to complete your application</p></Link>                                    </div>
                                 </div>
                             </form>
+
+                            {this.renderErrors()}
                         </div>
 
                         <div className="signup-disclaimer">
