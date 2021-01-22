@@ -49,6 +49,7 @@ class LoginForm extends React.Component {
                     </div>
 
                     <button className="login-submit-btn" type="submit">Login</button>
+                    <h1>DELETE THIS: TESTING</h1>
                 </form>
             </div>
         )
