@@ -20,7 +20,7 @@ demo = User.create!(
 test = User.create!(
     first_name: 'John',
     last_name: 'Smith',
-    email: 'test@test.com',
+    email: 'John@Smith.com',
     password: '123456'
 )
   
