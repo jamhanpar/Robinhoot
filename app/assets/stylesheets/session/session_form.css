@@ -97,6 +97,7 @@
     color: white;
     font-size: 13px;
     font-weight: bold;
+    margin-right: 20px;
 }
 
 .session-submit-btn:focus {

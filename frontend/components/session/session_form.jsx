@@ -89,6 +89,7 @@ class SessionForm extends React.Component {
                         {this.renderErrors()}
 
                         <button className="session-submit-btn" type="submit">{formType}</button>
+                        <button className="session-submit-btn" type="submit" onClick={() => this.setState({ username: this.props.demo.username, password: this.props.demo.password })}>Demo</button>
                     </form>
                 </div>
             </div>

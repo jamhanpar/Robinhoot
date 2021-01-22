@@ -8,6 +8,10 @@ const mStP = ({ errors }) => ({
         username: '',
         password: '',
     },
+    demo: {
+        username: 'demo',
+        password: 'password',
+    },
     errors: errors.session,
     formType: 'Sign In'
 });
