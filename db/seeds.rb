@@ -8,12 +8,15 @@
 
 
 # SEEDS
-# User.delete_all
+User.delete_all
 
-# u1 = User.create!(
-#     username: 'guest',
-#     password: 'password'
-# )
+demo = User.create!(
+    username: 'demo',
+    first_name: 'John',
+    last_name: 'Smith',
+    email: 'demo@demo.com',
+    password: 'password'
+)
   
 # u2 = User.create!(
 #     username: 'username',
