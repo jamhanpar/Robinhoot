@@ -39,8 +39,8 @@ class SignupForm extends React.Component {
                                 </header>
 
                                 <div className="name-input-container">
-                                    <input className="first-name-input" type="text" placeholder="First name" autoComplete="on" value={this.state.firstName} onChange={this.update('firstName')}/>
-                                    <input className="last-name-input" type="text" placeholder="Last name" autoComplete="on" value={this.state.lastName} onChange={this.update('lastName')}/>
+                                    <input className="first-name-input" type="text" placeholder="First name" autoComplete="on" value={this.state.first_name} onChange={this.update('first_name')}/>
+                                    <input className="last-name-input" type="text" placeholder="Last name" autoComplete="on" value={this.state.last_name} onChange={this.update('last_name')}/>
                                 </div>
 
                                 <div className="email-input-container">

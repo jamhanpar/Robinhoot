@@ -19,13 +19,14 @@ const receiveErrors = errors => ({
 })
 
 
-export const signup = formUser => dispatch => (
-    SessionAPIUtil.signup(formUser)
+export const signup = formUser => dispatch => {
+    debugger
+    return SessionAPIUtil.signup(formUser)
         .then(
             user => (dispatch(receiveCurrentUser(user))), 
             error => (dispatch(receiveErrors(error.responseJSON)))
         )
-);
+};
 
 export const login = formUser => dispatch => ( 
     SessionAPIUtil.login(formUser)

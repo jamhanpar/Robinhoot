@@ -5,6 +5,7 @@ const _nullSession = {
 };
 
 export default (state = _nullSession, action) => {
+    debugger
     Object.freeze(state);
     let newState = Object.assign({}, { currentUser: action.user })
     switch (action.type) {

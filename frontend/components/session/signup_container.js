@@ -5,9 +5,9 @@ import SessionForm from './session_form';
 
 const mStP = ({ errors }) => ({
     user: {
-        firstName: '',
-        lastName: '',
-        username: '',
+        first_name: '',
+        last_name: '',
+        username: 'temp',
         email: '',
         password: '',
     },
