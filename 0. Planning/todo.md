@@ -4,6 +4,6 @@
 4. Attempt to upload a picture using a png or jpeg file
 5. Create separate branch
 6. Upload Robinhoot Logo
-7. Replace all Robinhood or MerakiTrades with Robinhoot on splash page
+7. Replace all Robinhood or Robinhoot with Robinhoot on splash page
 8. Add favicon
 9. Fix all images

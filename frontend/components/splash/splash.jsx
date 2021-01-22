@@ -8,7 +8,7 @@ class Splash extends React.Component {
             <div>
                 <div className="main-nav-container">
                     <div className="main-logo">
-                        <a className="company-name" href="/">MerakiTrades</a>
+                        <a className="company-name" href="/">Robinhoot</a>
                         {/* <a href="/"><img className="logo" src="favicon.jpeg"/></a> */}
                         <a href="/"><img className="logo" src="https://pbs.twimg.com/profile_images/1267616128022351873/dZJpsWTD.jpg"/></a>
                     </div>
@@ -48,7 +48,7 @@ class Splash extends React.Component {
 
                 <div className="info-container-2">
                     <h1 className="info-title-2">Break Free from Commission Fees</h1>
-                    <p className="info-p-2">Make unlimited commission-free trades in stocks, ETFs, and options with MerakiTrades Financials, as well as buy and sell cryptocurrencies with MerakiTrades Crypto. See our fee schedule to learn more about cost.</p>
+                    <p className="info-p-2">Make unlimited commission-free trades in stocks, ETFs, and options with Robinhoot Financials, as well as buy and sell cryptocurrencies with Robinhoot Crypto. See our fee schedule to learn more about cost.</p>
                     <div className="general-disclosure">
                         <h4>Commissions Disclosure</h4>
                     </div>
@@ -122,7 +122,7 @@ class Splash extends React.Component {
                         </div>
 
                         <div className="info-list-2">
-                            <h1 className="info-title-6">MerakiTrades Snacks</h1>
+                            <h1 className="info-title-6">Robinhoot Snacks</h1>
                             <p className="info-p-6">The 3-minute newsletter with fresh takes on the financial news you need to start your day.</p>
                             <form className="email-subscribe-input">
                                 <input className="email-input-2" defaultValue="name@email.com" />
@@ -132,7 +132,7 @@ class Splash extends React.Component {
                             <ul className="info-list-container">
                                 <li className="info-list-item-2">Check the background of the firm on FINRA's BrokerCheck</li>
                                 <li className="info-list-item-2">Brokerage Customer Relationship Summary</li>
-                                <li className="info-list-item-2">MerakiTrades Terms {"&"} Conditions</li>
+                                <li className="info-list-item-2">Robinhoot Terms {"&"} Conditions</li>
                                 <li className="info-list-item-2">Disclosure Library</li>
                                 <li className="info-list-item-2">Privacy</li>
                             </ul>
@@ -143,13 +143,13 @@ class Splash extends React.Component {
                 <div className="footer-container">
                     <div className="content-container">
                         <div className="financial-disclosure">
-                            <p>© 2021 MerakiTrades. All rights reserved.</p>
+                            <p>© 2021 Robinhoot. All rights reserved.</p>
                             <br/>
-                            <p>MerakiTrades means MerakiTrades Markets and its in-application and web experiences with its family of wholly owned subsidiaries which includes MerakiTrades Financial, MerakiTrades Securities, and MerakiTrades Crypto.</p>
+                            <p>Robinhoot means Robinhoot Markets and its in-application and web experiences with its family of wholly owned subsidiaries which includes Robinhoot Financial, Robinhoot Securities, and Robinhoot Crypto.</p>
                             <br/>
                             <p>All investments involve risks, including the possible loss of capital.</p>
                             <br/>
-                            <p>Securities trading is offered to self-directed customers by MerakiTrades Financial. MerakiTrades Financial is a member of the <a className="finra-link" href="https://www.finra.org/#/">Financial Industry Regulatory Authority (FINRA)</a>.</p>
+                            <p>Securities trading is offered to self-directed customers by Robinhoot Financial. Robinhoot Financial is a member of the <a className="finra-link" href="https://www.finra.org/#/">Financial Industry Regulatory Authority (FINRA)</a>.</p>
                             <br/>
                             <div className="view-important-disclosures">
                                 <h1 className="general-disclosure">View Important Disclosures</h1>

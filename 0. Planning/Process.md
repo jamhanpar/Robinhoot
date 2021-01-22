@@ -34,14 +34,14 @@
         - @babel/preset-env
         - babel-loader
     - updated the webpack.config.js
-        - entry point to: ./frontend/merakitrades.jsx
+        - entry point to: ./frontend/Robinhoot.jsx
         - output path to: app/assets/javascripts
         - configure module.rules to use Babel transpilation for:
             - JSX
             - ES6
         - include devtool: 'source-map'
 9. React/Redux Setup
-    - Entry file: merakitrades.jsx
+    - Entry file: Robinhoot.jsx
     - /frontend/components/root.jsx
     - /frontend/store/store.js
 10. Backend Routes for Frontend Auth

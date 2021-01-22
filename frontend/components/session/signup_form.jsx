@@ -27,7 +27,7 @@ class SignupForm extends React.Component {
             <div className="login-form-container">
                 <form className="login-form" onSubmit={this.handleSubmit}>
                     <header>
-                        <p className="welcome">Welcome to MerakiTrades</p>
+                        <p className="welcome">Welcome to Robinhoot</p>
                     </header>
 
                     <div className="email-label">
