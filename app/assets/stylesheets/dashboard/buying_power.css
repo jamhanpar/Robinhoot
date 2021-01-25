@@ -1,0 +1,10 @@
+.buying-power {
+    width: 100%;
+    height: 74px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+}

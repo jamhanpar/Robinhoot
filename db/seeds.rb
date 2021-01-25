@@ -25,22 +25,7 @@ test = User.create!(
     password: '123456'
 )
   
-aapl = Stock.create!(
-    name: 'Apple',
-    ticker: 'AAPL'
-)
-
-visa = Stock.create!(
-    name: 'Visa',
-    ticker: 'V'
-)
-
-tsla = Stock.create!(
-    name: 'Tesla',
-    ticker: 'TSLA'
-)
-
-googl = Stock.create!(
-    name: 'Alphabet Class A',
-    ticker: 'GOOGL'
-)
+aapl = Stock.create!( name: 'Apple', ticker: 'AAPL' )
+visa = Stock.create!( name: 'Visa', ticker: 'V' )
+tsla = Stock.create!( name: 'Tesla', ticker: 'TSLA' )
+googl = Stock.create!( name: 'Alphabet Class A', ticker: 'GOOGL' )

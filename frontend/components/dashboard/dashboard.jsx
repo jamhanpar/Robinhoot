@@ -18,8 +18,53 @@ class Dashboard extends React.Component {
     render() {
         return (
             <div>
-                <h1>User Dashboard</h1>
-                <button onClick={this.handleSubmit}>Logout</button>
+                <div className="dashboard-nav-bar">
+                    <div className="dashboard-logo-container">
+                        <h1>Robinhoot</h1>
+                    </div>
+                    <div className="search-form-container">
+                        <form>
+                            <input type="text" placeholder="search" className="search-bar"/>
+                        </form>
+                    </div>
+                    <div>
+                        <ul className="dashboard-menu-list">
+                            <button className="logout-btn dashboard-menu-list-item" onClick={this.handleSubmit}>Logout</button>
+                            <li className="dashboard-menu-list-item">Free Stocks</li>
+                            <li className="dashboard-menu-list-item">Portfolio</li>
+                            <li className="dashboard-menu-list-item">Cash</li>
+                            <li className="dashboard-menu-list-item">Messages</li>
+                            <li className="dashboard-menu-list-item">Account</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div className="dashboard-container">
+                    <div className="dashboard-content-container">
+                        <div className="portfolio-and-relevant-info-container">
+                            <div className="portfolio-graph">
+                                <h1 className="account-balance">$10,000.00</h1>
+                            </div>
+                            <div className="buying-power">
+                                <h1>Buying Power</h1>
+                                <h1>$10,000.00</h1>
+                            </div>
+                            <div className="sector-list">
+                                <h1 className="sector-title">Popular Lists</h1>
+                            </div>
+                            <div className="news-list">
+                                <h1 className="news-title">News</h1>
+                            </div>
+                            <div className="privacy-policy-container">
+                                <h1 className="privacy-policy-disclaimer">For more information, see our <span className="privacy-policy-link">Privacy Policy</span>.</h1>
+                            </div>
+                        </div>
+            
+                        <div className="watchlist-container">
+                            <h1 className="watchlist-title">Watchlist</h1>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }

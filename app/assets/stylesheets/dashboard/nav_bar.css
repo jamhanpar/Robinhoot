@@ -1,0 +1,41 @@
+.dashboard-nav-bar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-logo-container {
+    margin-left: 60px;
+}
+
+.search-form-container {
+    border: 1px solid black;
+    width: 100%;
+}
+
+.dashboard-menu-list {
+    border: 1x solid black;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.dashboard-menu-list-item {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 13px;
+    margin-right: 35px;
+    vertical-align: center;
+}
+
+.dashboard-menu-list-item:hover {
+    color: rgb(0, 180, 5);
+}
+
+.logout-btn {
+    padding-right: 20px;
+}

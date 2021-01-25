@@ -6,7 +6,6 @@ export const fetchStocks = () => (
 
 export const fetchStock = stockId => (
     $.ajax({
-        url: `/api/stocks/${stockId}`,
-        method: 'POST'
+        url: `/api/stocks/${stockId}`
     })
 );
