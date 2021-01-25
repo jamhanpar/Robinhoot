@@ -1,7 +1,7 @@
-export const signup = user => (
+export const receiveStock = stock => (
     $.ajax({
-        url: '/api/users',
-        method: 'POST',
-        data: { user }
+        url: `/api/stock/${stock.id}`,
+        method: 'GET',
+        data: { stock }
     })
 );

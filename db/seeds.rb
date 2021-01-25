@@ -9,6 +9,7 @@
 
 # SEEDS
 User.delete_all
+Stock.delete_all
 
 demo = User.create!(
     first_name: 'John',
@@ -24,7 +25,22 @@ test = User.create!(
     password: '123456'
 )
   
-# u2 = User.create!(
-#     username: 'username',
-#     password: 'password'
-#  )
+aapl = Stock.create!(
+    name: 'Apple',
+    ticker: 'AAPL'
+)
+
+visa = Stock.create!(
+    name: 'Visa',
+    ticker: 'V'
+)
+
+tsla = Stock.create!(
+    name: 'Tesla',
+    ticker: 'TSLA'
+)
+
+googl = Stock.create!(
+    name: 'Alphabet Class A',
+    ticker: 'GOOGL'
+)
