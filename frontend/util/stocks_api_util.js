@@ -1,7 +1,13 @@
-export const receiveStock = stock => (
+export const fetchStocks = () => (
     $.ajax({
-        url: `/api/stock/${stock.id}`,
+        url: '/api/stocks',
+        method: 'GET'
+    })
+);
+
+export const fetchStock = stockId => (
+    $.ajax({
+        url: `/api/stocks/${stockId}`,
         method: 'GET',
-        data: { stock }
     })
 );
