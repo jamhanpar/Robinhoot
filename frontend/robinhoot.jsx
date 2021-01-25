@@ -5,6 +5,7 @@ import configureStore from './store/store';
 
 // TESTING
 import { signup, login, logout } from './util/session_api_util';
+import { fetchStocks, fetchStock } from './util/stocks_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById('root');
@@ -26,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.login = login;
     window.signup = signup;
     window.logout = logout;
+    window.stocks = fetchStocks;
+    window.stock = fetchStock;
     // DELETE
     
     // ReactDOM.render(<div>React is working</div>, root)
