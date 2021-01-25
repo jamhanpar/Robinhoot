@@ -20,14 +20,14 @@ class Dashboard extends React.Component {
             <div>
                 <div className="dashboard-nav-bar">
                     <div className="dashboard-logo-container">
-                        <h1>Robinhoot</h1>
+                        <img className="dashboard-logo" src={window.Logo} />
                     </div>
                     <div className="search-form-container">
                         <form>
                             <input type="text" placeholder="search" className="search-bar"/>
                         </form>
                     </div>
-                    <div>
+                    <div className="dashboard-menu-container">
                         <ul className="dashboard-menu-list">
                             <button className="logout-btn dashboard-menu-list-item" onClick={this.handleSubmit}>Logout</button>
                             <li className="dashboard-menu-list-item">Free Stocks</li>

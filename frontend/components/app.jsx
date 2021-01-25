@@ -15,7 +15,7 @@ import {
 const App = () => (
     <div>
         <Switch>
-            <Route exact path='/' component={SplashContainer} />
+            <AuthRoute exact path='/' component={SplashContainer} />
             <AuthRoute exact path='/signup' component={SignupContainer} />
             <AuthRoute exact path='/login' component={LoginContainer} />
             <ProtectedRoute path='/dashboard' component={DashboardContainer} />

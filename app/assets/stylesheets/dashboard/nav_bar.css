@@ -8,12 +8,27 @@
 }
 
 .dashboard-logo-container {
-    margin-left: 60px;
+    border: 1px solid black;
+    padding-left: 60px;
+    width: 20%;
+    height: auto;
+}
+
+.dashboard-logo {
+    width: 40px;
+    height: auto;
 }
 
 .search-form-container {
     border: 1px solid black;
-    width: 100%;
+    width: 1030px;
+}
+
+.dashboard-menu-container {
+    border: 1px solid black;
+    width: 22%;
+    display: flex;
+    justify-content: center;
 }
 
 .dashboard-menu-list {

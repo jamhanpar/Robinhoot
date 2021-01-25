@@ -1,6 +1,6 @@
 .dashboard-container {
     border: 1px solid black;
-    margin-top: 30px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
 }
