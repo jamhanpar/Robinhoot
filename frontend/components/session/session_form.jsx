@@ -9,6 +9,10 @@ class SessionForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentWillUnmount() {
+        this.props.resetErrors();
+    }
+
     update(field) {
         return e => {
             this.setState({ [field]: e.currentTarget.value })
@@ -74,14 +78,14 @@ class SessionForm extends React.Component {
                             <label htmlFor="username">Email</label>
                         </div>
                         <div className="input-container">
-                            <input className="username" type="text" autoComplete="current-email" value={this.state.email} onChange={this.update('email')}/>
+                            <input className="session-input" type="text" autoComplete="current-email" value={this.state.email} onChange={this.update('email')}/>
                         </div>
 
                         <div className="input-label">
                             <label htmlFor="password">Password</label>
                         </div>
                         <div className="input-container">
-                            <input className="password" type="password" autoComplete="current-password" value={this.state.password} onChange={this.update('password')}/>
+                            <input className="session-input" type="password" autoComplete="current-password" value={this.state.password} onChange={this.update('password')}/>
                         </div>
 
                         {forgotPassword}

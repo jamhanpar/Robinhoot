@@ -17,3 +17,7 @@
  div {
    font-family: 'Rubik', sans-serif;
  }
+
+ .hide-errors {
+   visibility: hidden;
+ }

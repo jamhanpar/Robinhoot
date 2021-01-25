@@ -6,7 +6,12 @@ class Api::UsersController < ApplicationController
             login(@user)
             render "api/users/show"
         else
-            render json: @user.errors.full_messages, status: 422
+            render json: [
+                "Please enter your first name.",
+                "Please enter your last name.",
+                "Please enter your email.",
+                "Your password must be at least 10 characters."
+            ], status: 422
         end
     end
 

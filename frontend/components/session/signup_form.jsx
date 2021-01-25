@@ -4,10 +4,15 @@ import { Link } from 'react-router-dom';
 class SignupForm extends React.Component {
     constructor(props) {
         super(props)
-
-        this.state = this.props.user;
+        
+        this.state = Object.assign({}, this.props.user);
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
+    }
+
+    componentWillUnmount() {
+        this.props.resetErrors();
     }
 
     update(field) {
@@ -19,25 +24,35 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        this.props.processForm(this.state)
-            .then(() => this.props.history.push('/dashboard'));
+        debugger
+        if (Object.values(this.state).some((val) => val === "")) {
+            this.props.processForm(this.state)
+                .then(() => this.renderErrors());
+            this.errors = this.renderErrors();
+            debugger
+        } else {
+            this.props.processForm(this.state)
+                .then(() => this.props.history.push('/dashboard'));
+        }
     }
 
     renderErrors() {
-        const { errors } = this.props
+        const { errors } = this.props;
 
         return (
-            <div className="session-error-container">
+            <ul className="signup-error-list">
                 {
                     errors.map((error, i) => (
-                        <p key={`error-#${i}`}>{error}</p>
+                        this.state[Object.keys(error)] === '' ? <li key={`error-#${i}`} className="signup-error-item">{Object.values(error)}</li> : null
                     ))
                 }
-            </div>
+            </ul>
         );
     }
 
     render() {
+        const toggleHidden = Object.values(this.props.errors).length < 1 ? "hide-errors" : "show-errors";
+
         return (
             <div className="signup-container">
                 <div className="signup-subcontainer">
@@ -69,13 +84,15 @@ class SignupForm extends React.Component {
                                     <button className="signup-submit-btn" type="submit">Continue</button>
                                     <div className="signup-reroutes">
                                         <p className="already-started">Already started?</p>
-                                        <Link to="/login"><p className="signup-alternative">Log in to complete your application</p></Link>                                    </div>
+                                        <Link to="/login"><p className="signup-alternative">Log in to complete your application</p></Link>                                    
+                                    </div>
+                                </div>
+
+                                <div className={`signup-error-container ${toggleHidden}`}>
+                                    {this.errors}
                                 </div>
                             </form>
-
-                            {this.renderErrors()}
                         </div>
-
                         <div className="signup-disclaimer">
                             <p className="disclaimer-p">All investments involve risk, including the possible loss of principal. Investors should consider their investment objectives and risks carefully before investing.</p>
                             <p className="disclaimer-p">Commission-free trading means $0 commission trading on self-directed individual cash or margin brokerage accounts that trade U.S. listed securities via mobile devices or web. Keep in mind, other fees such as trading (non-commission) fees, Gold subscription fees, wire transfer fees, and paper statement fees may apply to your brokerage account. Please see Robinhoot Financial’s fee schedule to learn more.</p>

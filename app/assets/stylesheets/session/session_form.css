@@ -50,15 +50,18 @@
     border-radius: 4px;
 }
 
-.session-form-box input{
+.session-form-box {
+    height: auto;
+}
+
+.session-form-box input {
     border: 1px solid lightgrey;
     outline: none;
     border-radius: 4px;
     width: 100%;
     height: 100%;
-    padding-left: 12px;
-    padding-right: 12px;
     text-indent: 10px;
+    transition: 0.3s;
 }
 
 .session-form-box input:hover {
@@ -98,6 +101,11 @@
     font-size: 13px;
     font-weight: bold;
     margin-right: 20px;
+}
+
+.session-submit-btn:hover {
+    background-color: #02ad10;
+    cursor: pointer;
 }
 
 .session-submit-btn:focus {

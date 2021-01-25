@@ -33,7 +33,7 @@ body {
     height: 36px;
 }
 
-li, a, button, .login-btn {
+li, a, button, span {
     font-family: "Montserrat", sans-serif;
     color: black;
     text-decoration: none;
@@ -67,9 +67,14 @@ li, a, button, .login-btn {
 }
 
 .login-btn {
+    color: green;
     font-size: 17px;
     font-weight: 600;
     padding-right: 10px;
+}
+
+.login-btn a:hover {
+    color:rgb(0, 180, 5);
 }
 
 .sign-up-btn {
@@ -78,7 +83,7 @@ li, a, button, .login-btn {
     border-radius: 24px;
     background-color: rgba(0, 180, 5, 0.8);
     margin-left: 20px;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 600;
     cursor: pointer;
     width: 150px;
@@ -86,5 +91,9 @@ li, a, button, .login-btn {
 }
 
 .sign-up-btn:hover {
-    background-color: rgb(4, 122, 8);
+    background-color: rgba(2, 168, 8, 0.8);
+}
+
+.sign-up-btn:focus {
+    outline: none;
 }

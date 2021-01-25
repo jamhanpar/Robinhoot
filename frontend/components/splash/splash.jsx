@@ -20,7 +20,7 @@ class Splash extends React.Component {
                     </nav>
                     <div className="sign-up-options">
                         <span className="login-btn"><Link to='/login'>Log In</Link></span>
-                        <button className="sign-up-btn"><Link to='/signup'>Sign up</Link></button>
+                        <Link to='/signup'><button className="sign-up-btn">Sign up</button></Link>
                     </div>
                 </div>
 
