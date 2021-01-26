@@ -4,21 +4,24 @@ import { Link } from 'react-router-dom';
 class News extends React.Component {
     constructor(props) {
         super(props)
-        debugger
     }
 
     componentDidMount() {
-        debugger
-        this.props.iexFetchNews(window.iexcloudApiKey);
+        this.props.iexFetchNews(window.iexcloudAPIKey);
     }
 
     render() {
-        const { news } = this.props;
+        const { entities } = this.props;
         debugger
         return (
             <div className="news-container">
-                Hello This Is News Component
-                This is news: {news}
+                <p>Hello This Is News Component</p>
+                <p>This is news: {entities.news.source} </p>
+                {
+                    entities.news.map(news_info => (
+                        <p>{news.source}</p>
+                    ))
+                }
                 {/* <a href={news.url}>
                     <div className="news-souce">news.source</div>
                     <div className="news-title">news.headline</div>

@@ -2,12 +2,11 @@ import { connect } from 'react-redux';
 import { fetchNews } from '../../../actions/news_actions';
 import News from './news';
 
-const mStP = (state, ownProps) => {
-    debugger
-    return {
-        news: state.news
+const mStP = (state, ownProps) => ({
+    entities: {
+        news: state.entities.news
     }
-};
+});
 
 const mDtP = dispatch => {
     debugger

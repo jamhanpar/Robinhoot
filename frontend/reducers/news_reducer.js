@@ -5,8 +5,8 @@ const newsReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_NEWS:
-            debugger
-            return action.news;
+            const newState = Object.assign({}, state, action.news.news)
+            return newState;
         default:
             return state;
     }
