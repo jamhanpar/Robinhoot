@@ -20,7 +20,7 @@ export const iexFetchStock = (stockSymbol, apikey) => (
             console.log(data)
         },
         error: function(error) {
-            console.log('error:' + error
+            console.log('error:' + error)
         }
     })
 );
