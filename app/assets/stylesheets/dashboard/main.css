@@ -15,12 +15,3 @@
     width: 690px;
     height: 100%;
 }
-
-.watchlist-container {
-    border: 1px solid black;
-    border-radius: 6px;
-    position: sticky;
-    top: 99px;
-    width: 276px;
-    height: 1125px;
-}
