@@ -11,6 +11,10 @@
 User.delete_all
 Stock.delete_all
 
+# reset id to 1 before seeding
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
+ActiveRecord::Base.connection.reset_pk_sequence!('stocks')
+
 demo = User.create!(
     first_name: 'John',
     last_name: 'Smith',
