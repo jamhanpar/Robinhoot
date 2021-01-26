@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NewsCard from './news_card';
 
 class News extends React.Component {
     constructor(props) {
@@ -7,28 +8,32 @@ class News extends React.Component {
     }
 
     componentDidMount() {
+        debugger
         this.props.iexFetchNews(window.iexcloudAPIKey);
     }
 
     render() {
         const { entities } = this.props;
         debugger
+        if(entities.length === 0) {
+            return null;
+        }
+
         return (
             <div className="news-container">
                 <p>Hello This Is News Component</p>
-                <p>This is news: {entities.news.source} </p>
+                {/* {
+                    entities.news.map((news_info, i) => {
+                        debugger
+                        return <p key={news_info.source + `-${i}`}>{news_info.source}</p>
+                    })
+                } */}
                 {
-                    entities.news.map(news_info => (
-                        <p>{news.source}</p>
-                    ))
+                    entities.news.map((news_data, i) => <NewsCard 
+                        news={news_data}
+                        key={i}
+                    />)
                 }
-                {/* <a href={news.url}>
-                    <div className="news-souce">news.source</div>
-                    <div className="news-title">news.headline</div>
-                    <div className="news-desc">news.summary</div>
-                    <div className="news-related-symbols">news.related</div>
-                    <div className="news-picture">news.image</div>
-                </a> */}
             </div>
         )
     }

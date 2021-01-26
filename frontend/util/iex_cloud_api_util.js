@@ -67,7 +67,7 @@ export const iexFetchGeneralNews = (apiKey) => (
         url: iexUrl + `/stock/market/batch?types=news&range=1m&last=15&token=${apiKey}`,
         dataType: 'JSON',
         success: function(data) {
-            return data;
+            console.log(data)
         },
         error: function(error) {
             console.log('error:' + error)
