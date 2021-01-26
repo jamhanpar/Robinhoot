@@ -6,7 +6,7 @@ import configureStore from './store/store';
 // TESTING
 import { signup, login, logout } from './util/session_api_util';
 import { fetchStocks, fetchStock } from './util/stocks_api_util';
-import { iexFetchStock, iexFetchCompany, iexFetchNews, iexFetchQuote} from './util/iex_cloud_api_util';
+import { iexFetchStock, iexFetchCompany, iexFetchNews, iexFetchQuote, iexFetchGeneralNews} from './util/iex_cloud_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById('root');
@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.iexCompany = iexFetchCompany;
     window.iexNews = iexFetchNews;
     window.iexQuote = iexFetchQuote;
+    window.iexGeneralNews = iexFetchGeneralNews;
     // DELETE
     
     // ReactDOM.render(<div>React is working</div>, root)

@@ -45,7 +45,7 @@ export const iexFetchCompany = (stockSymbol, apiKey) => (
     })
 );
 
-// news
+// news with symbol
 export const iexFetchNews = (stockSymbol, apiKey) => (
     $.ajax({
         method: 'GET',
@@ -53,6 +53,21 @@ export const iexFetchNews = (stockSymbol, apiKey) => (
         dataType: 'JSON',
         success: function(data) {
             console.log(data)
+        },
+        error: function(error) {
+            console.log('error:' + error)
+        }
+    })
+);
+
+// news
+export const iexFetchGeneralNews = (apiKey) => (
+    $.ajax({
+        method: 'GET',
+        url: iexUrl + `/stock/market/batch?types=news&range=1m&last=15&token=${apiKey}`,
+        dataType: 'JSON',
+        success: function(data) {
+            return data;
         },
         error: function(error) {
             console.log('error:' + error)

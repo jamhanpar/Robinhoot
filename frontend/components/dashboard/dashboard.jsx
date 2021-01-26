@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Example from './portfolio_graph';
 import StockChart from './watchlist/mini_stock_chart';
+import NewsContainer from './news/news_container';
+import News from './news/news';
 
 class Dashboard extends React.Component {
     constructor(props) {
@@ -77,6 +79,7 @@ class Dashboard extends React.Component {
                             </div>
                             <div className="news-list">
                                 <h1 className="news-title">News</h1>
+                                <NewsContainer />
                             </div>
                             <div className="privacy-policy-container">
                                 <h1 className="privacy-policy-disclaimer">For more information, see our <span className="privacy-policy-link">Privacy Policy</span>.</h1>
