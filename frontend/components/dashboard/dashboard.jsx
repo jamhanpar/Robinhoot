@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Example from './portfolio_graph';
+import StockChart from './watchlist/mini_stock_chart';
 
 class Dashboard extends React.Component {
     constructor(props) {
@@ -24,8 +25,11 @@ class Dashboard extends React.Component {
                         <img className="dashboard-logo" src={window.Logo} />
                     </div>
                     <div className="search-form-container">
+                        <div className="search-icon-container">
+                            <img className="search-icon" src={window.Logo} />
+                        </div>
                         <form>
-                            <input type="text" placeholder="search" className="search-bar"/>
+                            <input type="text" placeholder="Search" className="search-bar"/>
                         </form>
                     </div>
                     <div className="dashboard-menu-container">
@@ -80,7 +84,22 @@ class Dashboard extends React.Component {
                         </div>
             
                         <div className="watchlist-container">
-                            <h1 className="watchlist-title">Watchlist</h1>
+                            <div className="watchlist-title-container">
+                                <h1 className="watchlist-title">Stocks</h1>
+                            </div>
+                            <div className="stock-info-card">
+                                <div className="ticker-and-shares-owned">
+                                    <p className="stock-info-item stock-info-symbol">AAPL</p>
+                                    <p className="stock-info-item">2 Shares</p>
+                                </div>
+                                <div className="stock-graph">
+                                    <StockChart />
+                                </div>
+                                <div className="stock-price-and-percent">
+                                    <p className="stock-info-item">$355.06</p>
+                                    <p className="stock-info-item stock-info-pct">+0.33%</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

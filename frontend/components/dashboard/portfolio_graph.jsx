@@ -1,16 +1,16 @@
 import React, { PureComponent } from 'react';
 
 // code below is for testing purposes
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ReferenceDot } from 'recharts';
 
 const data = [
-  { name: 'Page B', date: 'JAN 18, 2021', price: 10000, open_price: 10000, amt: 10000 },
-  { name: 'Page B', date: 'JAN 19, 2021', price: 12000, open_price: 10000, amt: 10000 },
-  { name: 'Page C', date: 'JAN 20, 2021', price: 11000, open_price: 10000, amt: 10000 },
-  { name: 'Page D', date: 'JAN 21, 2021', price: 14000, open_price: 10000, amt: 10000 },
-  { name: 'Page E', date: 'JAN 22, 2021', price: 15000, open_price: 10000, amt: 10000 },
-  { name: 'Page F', date: 'JAN 23, 2021', price: 12500, open_price: 10000, amt: 10000 },
-  { name: 'Page G', date: 'JAN 24, 2021', price: 17000, open_price: 10000, amt: 10000 },
+  { name: 'Page B', date: 'JAN 18, 2021', price: 10000, amt: 10000 },
+  { name: 'Page B', date: 'JAN 19, 2021', price: 12000, amt: 10000 },
+  { name: 'Page C', date: 'JAN 20, 2021', price: 11000, amt: 10000 },
+  { name: 'Page D', date: 'JAN 21, 2021', price: 14000, amt: 10000 },
+  { name: 'Page E', date: 'JAN 22, 2021', price: 25000, amt: 10000 },
+  { name: 'Page F', date: 'JAN 23, 2021', price: 12500, amt: 10000 },
+  { name: 'Page G', date: 'JAN 24, 2021', price: 40000, amt: 10000 },
 ];
 
 // export default class SimpleLineChart extends PureComponent {
@@ -38,12 +38,11 @@ const data = [
 //   }
 // }
 
-const CustomTooltip = (properties) => {
-    if (properties.active) {
-        debugger
+const CustomTooltip = ({ active, payload }) => {
+    if (active) {
         return (
         <div className="custom-tooltip">
-            <p className="date">{`${properties.payload[0].date}`}</p>
+            <p className="date">{`${payload[0].date}`}</p>
         </div>
         );
     }
@@ -59,7 +58,7 @@ export default class TinyLineChart extends PureComponent {
       <LineChart width={690} height={260} data={data}>
         <Line type="monotone" dataKey="price" stroke="#00C805" strokeWidth={2} />
         {/* <Tooltip content={<CustomTooltip />} /> */}
-        <Tooltip content="" />
+        <Tooltip />
       </LineChart>
     );
   }

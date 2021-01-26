@@ -19,11 +19,12 @@
 .portfolio-stats-item {
     font-size: 13px;
     font-weight: bold;
-    padding-right: 2px;
+    padding-right: 3px;
 }
 
 .portfolio-stats-item:nth-child(3) {
     font-size: 13px;
+    font-weight: 500;
     color: grey;
 }
 
@@ -41,7 +42,7 @@
 .chart-display-item {
     font-size: 13px;
     font-weight: bold;
-    margin: 0 12px;
+    margin: 0 10px;
     padding-top: 4px;
     padding-bottom: 15px;
 }
