@@ -5,7 +5,8 @@ import configureStore from './store/store';
 
 // TESTING
 import { signup, login, logout } from './util/session_api_util';
-import { fetchStocks, fetchStock, iexFetchStock, iexFetchStockCompany } from './util/stocks_api_util';
+import { fetchStocks, fetchStock } from './util/stocks_api_util';
+import { iexFetchStock, iexFetchStockCompany } from './util/iex_cloud_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById('root');
