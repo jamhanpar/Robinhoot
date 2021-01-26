@@ -1,5 +1,4 @@
-.portfolio-graph {
-    border: 1px solid black;
+.portfolio-graph-container {
     width: 100%;
     height: 350px;
 }
@@ -7,4 +6,48 @@
 .account-balance {
     font-size: 32px;
     font-weight: 500;
+}
+
+.portfolio-stats-list {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.portfolio-stats-item {
+    font-size: 13px;
+    font-weight: bold;
+    padding-right: 2px;
+}
+
+.portfolio-stats-item:nth-child(3) {
+    font-size: 13px;
+    color: grey;
+}
+
+.portfolio-graph {
+    width: 100%;
+    height: 270px;
+}
+
+.chart-display-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.chart-display-item {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 12px;
+    padding-top: 4px;
+    padding-bottom: 15px;
+}
+
+.chart-display-item:hover {
+    color: rgb(0, 180, 5);
+    border-bottom: 3px solid rgb(0, 180, 5);
+    cursor: pointer;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Example from './portfolio_graph';
 
 class Dashboard extends React.Component {
     constructor(props) {
@@ -42,8 +43,26 @@ class Dashboard extends React.Component {
                 <div className="dashboard-container">
                     <div className="dashboard-content-container">
                         <div className="portfolio-and-relevant-info-container">
-                            <div className="portfolio-graph">
+                            <div className="portfolio-graph-container">
                                 <h1 className="account-balance">$10,000.00</h1>
+                                <ul className="portfolio-stats-list">
+                                    <li className="portfolio-stats-item">$200</li>
+                                    <li className="portfolio-stats-item">2.00%</li>
+                                    <li className="portfolio-stats-item">Today</li>
+                                </ul>
+                                {/* add graph here */}
+                                <div className="portfolio-graph">
+                                    <Example />
+                                </div>
+                                <ul className="chart-display-list">
+                                    <li className="chart-display-item">LIVE</li>
+                                    <li className="chart-display-item">1D</li>
+                                    <li className="chart-display-item">1W</li>
+                                    <li className="chart-display-item">1M</li>
+                                    <li className="chart-display-item">3M</li>
+                                    <li className="chart-display-item">1Y</li>
+                                    <li className="chart-display-item">ALL</li>
+                                </ul>
                             </div>
                             <div className="buying-power">
                                 <h1>Buying Power</h1>

@@ -13,7 +13,6 @@ export const iexFetchStock = (stockSymbol, apikey) => (
     })
 );
 
-
 // ajax call for company info - does not work
 export const iexFetchStockCompany = (stockSymbol, apikey) => (
     $.ajax({
