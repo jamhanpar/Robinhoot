@@ -19,7 +19,8 @@
 .watchlist-container {
     border: 1px solid black;
     border-radius: 6px;
+    position: sticky;
+    top: 99px;
     width: 276px;
     height: 1125px;
-    margin-bottom: 50px;
 }

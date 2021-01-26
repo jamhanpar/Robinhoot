@@ -11,6 +11,7 @@ body {
 }
 
 .main-nav-container {
+    background-color: white;
     position: sticky;
     top: 0;
     border-bottom: 1px solid darkgray;
@@ -20,7 +21,6 @@ body {
     align-items:center;
     padding: 0 2%;
     height: 64px;
-    background-color: white;
 }
 
 .main-logo {
