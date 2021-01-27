@@ -77,10 +77,7 @@ class Dashboard extends React.Component {
                             <div className="sector-list">
                                 <h1 className="sector-title">Popular Lists</h1>
                             </div>
-                            <div className="news-list">
-                                <h1 className="news-title">News</h1>
-                                <NewsContainer />
-                            </div>
+                            <NewsContainer />
                             <div className="privacy-policy-container">
                                 <h1 className="privacy-policy-disclaimer">For more information, see our <span className="privacy-policy-link">Privacy Policy</span>.</h1>
                             </div>

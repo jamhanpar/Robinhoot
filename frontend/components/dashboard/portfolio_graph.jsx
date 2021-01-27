@@ -41,9 +41,9 @@ const data = [
 const CustomTooltip = ({ active, payload }) => {
     if (active) {
         return (
-        <div className="custom-tooltip">
-            <p className="date">{`${payload[0].date}`}</p>
-        </div>
+          <div className="custom-tooltip">
+              <p className="date">{`${payload[0].date}`}</p>
+          </div>
         );
     }
 

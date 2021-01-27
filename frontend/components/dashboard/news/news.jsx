@@ -21,19 +21,15 @@ class News extends React.Component {
 
         return (
             <div className="news-container">
-                <p>Hello This Is News Component</p>
-                {/* {
-                    entities.news.map((news_info, i) => {
-                        debugger
-                        return <p key={news_info.source + `-${i}`}>{news_info.source}</p>
-                    })
-                } */}
-                {
-                    entities.news.map((news_data, i) => <NewsCard 
-                        news={news_data}
-                        key={i}
-                    />)
-                }
+                <div className="news-list">
+                    <h1 className="news-title">News</h1>
+                    {
+                        entities.news.map((news_data, i) => <NewsCard 
+                            news={news_data}
+                            key={i}
+                        />)
+                    }
+                </div>
             </div>
         )
     }
