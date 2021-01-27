@@ -1,0 +1,92 @@
+.dropdown {
+    position: absolute;
+    display: inline-block;
+}
+
+#myDropdown {
+    background-color: white;
+    border-radius: 6px;
+    position: absolute;
+    width: 300px;
+    height: auto;
+    top: 65px;
+    right: 20px;
+    min-width: 160px;
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content {
+    display: none;
+}
+
+.show {
+    display: block;
+    background-color: #f1f1f1;
+    position: absolute;
+    width: 300px;
+    height: auto;
+    top: 65px;
+    right: 20px;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.account-flex {
+    border: none;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.account-info-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.account-user-first-last-name {
+    height: auto;
+    padding: 20px 25px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.port-value-buying-power-container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+    padding-bottom: 18px;
+}
+
+.port-value-in-account-settings {
+    margin-left: 25px;
+    margin-right: 50px;
+}
+
+.account-value {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.account-value-desc {
+    font-size: 13px;
+}
+
+.account-dropdown-list {
+    border-top: 1px solid #E3E9ED;
+    width: 100%;
+    height: auto;
+}
+
+.account-dropdown-item {
+    font-size: 13px;
+    padding: 18px 25px;
+}
+
+.logout-btn {
+    border: none;
+    background-color: rgba(0,0,0,0);
+}

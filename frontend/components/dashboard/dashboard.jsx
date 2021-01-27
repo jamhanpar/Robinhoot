@@ -7,7 +7,10 @@ class Dashboard extends React.Component {
     constructor(props) {
         super(props)
 
+        this.state = { showToggle: "show"}
+
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.showDropdown = this.showDropdown.bind(this);
     }
 
     handleSubmit(e) {
@@ -17,7 +20,16 @@ class Dashboard extends React.Component {
             .then(() => this.props.history.push('/'));
     }
 
+    showDropdown() {
+        this.setState({showToggle: this.state.showToggle === "show" ? "dropdown-content" : "show"})
+    }
+
     render() {
+        const link = (url) => {
+            return url === "" ? null : url;
+            location.href = url;
+        }
+
         return (
             <div>
                 <div className="dashboard-nav-bar">
@@ -39,7 +51,43 @@ class Dashboard extends React.Component {
                             <li className="dashboard-menu-list-item">Portfolio</li>
                             <li className="dashboard-menu-list-item">Cash</li>
                             <li className="dashboard-menu-list-item">Messages</li>
-                            <li className="dashboard-menu-list-item">Account</li>
+                            <div className="dropdown-menu">
+                                <li className="dashboard-menu-list-item" onClick={this.showDropdown} onBlur={this.showDropdown}>Account</li>
+                                <div id="myDropdown" className={this.state.showToggle}>
+                                    <div className="account-flex">
+                                        <div className="account-info-section">
+                                            <p className="account-user-first-last-name">John Smith</p>
+                                            <div className="port-value-buying-power-container">
+                                                <div className="port-value-in-account-settings">
+                                                    <p className="account-value">$10,000.00</p>
+                                                    <p className="account-value-desc">Porfolio Value</p>
+                                                </div>
+                                                <div className="buying-power-in-account-settings">
+                                                    <p className="account-value">$10,000.00</p>
+                                                    <p className="account-value-desc">Buying Power</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="account-dropdown-list">
+                                            <p className="account-dropdown-item">Free Stock</p>
+                                            <p className="account-dropdown-item">Account</p>
+                                            <p className="account-dropdown-item">Banking</p>
+                                            <p className="account-dropdown-item">Recurring</p>
+                                            <p className="account-dropdown-item">History</p>
+                                            <p className="account-dropdown-item">Documents</p>
+                                            <p className="account-dropdown-item">Settings</p>
+                                        </div>
+                                        <div className="account-dropdown-list">
+                                            <p className="account-dropdown-item">Help Center</p>
+                                            <p className="account-dropdown-item">Contact Us</p>
+                                            <p className="account-dropdown-item">Disclosures</p>
+                                        </div>
+                                        <div className="account-dropdown-list">
+                                            <button className="account-dropdown-item logout-btn" onClick={this.handleSubmit}>Log Out</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </ul>
                     </div>
                 </div>
