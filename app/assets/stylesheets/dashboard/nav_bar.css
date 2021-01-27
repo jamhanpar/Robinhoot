@@ -28,6 +28,16 @@
     height: 35px;
     display: flex;
     margin-right: 60px;
+    transition: ease 0.3s;
+}
+
+.search-form-container:hover {
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+    transition: ease 0.3s;
+}
+
+.search-form-container:active {
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
 }
 
 .search-icon-container {
@@ -54,23 +64,27 @@
 }
 
 .dashboard-menu-container {
+    height: 100%;
     display: flex;
     justify-content: center;
 }
 
 .dashboard-menu-list {
     width: auto;
-    height: auto;
+    height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
 .dashboard-menu-list-item {
+    height: 100%;
     font-size: 13px;
     font-weight: bold;
     line-height: 13px;
     margin-right: 30px;
+    display: flex;
+    align-items: center;
 }
 
 .dashboard-menu-list-item:last-child {
@@ -82,6 +96,7 @@
     cursor: pointer;
 }
 
-.logout-btn {
-    text-align: center;
+.dashboard-menu-list-item:focus {
+    border-bottom: 3px solid green;
+    color: rgb(0, 180, 5);
 }
