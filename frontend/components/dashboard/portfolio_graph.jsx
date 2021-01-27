@@ -40,7 +40,6 @@ const data = [
 
 const CustomTooltip = ({ active, payload }) => {
     if (active) {
-      debugger
         return (
           <div className="custom-tooltip">
               <p className="date">{`${payload[0].date}`}</p>

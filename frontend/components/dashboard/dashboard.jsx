@@ -48,7 +48,6 @@ class Dashboard extends React.Component {
                     </div>
                     <div className="dashboard-menu-container">
                         <ul className="dashboard-menu-list">
-                            <button className="logout-btn dashboard-menu-list-item" onClick={this.handleSubmit}>Logout</button>
                             <li className="dashboard-menu-list-item">Free Stocks</li>
                             <li className="dashboard-menu-list-item">Portfolio</li>
                             <li className="dashboard-menu-list-item">Cash</li>
