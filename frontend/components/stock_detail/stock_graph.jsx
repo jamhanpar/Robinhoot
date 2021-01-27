@@ -19,6 +19,7 @@ export default class StockGraph extends PureComponent {
         return (
             <LineChart width={690} height={260} data={data}>
                 <Line type="monotone" dataKey="close" stroke="#000000" strokeWidth={2} dot={false}/>
+                <Tooltip />
             </LineChart>
         );
     }

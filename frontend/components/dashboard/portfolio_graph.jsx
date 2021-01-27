@@ -58,8 +58,8 @@ export default class TinyLineChart extends PureComponent {
     return (
       <LineChart width={690} height={260} data={data}>
         <Line type="monotone" dataKey="price" stroke="#00C805" strokeWidth={2} dot={false}/>
-        <Tooltip content={<CustomTooltip />} />
-        {/* <Tooltip /> */}
+        {/* <Tooltip content={<CustomTooltip />} /> */}
+        <Tooltip />
       </LineChart>
     );
   }
