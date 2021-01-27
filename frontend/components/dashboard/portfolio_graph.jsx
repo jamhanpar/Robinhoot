@@ -40,6 +40,7 @@ const data = [
 
 const CustomTooltip = ({ active, payload }) => {
     if (active) {
+      debugger
         return (
           <div className="custom-tooltip">
               <p className="date">{`${payload[0].date}`}</p>
@@ -56,9 +57,9 @@ export default class TinyLineChart extends PureComponent {
   render() {
     return (
       <LineChart width={690} height={260} data={data}>
-        <Line type="monotone" dataKey="price" stroke="#00C805" strokeWidth={2} />
-        {/* <Tooltip content={<CustomTooltip />} /> */}
-        <Tooltip />
+        <Line type="monotone" dataKey="price" stroke="#00C805" strokeWidth={2} dot={false}/>
+        <Tooltip content={<CustomTooltip />} />
+        {/* <Tooltip /> */}
       </LineChart>
     );
   }

@@ -93,7 +93,12 @@ class Dashboard extends React.Component {
                                     <p className="stock-info-item">2 Shares</p>
                                 </div>
                                 <div className="stock-graph">
-                                    <StockChart />
+                                    {/* want to get stock symbol from stock-info-symbol */}
+                                    <StockChart 
+                                        symbol={'AAPL'}
+                                        iexFetchData={this.props.iexFetchData}
+                                        data={this.props.data}    
+                                    />
                                 </div>
                                 <div className="stock-price-and-percent">
                                     <p className="stock-info-item">$355.06</p>
