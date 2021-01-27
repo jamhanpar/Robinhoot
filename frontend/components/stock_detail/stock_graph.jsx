@@ -1,18 +1,5 @@
 import React, { PureComponent } from 'react';
-
 import { LineChart, Line, Tooltip } from 'recharts';
-
-const stockData = [
-    { name: 'AAPL', date: 'JAN 1, 2021', price: 143.19 },
-    { name: 'AAPL', date: 'JAN 2, 2021', price: 143.19 },
-    { name: 'AAPL', date: 'JAN 3, 2021', price: 143.19 },
-    { name: 'AAPL', date: 'JAN 3, 2021', price: 143.19 },
-    { name: 'AAPL', date: 'JAN 3, 2021', price: 43.19 },
-    { name: 'AAPL', date: 'JAN 3, 2021', price: 143.19 },
-    { name: 'AAPL', date: 'JAN 3, 2021', price: 143.19 },
-    { name: 'AAPL', date: 'JAN 3, 2021', price: 150 },
-];
-
 
 export default class StockGraph extends PureComponent {
     constructor(props) {

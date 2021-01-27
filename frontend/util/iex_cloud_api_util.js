@@ -49,7 +49,7 @@ export const iexFetchCompany = (stockSymbol, apiKey) => (
 export const iexFetchNews = (stockSymbol, apiKey) => (
     $.ajax({
         method: 'GET',
-        url: iexUrl + `/stock/${stockSymbol}/batch?types=news&range=1m&last=15&token=${apiKey}`,
+        url: iexUrl + `/stock/${stockSymbol}/batch?filter=datetime,headline,source,url,related,image&types=news&range=1m&last=15&token=${apiKey}`,
         dataType: 'JSON',
         success: function(data) {
             console.log(data)

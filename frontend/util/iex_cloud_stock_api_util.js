@@ -1,6 +1,6 @@
 import { iexUrl } from './iex_cloud_api_util';
 
-// test
+// test - rename to test
 // export const iexFetchQuote = (stockSymbol, range, apiKey) => (
 //     $.ajax({
 //         method: 'GET',
