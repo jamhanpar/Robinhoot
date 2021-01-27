@@ -1,4 +1,4 @@
-const iexUrl = "https://sandbox.iexapis.com/stable"
+export const iexUrl = "https://sandbox.iexapis.com/stable"
 
 // testing IEX Cloud API
 export const iexFetchStock = (stockSymbol, apiKey) => (

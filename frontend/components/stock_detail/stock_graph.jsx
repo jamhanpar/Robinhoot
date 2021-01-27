@@ -4,6 +4,8 @@ import { LineChart, Line, Tooltip } from 'recharts';
 
 const data = [
     { name: 'AAPL', date: 'JAN 1, 2021', price: '$143.19' },
+    { name: 'AAPL', date: 'JAN 2, 2021', price: '$143.19' },
+    { name: 'AAPL', date: 'JAN 3, 2021', price: '$143.19' },
 ];
 
 class StockGraph extends PureComponent {
