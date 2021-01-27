@@ -7,7 +7,7 @@ class Dashboard extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = { showToggle: "show"}
+        this.state = { showToggle: "dropdown-content"}
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.showDropdown = this.showDropdown.bind(this);

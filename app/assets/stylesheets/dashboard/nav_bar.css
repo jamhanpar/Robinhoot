@@ -28,6 +28,16 @@
     height: 35px;
     display: flex;
     margin-right: 60px;
+    transition: ease 0.3s;
+}
+
+.search-form-container:hover {
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+    transition: ease 0.3s;
+}
+
+.search-form-container:active {
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
 }
 
 .search-icon-container {
