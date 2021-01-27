@@ -1,7 +1,6 @@
 import React from 'react';
 
 const NewsCard = ({ news }) => {
-    debugger
     return (
         <a href={news.url}>
             <div className="news-card">

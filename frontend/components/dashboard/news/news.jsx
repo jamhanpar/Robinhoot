@@ -8,13 +8,11 @@ class News extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         this.props.iexFetchNews(window.iexcloudAPIKey);
     }
 
     render() {
         const { entities } = this.props;
-        debugger
         if(entities.length === 0) {
             return null;
         }

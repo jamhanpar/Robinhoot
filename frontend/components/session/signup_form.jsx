@@ -24,12 +24,10 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        debugger
         if (Object.values(this.state).some((val) => val === "")) {
             this.props.processForm(this.state)
                 .then(() => this.renderErrors());
             this.errors = this.renderErrors();
-            debugger
         } else {
             this.props.processForm(this.state)
                 .then(() => this.props.history.push('/dashboard'));
