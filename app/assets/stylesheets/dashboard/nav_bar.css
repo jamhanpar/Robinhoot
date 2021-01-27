@@ -1,16 +1,18 @@
 .dashboard-nav-bar {
+    background-color: white;
+    position: sticky;
+    top: 0;
     width: 100%;
-    height: 60px;
+    height: 64px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    z-index: 2;
 }
 
 .dashboard-logo-container {
-    border: 1px solid black;
     padding-left: 60px;
-    width: 20%;
     height: auto;
 }
 
@@ -20,37 +22,66 @@
 }
 
 .search-form-container {
-    border: 1px solid black;
-    width: 1030px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    width: auto;
+    height: 35px;
+    display: flex;
+    margin-right: 60px;
+}
+
+.search-icon-container {
+    width: 50px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.search-icon {
+    width: auto;
+    height: 100%;
+    margin-left: 30%;
+}
+
+.search-bar {
+    border: none;
+    width: 480px;
+    height: 100%;
+    padding-left: 10px;
+}
+
+.search-bar:focus {
+    outline: none;
 }
 
 .dashboard-menu-container {
-    border: 1px solid black;
-    width: 22%;
     display: flex;
     justify-content: center;
 }
 
 .dashboard-menu-list {
-    border: 1x solid black;
     width: auto;
     height: auto;
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .dashboard-menu-list-item {
     font-size: 13px;
     font-weight: bold;
     line-height: 13px;
-    margin-right: 35px;
-    vertical-align: center;
+    margin-right: 30px;
+}
+
+.dashboard-menu-list-item:last-child {
+    padding-right: 20px;
 }
 
 .dashboard-menu-list-item:hover {
     color: rgb(0, 180, 5);
+    cursor: pointer;
 }
 
 .logout-btn {
-    padding-right: 20px;
+    text-align: center;
 }
