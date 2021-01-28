@@ -4,7 +4,7 @@ import { iexUrl, filter, chartInterval, includeToday } from './iex_cloud_api_uti
 export const iexFetchQuote = (stockSymbol, range, interval, apiKey) => (
     $.ajax({
         method: 'GET',
-        url: iexUrl + `/stock/${stockSymbol}/chart/${range}?${filter}&${chartInterval}=${interval}&${includeToday}&token=${apiKey}`,
+        url: iexUrl + `/stock/${stockSymbol}/chart/${range}?${filter}&${chartInterval}=${interval}&token=${apiKey}`,
         dataType: 'JSON',
         success: function(data) {
             console.log(data)

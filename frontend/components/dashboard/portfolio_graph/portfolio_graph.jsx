@@ -1,18 +1,17 @@
 import React, { PureComponent } from 'react';
 
-import { LineChart, Line, Tooltip} from 'recharts';
+import { LineChart, Line, Tooltip, YAxis, XAxis, ReferenceLine, ReferenceDot} from 'recharts';
 
-// work in progress
-const CustomTooltip = ({ active, payload }) => {
-    if (active) {
-        return (
-          <div className="custom-tooltip">
-              <p className="date">{`${payload[0].date}`}</p>
-          </div>
-        );
-    }
+class CustomizedLabel extends React.Component {
+  constructor(props) {
+    super(props)
+  }
 
-    return null;
+  render () {
+    const { label } = this.props;
+		return <span x={0} y={0}>{label}</span>
+
+  }
 };
 
 class PortfolioGraph extends PureComponent {
@@ -79,9 +78,9 @@ class PortfolioGraph extends PureComponent {
           <div className="portfolio-graph">
             <LineChart width={690} height={260} data={data}>
               <Line type="monotone" dataKey="close" stroke="#00C805" strokeWidth={2} dot={false}/>
-              {/* <Tooltip content={<CustomTooltip />} /> */}
-              <YAxis domain={['dataMin', 'dataMax']} />
-              <Tooltip />
+              <YAxis domain={['auto']} hide={true}/>
+              <XAxis dataKey="label" hide={true}></XAxis>
+              <Tooltip content={<CustomizedLabel label={data.label}/>} />
             </LineChart>
           </div>
           <ul className="chart-display-list">

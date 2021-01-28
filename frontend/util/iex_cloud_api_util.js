@@ -1,5 +1,5 @@
 export const iexUrl = "https://sandbox.iexapis.com/stable";
-export const filter = "filter=symbol,close,date,time";
+export const filter = "filter=symbol,close,date,minute,label";
 export const chartInterval = "chartInterval";
 export const includeToday = "includeToday=true";
 
