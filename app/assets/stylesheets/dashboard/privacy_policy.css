@@ -5,12 +5,12 @@
 }
 
 .privacy-policy-disclaimer {
+    margin-left: 5px;
     font-size: 13px;
     color: #B4BDC2;
 }
 
 .privacy-policy-link {
     font-size: 13px;
-    font-weight: bold;
-    color: rgb(0, 180, 5);
+    color: rgb(3, 201, 9);
 }

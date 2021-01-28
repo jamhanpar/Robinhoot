@@ -1,6 +1,5 @@
 export const iexUrl = "https://sandbox.iexapis.com/stable";
 export const filter = "filter=symbol,close,date,minute,label";
-export const chartInterval = "chartInterval";
 export const includeToday = "includeToday=true";
 
 // testing IEX Cloud API
@@ -52,7 +51,7 @@ export const iexFetchCompany = (stockSymbol, apiKey) => (
 export const iexFetchNews = (stockSymbol, apiKey) => (
     $.ajax({
         method: 'GET',
-        url: iexUrl + `/stock/${stockSymbol}/batch?filter=datetime,headline,source,url,related,image&types=news&range=1m&last=15&token=${apiKey}`,
+        url: iexUrl + `/stock/${stockSymbol}/batch?filter=datetime,headline,source,url,related,image&types=news&range=1m&last=10&token=${apiKey}`,
         dataType: 'JSON',
         success: function(data) {
             console.log(data)
@@ -67,7 +66,7 @@ export const iexFetchNews = (stockSymbol, apiKey) => (
 export const iexFetchGeneralNews = (apiKey) => (
     $.ajax({
         method: 'GET',
-        url: iexUrl + `/stock/market/batch?types=news&range=1m&last=15&token=${apiKey}`,
+        url: iexUrl + `/stock/market/batch?types=news&range=1m&last=10&token=${apiKey}`,
         dataType: 'JSON',
         success: function(data) {
             console.log(data)

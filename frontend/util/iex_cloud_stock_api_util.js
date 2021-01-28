@@ -1,10 +1,24 @@
-import { iexUrl, filter, chartInterval, includeToday } from './iex_cloud_api_util';
+import { iexUrl, filter } from './iex_cloud_api_util';
 
 // test - rename to test
-export const iexFetchQuote = (stockSymbol, range, interval, apiKey) => (
+export const iexFetchBatchQuotes = (stockSymbols, range, interval, apiKey) => (
     $.ajax({
         method: 'GET',
-        url: iexUrl + `/stock/${stockSymbol}/chart/${range}?${filter}&${chartInterval}=${interval}&token=${apiKey}`,
+        url: iexUrl + `/stock/market/batch?
+            types=charts&
+            symbols=${stockSymbols}&
+            ${filter}&
+            range=${range}&
+            chartInterval=${interval}&
+            token=${apiKey}`,
+    })
+);
+
+// // dynamic chart quotes (i.e. range = 5m)
+export const iexFetchSymbolQuote = (stockSymbol, range, interval, apiKey) => (
+    $.ajax({
+        method: 'GET',
+        url: iexUrl + `/stock/${stockSymbol}/chart/${range}?${filter}&chartInterval=${interval}&token=${apiKey}`,
         dataType: 'JSON',
         success: function(data) {
             console.log(data)
@@ -15,26 +29,16 @@ export const iexFetchQuote = (stockSymbol, range, interval, apiKey) => (
     })
 );
 
-// // quotes (i.e. range = 5m)
-// export const iexFetchQuote = (stockSymbol, range, apiKey) => (
+// // requesting chart data for multiple stock symbols
+// export const iexFetchBatchQuotes = (stockSymbols, range, interval, apiKey) => (
 //     $.ajax({
 //         method: 'GET',
-//         url: iexUrl + `/stock/${stockSymbol}/chart/${range}?filter=symbol,close,date,time&token=${apiKey}`,
-//         dataType: 'JSON',
-//         success: function(data) {
-//             console.log(data)
-//         },
-//         error: function(error) {
-//             console.log('error:' + error)
-//         }
-//     })
-// );
-
-// // 1 Week (i.e. range = 5dm)
-// export const iexFetchDynamicQuote = (stockSymbol, range, interval, apiKey) => (
-//     $.ajax({
-//         method: 'GET',
-//         url: iexUrl + `/stock/${stockSymbol}/chart/${range}?${filter}&${chartInterval}${interval}&${includeToday}&token=${apiKey}`,
-//         dataType: 'JSON',
+//         url: iexUrl + `/stock/market/batch?
+//             types=charts&
+//             symbols=${stockSymbols}&
+//             ${filter}&
+//             range=${range}&
+//             chartInterval=${interval}&
+//             token=${apiKey}`,
 //     })
 // );

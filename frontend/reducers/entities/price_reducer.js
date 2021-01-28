@@ -1,11 +1,14 @@
-import { RECEIVE_PRICES } from '../../actions/price_actions';
+import { RECEIVE_SYMBOL_PRICES, RECEIVE_BATCH_PRICES } from '../../actions/price_actions';
 
 const priceReducer = (state = [], action) => {
     Object.freeze(state);
 
     switch (action.type) {
-        case RECEIVE_PRICES:
-            return action.prices;    
+        case RECEIVE_SYMBOL_PRICES:
+            return action.prices;
+        case RECEIVE_BATCH_PRICES:
+            debugger
+            return action.prices;        
         default:
             return state;
     }

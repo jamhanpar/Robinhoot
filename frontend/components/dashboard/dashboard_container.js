@@ -18,7 +18,6 @@ const mDtP = dispatch => ({
     logout: () => dispatch(logout()),
     fetchStocks: () => dispatch(fetchStocks()),
     fetchStock: () => dispatch(fetchStock()),
-    iexFetchData: (symbol, range, apiKey) => dispatch(fetchPrices(symbol, range, apiKey))
 });
 
 export default connect(mStP, mDtP)(Dashboard);
