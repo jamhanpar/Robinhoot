@@ -21,14 +21,16 @@ demo = User.create!(
     first_name: 'John',
     last_name: 'Smith',
     email: 'demo',
-    password: 'password'
+    password: 'password',
+    funds: 10000.00
 )
 
 test = User.create!(
     first_name: 'Jimmy',
     last_name: 'Smith',
     email: 'Jimmy@Smith.com',
-    password: '123456'
+    password: '123456',
+    funds: 0.0
 )
   
 aapl = Stock.create!( name: 'Apple', ticker: 'AAPL' )
