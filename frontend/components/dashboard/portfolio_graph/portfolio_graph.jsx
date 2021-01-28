@@ -17,7 +17,6 @@ class CustomizedLabel extends React.Component {
 class PortfolioGraph extends PureComponent {
   constructor(props) {
     super(props)
-    debugger
     this.state={ range: '5dm', interval: "1" }
 
     this.updateRange = this.updateRange.bind(this);
