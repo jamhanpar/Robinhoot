@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 
-import { LineChart, Line, Tooltip, YAxis, XAxis, ReferenceLine, ReferenceDot} from 'recharts';
+import { LineChart, Line, Tooltip, YAxis, XAxis } from 'recharts';
 
 class CustomizedLabel extends React.Component {
   constructor(props) {
@@ -14,21 +14,16 @@ class CustomizedLabel extends React.Component {
   }
 };
 
-class PortfolioGraph extends PureComponent {
+export default class StockGraph extends PureComponent {
   constructor(props) {
     super(props)
     
     this.state={ range: '5dm', interval: "1" }
 
     this.updateRange = this.updateRange.bind(this);
-    this.iexFetchGraphDate = this.iexFetchGraphDate.bind(this);
   }
-  
+
   componentDidMount() {
-    this.iexFetchGraphDate()
-  }
-  
-  iexFetchGraphDate() {
     this.props.iexFetchData('AAPL', this.state.range, this.state.interval, window.iexcloudAPIKey)
   }
 
@@ -66,7 +61,7 @@ class PortfolioGraph extends PureComponent {
     }
 
     this.setState({ range: rangeUpdate, interval: intervalUpdate })
-    this.iexFetchGraphDate()
+    this.props.iexFetchData('AAPL', this.state.range, this.state.interval, window.iexcloudAPIKey)
   }
 
   render() {
@@ -102,5 +97,3 @@ class PortfolioGraph extends PureComponent {
     );
   }
 }
-
-export default PortfolioGraph;

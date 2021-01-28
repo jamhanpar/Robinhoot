@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import users from './users_reducer';
-import stocks from './stocks_reducer';
+import users from './entities/users_reducer';
+import stocks from './entities/stocks_reducer';
 import news from './entities/news_reducer';
 import prices from './entities/price_reducer';
 

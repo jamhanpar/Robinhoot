@@ -1,39 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PortfolioGraphContainer from './portfolio_graph/portfolio_graph_container';
-import StockChart from './watchlist/mini_stock_chart';
-import NewsContainer from './news/news_container';
 import MainNavContainer from './main_navbar/main_navbar_container';
+import PortfolioGraphContainer from './portfolio_graph/portfolio_graph_container';
+import BuyingPowerContainer from './buying_power/buying_power_container';
+import NewsContainer from './news/news_container';
+import WatchlistContainer from './watchlist/watchlist_container';
 
 class Dashboard extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = { showToggle: "dropdown-content"}
-
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.showDropdown = this.showDropdown.bind(this);
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-
-        this.props.logout()
-            .then(() => this.props.history.push('/'));
-    }
-
-    showDropdown() {
-        this.setState({showToggle: this.state.showToggle === "show" ? "dropdown-content" : "show"})
-    }
-
-    render() {
-        const { user } = this.props;
-        
-        // const link = (url) => {
-        //     return url === "" ? null : url;
-        //     location.href = url;
-        // }
-        
+    render() {        
         return (
             <div>
                 <MainNavContainer />
@@ -42,10 +22,7 @@ class Dashboard extends React.Component {
                     <div className="dashboard-content-container">
                         <div className="portfolio-and-relevant-info-container">
                             <PortfolioGraphContainer />
-                            <div className="buying-power">
-                                <h1>Buying Power</h1>
-                                <h1>$10,000.00</h1>
-                            </div>
+                            <BuyingPowerContainer />
                             <div className="sector-list">
                                 <h1 className="sector-title">Popular Lists</h1>
                             </div>
@@ -55,29 +32,7 @@ class Dashboard extends React.Component {
                             </div>
                         </div>
             
-                        <div className="watchlist-container">
-                            <div className="watchlist-title-container">
-                                <h1 className="watchlist-title">Stocks</h1>
-                            </div>
-                            <div className="stock-info-card">
-                                <div className="ticker-and-shares-owned">
-                                    <p className="stock-info-item stock-info-symbol">AAPL</p>
-                                    <p className="stock-info-item">2 Shares</p>
-                                </div>
-                                <div className="stock-graph">
-                                    {/* want to get stock symbol from stock-info-symbol */}
-                                    <StockChart 
-                                        symbol={'AAPL'}
-                                        iexFetchData={this.props.iexFetchData}
-                                        data={this.props.data}    
-                                    />
-                                </div>
-                                <div className="stock-price-and-percent">
-                                    <p className="stock-info-item">$355.06</p>
-                                    <p className="stock-info-item stock-info-pct">+0.33%</p>
-                                </div>
-                            </div>
-                        </div>
+                        <WatchlistContainer />
                     </div>
                 </div>
             </div>
