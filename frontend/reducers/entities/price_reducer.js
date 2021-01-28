@@ -5,7 +5,6 @@ const priceReducer = (state = [], action) => {
 
     switch (action.type) {
         case RECEIVE_PRICES:
-            debugger
             return action.prices;    
         default:
             return state;

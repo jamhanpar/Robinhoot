@@ -3,7 +3,6 @@ import PortfolioGraph from './portfolio_graph';
 import { fetchPrices } from '../../../actions/price_actions';
 
 const mStP = (state, ownProps) => {
-    debugger
     return {
         data: state.entities.prices
 }};
