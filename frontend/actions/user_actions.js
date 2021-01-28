@@ -13,6 +13,5 @@ export const fetchUser = (userId) => dispatch => (
     UserApiUtil.requestUser(userId)
         .then(
             user => (dispatch(receiveUserStocks(user))),
-            error => (dispatch(receiveErrors(error.responseJSON)))
         )
 );
