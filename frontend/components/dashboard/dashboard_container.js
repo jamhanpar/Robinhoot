@@ -4,11 +4,12 @@ import { fetchStocks, fetchStock } from '../../actions/stock_actions';
 import { fetchPrices } from '../../actions/price_actions';
 import Dashboard from './dashboard';
 
-const mStP = ({ errors, entities }) => ({
+const mStP = ({ errors, entities, session }) => ({
     stock:{
         name: '',
         ticker: '',
     },
+    user: session.currentUser,
     data: entities.prices,
     errors: errors.session
 });

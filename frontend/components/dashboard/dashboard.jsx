@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import PortfolioGraphContainer from './portfolio_graph/portfolio_graph_container';
 import StockChart from './watchlist/mini_stock_chart';
 import NewsContainer from './news/news_container';
-import News from './news/news';
 
 class Dashboard extends React.Component {
     constructor(props) {
@@ -27,11 +26,14 @@ class Dashboard extends React.Component {
     }
 
     render() {
-        const link = (url) => {
-            return url === "" ? null : url;
-            location.href = url;
-        }
+        const { user } = this.props;
+        
+        // const link = (url) => {
+        //     return url === "" ? null : url;
+        //     location.href = url;
+        // }
 
+        debugger
         return (
             <div>
                 <div className="dashboard-nav-bar">
@@ -57,7 +59,7 @@ class Dashboard extends React.Component {
                                 <div id="myDropdown" className={this.state.showToggle}>
                                     <div className="account-flex">
                                         <div className="account-info-section">
-                                            <p className="account-user-first-last-name">John Smith</p>
+                                            <p className="account-user-first-last-name">{user.first_name} {user.last_name}</p>
                                             <div className="port-value-buying-power-container">
                                                 <div className="port-value-in-account-settings">
                                                     <p className="account-value">$10,000.00</p>
