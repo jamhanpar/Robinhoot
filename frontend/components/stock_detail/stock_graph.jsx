@@ -9,12 +9,10 @@ export default class StockGraph extends PureComponent {
     }
     
     componentDidMount() {
-        debugger
         this.props.iexFetchData('AAPL', this.state.range, window.iexcloudAPIKey)
     }
 
     render() {
-        debugger
         const { data } = this.props;
         return (
             <LineChart width={690} height={260} data={data}>

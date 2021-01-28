@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Example from './portfolio_graph';
+import PortfolioGraphContainer from './portfolio_graph/portfolio_graph_container';
 import StockChart from './watchlist/mini_stock_chart';
 import NewsContainer from './news/news_container';
-import News from './news/news';
 
 class Dashboard extends React.Component {
     constructor(props) {
@@ -27,11 +26,13 @@ class Dashboard extends React.Component {
     }
 
     render() {
-        const link = (url) => {
-            return url === "" ? null : url;
-            location.href = url;
-        }
-
+        const { user } = this.props;
+        
+        // const link = (url) => {
+        //     return url === "" ? null : url;
+        //     location.href = url;
+        // }
+        
         return (
             <div>
                 <div className="dashboard-nav-bar">
@@ -40,7 +41,7 @@ class Dashboard extends React.Component {
                     </div>
                     <div className="search-form-container">
                         <div className="search-icon-container">
-                            <img className="search-icon" src={window.Logo} />
+                            <img className="search-icon" src={window.searchIcon} />
                         </div>
                         <form>
                             <input type="text" placeholder="Search" className="search-bar"/>
@@ -48,7 +49,6 @@ class Dashboard extends React.Component {
                     </div>
                     <div className="dashboard-menu-container">
                         <ul className="dashboard-menu-list">
-                            <button className="logout-btn dashboard-menu-list-item" onClick={this.handleSubmit}>Logout</button>
                             <li className="dashboard-menu-list-item">Free Stocks</li>
                             <li className="dashboard-menu-list-item">Portfolio</li>
                             <li className="dashboard-menu-list-item">Cash</li>
@@ -58,7 +58,7 @@ class Dashboard extends React.Component {
                                 <div id="myDropdown" className={this.state.showToggle}>
                                     <div className="account-flex">
                                         <div className="account-info-section">
-                                            <p className="account-user-first-last-name">John Smith</p>
+                                            <p className="account-user-first-last-name">{user.first_name} {user.last_name}</p>
                                             <div className="port-value-buying-power-container">
                                                 <div className="port-value-in-account-settings">
                                                     <p className="account-value">$10,000.00</p>
@@ -97,27 +97,7 @@ class Dashboard extends React.Component {
                 <div className="dashboard-container">
                     <div className="dashboard-content-container">
                         <div className="portfolio-and-relevant-info-container">
-                            <div className="portfolio-graph-container">
-                                <h1 className="account-balance">$10,000.00</h1>
-                                <ul className="portfolio-stats-list">
-                                    <li className="portfolio-stats-item">$200</li>
-                                    <li className="portfolio-stats-item">2.00%</li>
-                                    <li className="portfolio-stats-item">Today</li>
-                                </ul>
-                                {/* add graph here */}
-                                <div className="portfolio-graph">
-                                    <Example />
-                                </div>
-                                <ul className="chart-display-list">
-                                    <li className="chart-display-item">LIVE</li>
-                                    <li className="chart-display-item">1D</li>
-                                    <li className="chart-display-item">1W</li>
-                                    <li className="chart-display-item">1M</li>
-                                    <li className="chart-display-item">3M</li>
-                                    <li className="chart-display-item">1Y</li>
-                                    <li className="chart-display-item">ALL</li>
-                                </ul>
-                            </div>
+                            <PortfolioGraphContainer />
                             <div className="buying-power">
                                 <h1>Buying Power</h1>
                                 <h1>$10,000.00</h1>

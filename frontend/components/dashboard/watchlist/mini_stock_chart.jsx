@@ -17,12 +17,10 @@ export default class StockChart extends PureComponent {
   }
 
   componentDidMount() {
-    debugger
     this.props.iexFetchData(this.props.symbol, this.state.range, window.iexcloudAPIKey)
   }
 
   render() {
-    debugger
     return (
       <LineChart width={this.state.width} height={this.state.height} data={this.props.data}>
         <Line type="monotone" dataKey="close" stroke="#00C805" strokeWidth={2} dot={false} />
