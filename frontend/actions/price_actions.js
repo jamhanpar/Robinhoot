@@ -1,15 +1,27 @@
 import * as iexCloudStockApiUtil from '../util/iex_cloud_stock_api_util';
 
-export const RECEIVE_PRICES = "RECEIVE_PRICES";
+export const RECEIVE_SYMBOL_PRICES = "RECEIVE_PRICES";
 
-const receivePrices = prices => ({
-    type: RECEIVE_PRICES,
+const receiveSymbolPrices = prices => ({
+    type: RECEIVE_SYMBOL_PRICES,
+    prices
+});
+
+const receiveBatchPrices = prices => ({
+    type: RECEIVE_BATCH_PRICES,
     prices
 });
 
 export const fetchPrices = (symbol, range, interval, apiKey) => dispatch => {
-    return iexCloudStockApiUtil.iexFetchQuote(symbol, range, interval, apiKey)
+    return iexCloudStockApiUtil.iexFetchSymbolQuote(symbol, range, interval, apiKey)
         .then(
-            prices => (dispatch(receivePrices(prices)))
+            prices => (dispatch(receiveSymbolPrices(prices)))
+        )
+}
+
+export const fetchBatchPrices = (symbols, range, interval, apiKey) => dispatch => {
+    return iexCloudStockApiUtil.iexFetchBatchQuotes(symbols, range, interval, apiKey)
+        .then(
+            prices => (dispatch(receiveBatchPrices(prices)))
         )
 }

@@ -6,13 +6,11 @@ export default class WatchlistIndex extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = { showToggle: "dropdown-content"}
-        
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = { showToggle: "dropdown-content", range: '1D', interval: "5"}
     }
 
-    handleSubmit(e) {
-        
+    iexFetchData() {
+        this.props.iexFetchData('AAPL', this.state.range, this.state.interval, window.iexcloudAPIKey)
     }
 
     render() {
@@ -22,7 +20,7 @@ export default class WatchlistIndex extends React.Component {
                     <h1 className="watchlist-title">Stocks</h1>
                 </div>
                 {
-                    <WatchlistIndexItem />
+                    <WatchlistIndexItem data={this.props.data}/>
                 }
             </div>
         )

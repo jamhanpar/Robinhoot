@@ -6,7 +6,7 @@ export default class WatchlistIndexItem extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = { showToggle: "dropdown-content", width: 100, height: 40, range: '5m', interval: "1" }
+        this.state = { showToggle: "dropdown-content" }
         
         this.handleSubmit = this.handleSubmit.bind(this);
     }

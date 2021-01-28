@@ -14,7 +14,7 @@ export default class MiniStockChart extends PureComponent {
     super(props)
 
     debugger
-    this.state = { width: 100, height: 40, range: '5m', interval: "1" }
+    this.state = { width: 100, height: 40 }
   }
 
   render() {
