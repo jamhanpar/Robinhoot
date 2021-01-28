@@ -32,8 +32,7 @@ class Dashboard extends React.Component {
         //     return url === "" ? null : url;
         //     location.href = url;
         // }
-
-        debugger
+        
         return (
             <div>
                 <div className="dashboard-nav-bar">

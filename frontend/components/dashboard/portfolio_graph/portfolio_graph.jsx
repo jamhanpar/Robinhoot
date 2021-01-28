@@ -3,22 +3,22 @@ import React, { PureComponent } from 'react';
 import { LineChart, Line, Tooltip} from 'recharts';
 
 // work in progress
-// const CustomTooltip = ({ active, payload }) => {
-//     if (active) {
-//         return (
-//           <div className="custom-tooltip">
-//               <p className="date">{`${payload[0].date}`}</p>
-//           </div>
-//         );
-//     }
+const CustomTooltip = ({ active, payload }) => {
+    if (active) {
+        return (
+          <div className="custom-tooltip">
+              <p className="date">{`${payload[0].date}`}</p>
+          </div>
+        );
+    }
 
-//     return null;
-// };
+    return null;
+};
 
 class PortfolioGraph extends PureComponent {
   constructor(props) {
     super(props)
-
+    debugger
     this.state={ range: '5dm', interval: "1" }
 
     this.updateRange = this.updateRange.bind(this);
@@ -80,6 +80,7 @@ class PortfolioGraph extends PureComponent {
             <LineChart width={690} height={260} data={data}>
               <Line type="monotone" dataKey="close" stroke="#00C805" strokeWidth={2} dot={false}/>
               {/* <Tooltip content={<CustomTooltip />} /> */}
+              <YAxis domain={['dataMin', 'dataMax']} />
               <Tooltip />
             </LineChart>
           </div>
