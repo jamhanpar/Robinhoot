@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Example from './portfolio_graph';
+import PortfolioGraphContainer from './portfolio_graph/portfolio_graph_container';
 import StockChart from './watchlist/mini_stock_chart';
 import NewsContainer from './news/news_container';
 import News from './news/news';
@@ -40,7 +40,7 @@ class Dashboard extends React.Component {
                     </div>
                     <div className="search-form-container">
                         <div className="search-icon-container">
-                            <img className="search-icon" src={window.Logo} />
+                            <img className="search-icon" src={window.searchIcon} />
                         </div>
                         <form>
                             <input type="text" placeholder="Search" className="search-bar"/>
@@ -96,27 +96,7 @@ class Dashboard extends React.Component {
                 <div className="dashboard-container">
                     <div className="dashboard-content-container">
                         <div className="portfolio-and-relevant-info-container">
-                            <div className="portfolio-graph-container">
-                                <h1 className="account-balance">$10,000.00</h1>
-                                <ul className="portfolio-stats-list">
-                                    <li className="portfolio-stats-item">$200</li>
-                                    <li className="portfolio-stats-item">2.00%</li>
-                                    <li className="portfolio-stats-item">Today</li>
-                                </ul>
-                                {/* add graph here */}
-                                <div className="portfolio-graph">
-                                    <Example />
-                                </div>
-                                <ul className="chart-display-list">
-                                    <li className="chart-display-item">LIVE</li>
-                                    <li className="chart-display-item">1D</li>
-                                    <li className="chart-display-item">1W</li>
-                                    <li className="chart-display-item">1M</li>
-                                    <li className="chart-display-item">3M</li>
-                                    <li className="chart-display-item">1Y</li>
-                                    <li className="chart-display-item">ALL</li>
-                                </ul>
-                            </div>
+                            <PortfolioGraphContainer />
                             <div className="buying-power">
                                 <h1>Buying Power</h1>
                                 <h1>$10,000.00</h1>

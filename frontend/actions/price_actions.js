@@ -7,8 +7,8 @@ const receivePrices = prices => ({
     prices
 });
 
-export const fetchPrices = (symbol, range, apiKey) => dispatch => {
-    return iexCloudStockApiUtil.iexFetchQuote(symbol, range, apiKey)
+export const fetchPrices = (symbol, range, interval, apiKey) => dispatch => {
+    return iexCloudStockApiUtil.iexFetchQuote(symbol, range, interval, apiKey)
         .then(
             prices => (dispatch(receivePrices(prices)))
         )
