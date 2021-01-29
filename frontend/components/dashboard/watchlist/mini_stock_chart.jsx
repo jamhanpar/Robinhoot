@@ -13,12 +13,10 @@ export default class MiniStockChart extends PureComponent {
   constructor(props) {
     super(props)
 
-    debugger
     this.state = { width: 100, height: 40 }
   }
 
   render() {
-    debugger
     return (
       <LineChart width={this.state.width} height={this.state.height} data={this.props.data}>
         <Line type="monotone" dataKey="close" stroke="#00C805" strokeWidth={2} dot={false} />
