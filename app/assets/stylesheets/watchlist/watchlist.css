@@ -32,7 +32,7 @@
 }
 
 .stock-info-card:hover {
-    background-color: rgb(245 248 250);
+    background-color: rgb(245, 248, 250);
 }
 
 .ticker-and-shares-owned, .stock-price-and-percent {
