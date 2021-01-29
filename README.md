@@ -23,6 +23,7 @@ Things you may want to cover:
 
 * ...
 
+<img width='' height='' src='filler.jpeg' >
 <img src="robinhoot_logo.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
@@ -37,7 +38,7 @@ Robinhoot is a full stack, single page rails project inspired by Robinhood. Robi
 # Demo
 Here is a working live demo: https://robinhoot.herokuapp.com/#/
 
-# Site
+# App Features
 ### Landing Page
 Users can either create an account using the sign up links or log in to an existing account using the login link. Information on the splash page has been populated using information from the actual Robinhood website.
 
@@ -67,3 +68,32 @@ The stock details page will display a graphical representation of the stocks rea
 On the stocks details page, users can simulating buying shares in dollars or shares based on current stock price. If the user owns any shares, the user can simulate selling the stocks they own.
 
 ![alt text](http://url/to/img.png)
+
+# Features in the Works
+* Risk analysis based on % of funds allocated to each stock sectors 
+
+# Dependencies & Version
+* Ruby 2.5.1
+* Rails 5.2.4.4
+* React.js 17.0.1
+* Recharts 2.0.3
+* Redux.js 4.0.5
+* Redux Thunk 2.3.0
+* Babel Loader 8.2.2
+* PostgresSQL
+* Webpack 4.44.2
+* Heroku
+
+# Languages / Libraries
+* Ruby
+* HTML
+* CSS
+* JavaScript
+     * jQuery 
+     * Ajax
+
+# APIs and External Libraries
+* IEX Cloud API - stock api
+* Recharts 2.0.3 - graphing data
+* FreeLogoDesign.org - logos and icons
+* Unsplash.com - site images
