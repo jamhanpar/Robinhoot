@@ -16,4 +16,4 @@ const mDtP = dispatch => {
     iexFetchData: (symbol, range, interval, apiKey) => dispatch(fetchPrices(symbol, range, interval, apiKey))
 }};
 
-export default connect(mStP, mDtP)(WatchlistIndex)
+export default connect(mStP, mDtP)(WatchlistIndex);

@@ -1,9 +1,6 @@
 class Api::StocksController < ApplicationController
     def index
-        if !params[:user_id]
-            @stocks = Stock.all;
-        else
-            @stocks = Stock.where()
+        @stocks = Stock.all;
 
         render "api/stocks/index"
     end
