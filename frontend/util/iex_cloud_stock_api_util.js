@@ -20,12 +20,6 @@ export const iexFetchSymbolQuote = (stockSymbol, range, interval, apiKey) => (
         method: 'GET',
         url: iexUrl + `/stock/${stockSymbol}/chart/${range}?${filter}&chartInterval=${interval}&token=${apiKey}`,
         dataType: 'JSON',
-        success: function(data) {
-            console.log(data)
-        },
-        error: function(error) {
-            console.log('error:' + error)
-        }
     })
 );
 

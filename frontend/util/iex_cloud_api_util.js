@@ -8,12 +8,6 @@ export const iexFetchStock = (stockSymbol, apiKey) => (
         method: 'GET',
         url: iexUrl + `/stock/${stockSymbol}/batch?types=quote,news,chart&range=1m&last=10&token=${apiKey}`,
         dataType: 'JSON',
-        success: function(data) {
-            console.log(data)
-        },
-        error: function(error) {
-            console.log('error:' + error)
-        }
     })
 );
 
@@ -23,12 +17,6 @@ export const iexFetchQuote = (stockSymbol, range, apiKey) => (
         method: 'GET',
         url: iexUrl + `/stock/${stockSymbol}/chart/${range}?token=${apiKey}`,
         dataType: 'JSON',
-        success: function(data) {
-            console.log(data)
-        },
-        error: function(error) {
-            console.log('error:' + error)
-        }
     })
 );
 
@@ -38,12 +26,6 @@ export const iexFetchCompany = (stockSymbol, apiKey) => (
         method: 'GET',
         url: iexUrl + `/stock/${stockSymbol}/company?token=${apiKey}`,
         dataType: 'JSON',
-        success: function(data) {
-            console.log(data)
-        },
-        error: function(error) {
-            console.log('error:' + error)
-        }
     })
 );
 
@@ -53,12 +35,6 @@ export const iexFetchNews = (stockSymbol, apiKey) => (
         method: 'GET',
         url: iexUrl + `/stock/${stockSymbol}/batch?filter=datetime,headline,source,url,related,image&types=news&range=1m&last=10&token=${apiKey}`,
         dataType: 'JSON',
-        success: function(data) {
-            console.log(data)
-        },
-        error: function(error) {
-            console.log('error:' + error)
-        }
     })
 );
 
@@ -68,12 +44,6 @@ export const iexFetchGeneralNews = (apiKey) => (
         method: 'GET',
         url: iexUrl + `/stock/market/batch?types=news&range=1m&last=10&token=${apiKey}`,
         dataType: 'JSON',
-        success: function(data) {
-            console.log(data)
-        },
-        error: function(error) {
-            console.log('error:' + error)
-        }
     })
 );
 
@@ -83,11 +53,5 @@ export const iexFetchPrices = (stockSymbol, apiKey) => (
         method: 'GET',
         url: iexUrl + `/stock/${stockSymbol}/batch?types=news&range=1m&last=15&token=${apiKey}`,
         dataType: 'JSON',
-        success: function(data) {
-            console.log(data)
-        },
-        error: function(error) {
-            console.log('error:' + error)
-        }
     })
 );
