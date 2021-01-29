@@ -7,7 +7,6 @@ const priceReducer = (state = [], action) => {
         case RECEIVE_SYMBOL_PRICES:
             return action.prices;
         case RECEIVE_BATCH_PRICES:
-            debugger
             return action.prices;        
         default:
             return state;

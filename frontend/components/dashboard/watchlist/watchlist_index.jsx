@@ -10,7 +10,6 @@ export default class WatchlistIndex extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         this.props.getOwnedStocks(this.props.userId)
     }
 
@@ -19,6 +18,8 @@ export default class WatchlistIndex extends React.Component {
     }
 
     render() {
+        const { stocksOwned } = this.props;
+
         return (
             <div className="watchlist-container">
                 <div className="watchlist-title-container">

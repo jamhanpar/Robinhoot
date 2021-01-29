@@ -10,7 +10,6 @@ const usersReducer = (state = {}, action) => {
             newState[action.user.id]= action.user;
             return newState;
         case RECEIVE_USER_STOCKS:
-            debugger
             return Object.assign({}, state, action.user)
         default:
             return state;
