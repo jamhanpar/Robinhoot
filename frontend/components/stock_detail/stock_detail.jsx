@@ -2,6 +2,7 @@ import React from 'react';
 import StockGraphContainer from './stock_graph/stock_graph_container';
 import MainNavContainer from '../dashboard/main_navbar/main_navbar_container';
 import NewsContainer from '../dashboard/news/news_container';
+import TransactionFormContainer from './transaction_form/transaction_container';
 
 class StockDetail extends React.Component {
     constructor(props) {
@@ -26,9 +27,7 @@ class StockDetail extends React.Component {
                             </div>
                         </div>
             
-                        <div className="watchlist-container">
-                            buying component
-                        </div>
+                        <TransactionFormContainer />
                     </div>
                 </div>
             </div>
