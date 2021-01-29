@@ -23,9 +23,11 @@ class Dashboard extends React.Component {
                         <div className="portfolio-and-relevant-info-container">
                             <PortfolioGraphContainer />
                             <BuyingPowerContainer />
-                            <div className="sector-list">
-                                <h1 className="sector-title">Popular Lists</h1>
+                            <div className="spacing">
                             </div>
+                            {/* <div className="sector-list">
+                                <h1 className="sector-title">Popular Lists</h1>
+                            </div> */}
                             <NewsContainer />
                             <div className="privacy-policy-container">
                                 <h1 className="privacy-policy-disclaimer">For more information, see our <span className="privacy-policy-link">Privacy Policy</span>.</h1>

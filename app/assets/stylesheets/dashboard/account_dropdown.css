@@ -86,10 +86,22 @@
     padding: 18px 25px;
 }
 
+.account-dropdown-item:hover {
+    background-color: rgb(245 248 250);
+}
+
 .logout-btn {
     background-color: rgba(0,0,0,0);
     width: 100%;
     height: auto;
     border: none;
     text-align: left;
+}
+
+.logout-btn:hover {
+    cursor: pointer;
+}
+
+.logout-btn:focus {
+    outline: none;
 }
