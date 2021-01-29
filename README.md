@@ -8,7 +8,7 @@ Here is a working live demo: https://robinhoot.herokuapp.com/#/
 ### Landing Page
 Users can either create an account using the sign up links or log in to an existing account using the login link. Information on the splash page has been populated using information from the actual Robinhood website.
 
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/jamhanpar/Robinhoot/blob/main/0.%20Features/landing_page.png?raw=true)
 
 ### Frontend Auth
 Users can sign up and will return errors if missing critical information necessary for registering a user. The login page will allow users to access existing accounts, but for the purpose of demonstration and having access to the app features, a demo account is available.
