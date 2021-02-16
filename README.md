@@ -70,5 +70,6 @@ On the stocks details page, users can simulating buying shares in dollars or sha
 # Database initialization
 
 # How to run the test suite
+- bundle exec rails s
 
 # Deployment instructions
