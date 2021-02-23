@@ -33,7 +33,7 @@ class MainNav extends React.Component {
         return (
             <div className="dashboard-nav-bar">
                 <div className="dashboard-logo-container">
-                    <Link to="/dashboard"><img className="dashboard-logo" src={window.Logo} /></Link>
+                    <Link to="/dashboard"><img className="dashboard-logo" src={window.logo} /></Link>
                 </div>
                 <div className="search-form-container">
                     <div className="search-icon-container">

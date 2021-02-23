@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaInfoCircle } from "react-icons/fa";
 
 // Temporary headers and paragraphs taken from Robinhood, but will replace
 class Splash extends React.Component {
@@ -12,10 +13,10 @@ class Splash extends React.Component {
                     </div>
                     <nav className="main-nav">
                         <ul className="nav-list">
-                            <li className="nav-list-item"><a href="#">Products</a></li>
-                            <li className="nav-list-item"><a href="#">Learn</a></li>
-                            <li className="nav-list-item"><a href="#">Support</a></li>
-                            <li className="nav-list-item"><a href="#">Who we are</a></li>
+                            <li className="nav-list-item"><a href="https://www.linkedin.com/in/jameshansungpark/">LinkedIn</a></li>
+                            <li className="nav-list-item"><a href="https://github.com/jamhanpar">Github</a></li>
+                            <li className="nav-list-item"><a href="https://angel.co/u/jameshansungpark">AngelList</a></li>
+                            <li className="nav-list-item"><a href="mailto:james.hansung.park@gmail.com">Email</a></li>
                         </ul>
                     </nav>
                     <div className="sign-up-options">
@@ -34,7 +35,7 @@ class Splash extends React.Component {
                                     <Link to='/signup'><span>Sign up</span></Link>
                                 </button>
                                 <div className="free-stock-disclosure">
-                                    <h4>Free Stock Disclosure</h4>
+                                    <h4><FaInfoCircle className="info-icon"/> Free Stock Disclosure</h4>
                                 </div>
                             </div>
                             <div className="image-container">
@@ -48,7 +49,7 @@ class Splash extends React.Component {
                     <h1 className="info-title-2">Break Free from Commission Fees</h1>
                     <p className="info-p-2">Make unlimited commission-free trades in stocks, ETFs, and options with Robinhoot Financials, as well as buy and sell cryptocurrencies with Robinhoot Crypto. See our fee schedule to learn more about cost.</p>
                     <div className="general-disclosure">
-                        <h4>Commissions Disclosure</h4>
+                        <h4><FaInfoCircle className="info-icon-grey"/> Commissions Disclosure</h4>
                     </div>
                 </div>
 
@@ -76,7 +77,7 @@ class Splash extends React.Component {
                                 </div>
                             </div>
                             <div className="fractional-shares-disclosure">
-                                <h4 className="general-disclosure">Fractional Shares Disclosure</h4>
+                                <h4 className="general-disclosure"><FaInfoCircle className="info-icon-grey"/> Fractional Shares Disclosure</h4>
                             </div>
                         </div>
                         <div className="image-container-3">
@@ -150,7 +151,7 @@ class Splash extends React.Component {
                             <p>Securities trading is offered to self-directed customers by Robinhoot Financial. Robinhoot Financial is a member of the <a className="finra-link" href="https://www.finra.org/#/">Financial Industry Regulatory Authority (FINRA)</a>.</p>
                             <br/>
                             <div className="view-important-disclosures">
-                                <h1 className="general-disclosure">View Important Disclosures</h1>
+                                <h1 className="general-disclosure"><FaInfoCircle className="info-icon-grey"/> View Important Disclosures</h1>
                             </div>
                         </div>
                     </div>

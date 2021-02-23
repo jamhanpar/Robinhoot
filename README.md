@@ -72,5 +72,6 @@ On the stocks details page, users can simulating buying shares in dollars or sha
 
 # How to run the test suite
 - bundle exec rails s
+- npm run webpack
 
 # Deployment instructions

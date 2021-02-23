@@ -6,9 +6,17 @@ class SignupForm extends React.Component {
         super(props)
         
         this.state = Object.assign({}, this.props.user);
+        
+        this.firstNameClass = "first-name-input";
+        this.lastNameClass = "last-name-input";
+        this.emailClass = "signup-email";
+        this.passwordClass = "signup-password";
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+
+        this.toggleHidden = "hide-errors";
+        // this.toggleHidden = Object.values(this.props.errors).length < 1 ? "hide-errors" : "show-errors";
     }
 
     componentWillUnmount() {
@@ -16,8 +24,24 @@ class SignupForm extends React.Component {
     }
 
     update(field) {
+        
         return e => {
             this.setState({ [field]: e.target.value })
+            
+            switch(field) {
+                case 'first_name':
+                    this.firstNameClass = this.state.first_name === "" ? "first-name-input-error" : "first-name-input";
+                    break;
+                case 'last_name':
+                    this.lastNameClass = this.state.last_name === "" ? "last-name-input-error" : "last-name-input";
+                    break;
+                case 'email':
+                    this.emailClass = this.state.email === "" ? "signup-email-error" : "signup-email";
+                    break;
+                case 'password':
+                    this.passwordClass = this.state.password === "" ? "signup-password-error" : "signup-password";
+                    break;
+            }
         }
     }
 
@@ -26,7 +50,7 @@ class SignupForm extends React.Component {
 
         if (Object.values(this.state).some((val) => val === "")) {
             this.props.processForm(this.state)
-                .then(() => this.renderErrors());
+                .then(() => this.errors = this.renderErrors());
             this.errors = this.renderErrors();
         } else {
             this.props.processForm(this.state)
@@ -37,19 +61,16 @@ class SignupForm extends React.Component {
     renderErrors() {
         const { errors } = this.props;
 
-        return (
-            <ul className="signup-error-list">
-                {
-                    errors.map((error, i) => (
-                        this.state[Object.keys(error)] === '' ? <li key={`error-#${i}`} className="signup-error-item">{Object.values(error)}</li> : null
-                    ))
-                }
-            </ul>
-        );
+        this.firstNameClass = this.state.first_name === "" ? "first-name-input-error" : "first-name-input";
+        this.lastNameClass = this.state.last_name === "" ? "last-name-input-error" : "last-name-input";
+        this.emailClass = this.state.email === "" ? "signup-email-error" : "signup-email";
+        this.passwordClass = this.state.password === "" ? "signup-password-error" : "signup-password";
+
+        if (Object.values(errors).length < 1) this.toggleHidden = "show-errors";
     }
 
     render() {
-        const toggleHidden = Object.values(this.props.errors).length < 1 ? "hide-errors" : "show-errors";
+        const { errors } = this.props;
 
         return (
             <div className="signup-container">
@@ -66,16 +87,16 @@ class SignupForm extends React.Component {
                                 </header>
 
                                 <div className="name-input-container">
-                                    <input className="first-name-input" type="text" placeholder="First name" autoComplete="on" value={this.state.first_name} onChange={this.update('first_name')}/>
-                                    <input className="last-name-input" type="text" placeholder="Last name" autoComplete="on" value={this.state.last_name} onChange={this.update('last_name')}/>
+                                    <input className={this.firstNameClass} type="text" placeholder="First name" autoComplete="on" value={this.state.first_name} onChange={this.update('first_name')}/>
+                                    <input className={this.lastNameClass} type="text" placeholder="Last name" autoComplete="on" value={this.state.last_name} onChange={this.update('last_name')}/>
                                 </div>
 
                                 <div className="email-input-container">
-                                    <input className="signup-email" type="text" placeholder="Email" autoComplete="on" value={this.state.email} onChange={this.update('email')}/>
+                                    <input className={this.emailClass} type="text" placeholder="Email" autoComplete="on" value={this.state.email} onChange={this.update('email')}/>
                                 </div>
 
                                 <div className="password-input-container">
-                                    <input className="signup-password" type="password" placeholder="Password (min. 6 characters)" autoComplete="on" value={this.state.password} onChange={this.update('password')}/>
+                                    <input className={this.passwordClass} type="password" placeholder="Password (min. 6 characters)" autoComplete="on" value={this.state.password} onChange={this.update('password')}/>
                                 </div>
 
                                 <div className="submit-or-reroute">
@@ -86,8 +107,16 @@ class SignupForm extends React.Component {
                                     </div>
                                 </div>
 
-                                <div className={`signup-error-container ${toggleHidden}`}>
-                                    {this.errors}
+                                <div className={`signup-error-container ${this.toggleHidden}`}>
+                                    <ul className="signup-error-list">
+                                        {errors.map((error, i) =>
+                                            this.state[Object.keys(error)] === "" ? (
+                                            <li key={`error-#${i}`} className="signup-error-item">
+                                                {Object.values(error)}
+                                            </li>
+                                            ) : null
+                                        )}
+                                    </ul>
                                 </div>
                             </form>
                         </div>

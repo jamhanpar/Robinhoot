@@ -5,6 +5,8 @@ class SessionForm extends React.Component {
         super(props)
 
         this.state = this.props.user;
+        this.usernameClass = "session-input";
+        this.passwordClass = "session-input";
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -28,6 +30,9 @@ class SessionForm extends React.Component {
 
     renderErrors() {
         const { errors } = this.props
+
+        // if (this.state.email === "") this.usernameClass = "session-input-error";
+        // if (this.state.email === "") this.passwordClass = "session-input-error";
 
         return (
             <div className="session-error-container">
@@ -78,14 +83,14 @@ class SessionForm extends React.Component {
                             <label htmlFor="username">Email</label>
                         </div>
                         <div className="input-container">
-                            <input className="session-input" type="text" autoComplete="current-email" value={this.state.email} onChange={this.update('email')}/>
+                            <input className={this.usernameClass} type="text" autoComplete="current-email" value={this.state.email} onChange={this.update('email')}/>
                         </div>
 
                         <div className="input-label">
                             <label htmlFor="password">Password</label>
                         </div>
                         <div className="input-container">
-                            <input className="session-input" type="password" autoComplete="current-password" value={this.state.password} onChange={this.update('password')}/>
+                            <input className={this.passwordClass}  type="password" autoComplete="current-password" value={this.state.password} onChange={this.update('password')}/>
                         </div>
 
                         {forgotPassword}
