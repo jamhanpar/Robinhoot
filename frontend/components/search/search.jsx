@@ -4,7 +4,7 @@ class Search extends React.Component {
     constructor(props) {
         super(props);
 
-        this.searchTerm = "";
+        this.state = { searchTerm: "" }
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -25,8 +25,8 @@ class Search extends React.Component {
             <div className="search-icon-container">
               <img className="search-icon" src={window.searchIcon} />
             </div>
-            <form>
-              <input type="text" placeholder="Search" className="search-bar" />
+            <form onSubmit={this.handleSubmit}>
+              <input className="search-bar" type="text" placeholder="Search" onChange={this.update("searchTerm")}/>
             </form>
           </div>
         );
