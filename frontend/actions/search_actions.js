@@ -10,6 +10,7 @@ const receiveSearch = (searchResults) => {
 };
 
 export const fetchSearch = (fragment, apiKey) => (dispatch) => {
+  debugger
   return IEXCloudAPIUtil.fetchSearch(fragment, apiKey)
     .then((searchResults) => dispatch(receiveSearch(searchResults))
   );

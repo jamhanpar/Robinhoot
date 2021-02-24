@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchContainer from "../../search/search_container";
 
 class MainNav extends React.Component {
     constructor(props) {
@@ -35,14 +36,15 @@ class MainNav extends React.Component {
                 <div className="dashboard-logo-container">
                     <Link to="/dashboard"><img className="dashboard-logo" src={window.logo} /></Link>
                 </div>
-                <div className="search-form-container">
+                {/* <div className="search-form-container">
                     <div className="search-icon-container">
                         <img className="search-icon" src={window.searchIcon} />
                     </div>
                     <form>
                         <input type="text" placeholder="Search" className="search-bar"/>
                     </form>
-                </div>
+                </div> */}
+                <SearchContainer />
                 <div className="dashboard-menu-container">
                     <ul className="dashboard-menu-list">
                         <li className="dashboard-menu-list-item">Free Stocks</li>

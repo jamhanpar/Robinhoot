@@ -3,7 +3,7 @@ import { fetchSearch } from "../../actions/search_actions";
 import Search from "./search";
 
 const mStP = ({ entities }) => ({
-  searchResults: entities.searchResults
+  searchResults: entities.search,
 });
 
 const mDtP = (dispatch) => ({
