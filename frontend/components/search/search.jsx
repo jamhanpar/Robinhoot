@@ -5,21 +5,25 @@ class Search extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { searchTerm: "" }
+        this.state = { searchTerm: '' }
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     update(field) {
+      debugger
         return (e) => {
             this.setState({ [field]: e.currentTarget.value })
+            
+            this.props.fetchSearch(e.currentTarget.value)
         }
     }
 
     handleSubmit(e) {
         e.preventDefault();
 
-        this.props.history.push({ pathname: `/stocks/${this.state.searchTerm}` });
+        // this.props.history.push({ pathname: `/stocks/${this.state.searchTerm}` });
+        this.props.fetchSearch(this.state.searchTerm, window.iexcloudAPIKey);
     }
 
     render() {
@@ -31,6 +35,9 @@ class Search extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <input className="search-bar" type="text" placeholder="Search" onChange={this.update("searchTerm")}/>
             </form>
+            <div>
+              <p>{this.props.searchResults}</p>
+            </div>
           </div>
         );
     }
