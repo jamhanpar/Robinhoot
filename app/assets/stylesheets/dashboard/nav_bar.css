@@ -29,6 +29,7 @@
     display: flex;
     margin-right: 60px;
     transition: ease 0.3s;
+    position: relative;
 }
 
 .search-form-container:hover {

@@ -1,0 +1,38 @@
+.search-results-container {
+    /* border: 1px solid black; */
+    border: 1px solid lightgray;
+    border-top: none;
+    background-color: white;
+    width: 526px;
+    position: absolute;
+    top: 34px;
+    left: -1px;
+    padding: 15px 0px;
+}
+
+.search-title {
+    font-size: 13px;
+    color: grey;
+    margin-left: 20px;
+}
+
+.search-results-list {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.search-results-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.no-stock-result-message, .search-stock-symbol, .search-stock-name {
+    margin: 8px 20px;
+    font-size: 13px;
+    line-height: 15px;
+}
