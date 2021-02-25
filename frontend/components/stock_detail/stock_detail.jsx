@@ -12,7 +12,9 @@ class StockDetail extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({ symbol: this.props.match.params.symbol })
+        this.setState({ symbol: this.props.match.params.symbol }, () => {
+            this.props.fetchCompany(this.state.symbol, window.iexcloudAPIKey)
+        });
     }
 
     render() {
@@ -26,6 +28,32 @@ class StockDetail extends React.Component {
                             <div className="spacing">
                                 <h1 className="stock-name">{this.state.symbol}</h1>
                                 <StockGraphContainer />
+                            </div>
+                            <div className="company-info-container">
+                                <h1 className="company-about">About</h1>
+                                <div className="company-description">{this.props.companyInfo.description}</div>
+                                <div>
+                                    <div className="company-info-card">
+                                        <div className="company-title">CEO</div>
+                                        <div className="company-info">{this.props.companyInfo.CEO}</div>
+                                    </div>
+                                    <div className="company-info-card">
+                                        <div className="company-title">Employees</div>
+                                        <div className="company-info">{this.props.companyInfo.employees}</div>
+                                    </div>
+                                    <div className="company-info-card">
+                                        <div className="company-title">Headquarters</div>
+                                        <div className="company-info">{this.props.companyInfo.city}, {this.props.companyInfo.state}</div>
+                                    </div>
+                                    <div className="company-info-card">
+                                        <div className="company-title">Founded</div>
+                                        <div className="company-info">1976</div>
+                                    </div>
+                                    <div className="company-info-card">
+                                        <div className="company-title">Founded</div>
+                                        <div className="company-info">1976</div>
+                                    </div>
+                                </div>
                             </div>
                             <NewsContainer />
                             <div className="privacy-policy-container">
@@ -41,15 +69,15 @@ class StockDetail extends React.Component {
     }
 }
 
-debugger
-const searchBar = document.getElementById("search-results");
+// hide search results when user clicks off the search bar or search results
+// const searchBar = document.getElementById("search-results");
 
-document.addEventListener("click", (e) => {
-    if (e.target !== searchBar) {
-        searchBar.classList.add('hide')
-    } else {
-        searchBar.classList.remove('hide')
-    }
-})
+// document.addEventListener("click", (e) => {
+//     if (e.target !== searchBar) {
+//         searchBar.classList.add('hide')
+//     } else {
+//         searchBar.classList.remove('hide')
+//     }
+// })
 
 export default StockDetail;

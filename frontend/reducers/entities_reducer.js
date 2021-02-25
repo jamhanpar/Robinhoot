@@ -4,6 +4,7 @@ import stocks from './entities/stocks_reducer';
 import news from './entities/news_reducer';
 import prices from './entities/price_reducer';
 import search from './entities/search_reducer';
+import company from "./entities/company_reducer";
 
 export default combineReducers({
     users,
@@ -11,4 +12,5 @@ export default combineReducers({
     news,
     prices,
     search,
+    company,
 });

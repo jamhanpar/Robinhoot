@@ -1,18 +1,13 @@
 import { connect } from 'react-redux';
+import { fetchCompany } from "../../actions/company_actions";
 import StockDetail from './stock_detail';
 
-const mStP = (state, ownProps) => {
-    debugger
-    return {
-    
-}};
+const mStP = ({ entities }) => ({
+  companyInfo: entities.company,
+});
 
-// const mStP = (state, ownProps) => ({
-    
-// });
-
-const mDtP = dispatch => ({
-
+const mDtP = (dispatch) => ({
+  fetchCompany: (stockSymbol, apiKey) => dispatch(fetchCompany(stockSymbol, apiKey)),
 });
 
 export default connect(mStP, mDtP)(StockDetail)
