@@ -44,7 +44,6 @@ class TransactionForm extends React.Component {
                     {/* <div className="border-top"> */}
                     <div className="buying-power-show-container">
                         <p className="transaction-title-green buying-power-available">$100.00 Buying Power Available</p>
-                        <img className="faq-icon" src={window.faqIcon} />
                     </div>
                     {/* </div> */}
                 </div>

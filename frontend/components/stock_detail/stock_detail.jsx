@@ -32,7 +32,7 @@ class StockDetail extends React.Component {
                             <div className="company-info-container">
                                 <h1 className="company-about">About</h1>
                                 <div className="company-description">{this.props.companyInfo.description}</div>
-                                <div>
+                                <div className="company-info-cards-list">
                                     <div className="company-info-card">
                                         <div className="company-title">CEO</div>
                                         <div className="company-info">{this.props.companyInfo.CEO}</div>
@@ -56,6 +56,10 @@ class StockDetail extends React.Component {
                                     <div className="company-info-card">
                                         <div className="company-title">Price-Earnings Ratio</div>
                                         <div className="company-info">Price-Earnings Ratio</div>
+                                    </div>
+                                    <div className="company-info-card">
+                                        <div className="company-title">Dividend Yield</div>
+                                        <div className="company-info">Dividend Yield</div>
                                     </div>
                                     <div className="company-info-card">
                                         <div className="company-title">Average Volume</div>

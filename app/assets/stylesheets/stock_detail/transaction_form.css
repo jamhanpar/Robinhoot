@@ -27,7 +27,7 @@
 }
 
 .border-bottom {
-    border-bottom: 2px solid green;
+    border-bottom: 2px solid #00C805;
     height: 100%;
     display: flex;
     align-items: center;
@@ -43,7 +43,7 @@
 }
 
 .buy-option {
-    color: green;
+    color: #00C805;
 }
 
 .sell-option {
@@ -82,7 +82,7 @@
 
 .transaction-title-green {
     font-size: 13px;
-    color: green;
+    color: #00C805;
     display: flex;
     align-items: center;
 }
@@ -149,13 +149,13 @@
 
 .transaction-btn {
     background: none;
-    border: 1px solid green;
+    border: 1px solid #00C805;
     border-radius: 4px;
     width: 225px;
     height: 48px;
     font-size: 13px;
     font-weight: bold;
-    color: green;
+    color: #00C805;
 }
 
 .transaction-btn:hover {
@@ -164,7 +164,7 @@
 
 .transaction-submit-btn {
     border: none;
-    background-color: green;
+    background-color: #00C805;
     color: white;
     font-weight: bold;
 }
