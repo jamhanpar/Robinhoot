@@ -50,8 +50,40 @@ class StockDetail extends React.Component {
                                         <div className="company-info">1976</div>
                                     </div>
                                     <div className="company-info-card">
-                                        <div className="company-title">Founded</div>
-                                        <div className="company-info">1976</div>
+                                        <div className="company-title">Market Cap</div>
+                                        <div className="company-info">Market Cap</div>
+                                    </div>
+                                    <div className="company-info-card">
+                                        <div className="company-title">Price-Earnings Ratio</div>
+                                        <div className="company-info">Price-Earnings Ratio</div>
+                                    </div>
+                                    <div className="company-info-card">
+                                        <div className="company-title">Average Volume</div>
+                                        <div className="company-info">Average Volume</div>
+                                    </div>
+                                    <div className="company-info-card">
+                                        <div className="company-title">High Today</div>
+                                        <div className="company-info">High Today</div>
+                                    </div>
+                                    <div className="company-info-card">
+                                        <div className="company-title">Low Today</div>
+                                        <div className="company-info">Low Today</div>
+                                    </div>
+                                    <div className="company-info-card">
+                                        <div className="company-title">Open Price</div>
+                                        <div className="company-info">Open Price</div>
+                                    </div>
+                                    <div className="company-info-card">
+                                        <div className="company-title">Volume</div>
+                                        <div className="company-info">Volume</div>
+                                    </div>
+                                    <div className="company-info-card">
+                                        <div className="company-title">52 Week High</div>
+                                        <div className="company-info">52 Week High</div>
+                                    </div>
+                                    <div className="company-info-card">
+                                        <div className="company-title">52 Week Low</div>
+                                        <div className="company-info">52 Week Low</div>
                                     </div>
                                 </div>
                             </div>
