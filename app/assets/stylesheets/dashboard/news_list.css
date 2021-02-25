@@ -12,7 +12,7 @@
 }
 
 .news-title {
-    border-bottom: 1px solid #d8d8d8;
+    border-bottom: 1px solid #E3E9ED;
     font-size: 24px;
     padding-bottom: 27px;
 }
@@ -25,7 +25,7 @@
 }
 
 .news-card-outline {
-    border-bottom: 1px solid #d8d8d8;
+    border-bottom: 1px solid #E3E9ED;
     height: 160px;
     display: flex;
     flex-direction: row;

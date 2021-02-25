@@ -17,7 +17,7 @@
 }
 
 .buy-sell-options-container {
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 1px solid #E3E9ED;
     width: auto;
     height: 53px;
     display: flex;
@@ -26,11 +26,12 @@
     padding: 0px 27px;
 }
 
-.border-bottom {
+.highlight-selected {
     border-bottom: 2px solid #00C805;
     height: 100%;
     display: flex;
     align-items: center;
+    color: #00C805;
 }
 
 .border-bottom-red {
@@ -42,12 +43,13 @@
     font-weight: bold;
 }
 
-.buy-option {
+.buy-option:hover, .sell-option:hover {
+    cursor: pointer;
     color: #00C805;
 }
 
-.sell-option {
-    padding-left: 15px;
+.sell-option-container {
+    margin-left: 15px;
 }
 
 .transaction-inputs-container {
@@ -70,7 +72,7 @@
 }
 
 .market-price-container {
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 1px solid #E3E9ED;
     padding-bottom: 20px;
     display: flex;
     align-items: center;
@@ -88,7 +90,7 @@
 }
 
 .buying-power-show-container {
-    border-top: 1px solid lightgrey;
+    border-top: 1px solid #E3E9ED;
 }
 
 .buying-power-available {
@@ -112,7 +114,7 @@
 
 .dollar-shares-input {
     outline: none;
-    border: 1px solid lightgrey;
+    border: 1px solid #E3E9ED;
     border-radius: 4px;
     background-color: none;
     width: 135px;
