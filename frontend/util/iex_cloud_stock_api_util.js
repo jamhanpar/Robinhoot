@@ -1,10 +1,10 @@
 import { iexUrl, filter } from './iex_cloud_api_util';
 
 // test - rename to test
-export const fetchSearch = (fragment, apiKey) => (
+export const fetchCompany = (stockSymbol, apiKey) => (
     $.ajax({
         method: 'GET',
-        url: iexUrl + `/search/${fragment}?token=${apiKey}`,
+        url: iexUrl + `/stock/${stockSymbol}/company?token=${apiKey}`,
     })
 );
 
@@ -32,3 +32,11 @@ export const iexFetchBatchQuotes = (stockSymbols, range, interval, apiKey) => (
 );
 
 // search stock name or ticker
+export const fetchSearch = (fragment, apiKey) => (
+    $.ajax({
+        method: 'GET',
+        url: iexUrl + `/search/${fragment}?token=${apiKey}`,
+    })
+);
+
+// stock company info
