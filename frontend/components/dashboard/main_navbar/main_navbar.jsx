@@ -26,24 +26,11 @@ class MainNav extends React.Component {
     render() {
         const { user } = this.props;
         
-        // const link = (url) => {
-        //     return url === "" ? null : url;
-        //     location.href = url;
-        // }
-        
         return (
             <div className="dashboard-nav-bar">
                 <div className="dashboard-logo-container">
                     <Link to="/dashboard"><img className="dashboard-logo" src={window.logo} /></Link>
                 </div>
-                {/* <div className="search-form-container">
-                    <div className="search-icon-container">
-                        <img className="search-icon" src={window.searchIcon} />
-                    </div>
-                    <form>
-                        <input type="text" placeholder="Search" className="search-bar"/>
-                    </form>
-                </div> */}
                 <SearchContainer />
                 <div className="dashboard-menu-container">
                     <ul className="dashboard-menu-list">
