@@ -10,6 +10,10 @@
     padding: 15px 0px;
 }
 
+/* .idle-search-results-container {
+    display: none;
+} */
+
 .search-title {
     font-size: 13px;
     color: grey;

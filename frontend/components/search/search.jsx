@@ -5,7 +5,7 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { searchTerm: "", searchResults: [] };
+    this.state = { searchTerm: "", showResults: false };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderSearchResults = this.renderSearchResults.bind(this);
