@@ -1,9 +1,15 @@
 import { connect } from 'react-redux';
 import StockDetail from './stock_detail';
 
-const mStP = (state, ownProps) => ({
+const mStP = (state, ownProps) => {
+    debugger
+    return {
+    
+}};
 
-});
+// const mStP = (state, ownProps) => ({
+    
+// });
 
 const mDtP = dispatch => ({
 

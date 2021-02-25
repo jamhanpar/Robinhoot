@@ -7,6 +7,12 @@ import TransactionFormContainer from './transaction_form/transaction_container';
 class StockDetail extends React.Component {
     constructor(props) {
         super(props)
+        
+        this.state = { symbol: '' };
+    }
+
+    componentDidMount() {
+        this.setState({ symbol: this.props.match.params.symbol })
     }
 
     render() {
@@ -18,7 +24,7 @@ class StockDetail extends React.Component {
                     <div className="dashboard-content-container">
                         <div className="portfolio-and-relevant-info-container">
                             <div className="spacing">
-                                <h1 className="stock-name">Stock</h1>
+                                <h1 className="stock-name">{this.state.symbol}</h1>
                                 <StockGraphContainer />
                             </div>
                             <NewsContainer />
@@ -34,5 +40,16 @@ class StockDetail extends React.Component {
         )
     }
 }
+
+debugger
+const searchBar = document.getElementById("search-results");
+
+document.addEventListener("click", (e) => {
+    if (e.target !== searchBar) {
+        searchBar.classList.add('hide')
+    } else {
+        searchBar.classList.remove('hide')
+    }
+})
 
 export default StockDetail;

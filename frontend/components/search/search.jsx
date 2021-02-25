@@ -77,7 +77,7 @@ class Search extends React.Component {
             onChange={this.update("searchTerm")}
           />
         </form>
-        <div className={`search-results-container ${this.showResultsClass}`}>
+        <div id="search-results" className={`search-results-container ${this.showResultsClass}`}>
           {this.renderSearchResults()}
         </div>
       </div>

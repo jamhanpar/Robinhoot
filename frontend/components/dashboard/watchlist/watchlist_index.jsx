@@ -20,8 +20,12 @@ export default class WatchlistIndex extends React.Component {
                     <h1 className="watchlist-title">Stocks</h1>
                 </div>
                 {
-                    <Link to="/stocks/symbol"><WatchlistIndexItem data={this.props.data}/></Link>
+                    <Link to={`/stocks/symbol`}><WatchlistIndexItem data={this.props.data}/></Link>
                 }
+                <Link to={`/stocks/symbol`}><WatchlistIndexItem data={this.props.data}/></Link>
+                <div className="watchlist-title-container">
+                    <h1 className="watchlist-title">Lists</h1>
+                </div>
             </div>
         )
     }
