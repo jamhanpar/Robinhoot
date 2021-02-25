@@ -1,12 +1,19 @@
 import React from 'react';
+import { FaPlus, FaCheck } from "react-icons/fa";
 
 class TransactionForm extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = { status: 'buy' }
+        this.state = { status: 'buy', addToList: false }
         this.buySelected = 'highlight-selected'
         this.sellSelected = ''
+        // needs to check if this stock is included in the user's list
+        this.addToListIcon = <FaPlus className="add-to-list-icon" />;
+    }
+
+    addToList() {
+        this.setState({ addToList: this.state.addToList === true ? false : true });
     }
 
     handleClick(field, option) {     
@@ -14,20 +21,27 @@ class TransactionForm extends React.Component {
     }
 
     render() {
-        let costOrCredit = 'cost'
+        let costOrCredit = 'Cost'
         let buyingPowerOrOwnedShares = 'Buying Power Available';
 
-        if (this.state.status === 'buy') {
-            costOrCredit = 'cost';
-            buyingPowerOrOwnedShares = 'Buying Power Available';
-            this.buySelected = 'highlight-selected';
-            this.sellSelected = '';
-        } else {
-            costOrCredit = 'credit';
-            buyingPowerOrOwnedShares = 'Shares Available - Sell All';
-            this.buySelected = '';
-            this.sellSelected = 'highlight-selected';
+        switch(this.state.status) {
+            case 'buy':
+                costOrCredit = 'Cost';
+                buyingPowerOrOwnedShares = 'Buying Power Available';
+                this.buySelected = 'highlight-selected';
+                this.sellSelected = '';
+                break;
+            case 'sell':
+                costOrCredit = 'Credit';
+                buyingPowerOrOwnedShares = 'Shares Available - Sell All';
+                this.buySelected = '';
+                this.sellSelected = 'highlight-selected';
+                break;
+            default:
+                break;
         }
+
+        this.addToListIcon = this.state.addToList === false ? <FaPlus className="add-to-list-icon" /> : <FaCheck className="add-to-list-icon" />;
 
         return (
             <div className="transaction-form-container">
@@ -63,18 +77,16 @@ class TransactionForm extends React.Component {
                             <button type="submit" className="transaction-btn transaction-submit-btn">Review Order</button>
                         </div>
                     </div>
-                    {/* <div className="border-top"> */}
                     <div className="buying-power-show-container">
                         <p className="transaction-title-green buying-power-available">$100.00 {buyingPowerOrOwnedShares}</p>
                     </div>
-                    {/* </div> */}
                 </div>
                 <div className="stock-detail-button-container">
-                    <div className="trade-stock-options-button-container">
+                    {/* <div className="trade-stock-options-button-container">
                         <button className="transaction-btn">Trade AAPL Options</button>
-                    </div>
+                    </div> */}
                     <div className="add-to-list-button-container">
-                        <button className="transaction-btn">Add to Lists</button>
+                        <button className="transaction-btn" onClick={() => this.addToList()}>{this.addToListIcon} Add to Lists</button>
                     </div>
                 </div>
             </div>
