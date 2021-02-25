@@ -29,7 +29,7 @@ class Dashboard extends React.Component {
                                 <h1 className="sector-title">Popular Lists</h1>
                             </div> */}
                             <NewsContainer />
-                            <div className="privacy-policy-container">
+                            <div className="disclaimer-container">
                                 <h1 className="privacy-policy-disclaimer">For more information, see our <span className="privacy-policy-link">Privacy Policy</span>.</h1>
                             </div>
                         </div>

@@ -103,7 +103,7 @@ class StockDetail extends React.Component {
                     </div>
                   </div>
                   <NewsContainer />
-                  <div className="privacy-policy-container">
+                  <div className="disclaimer-container">
                     <h1 className="full-disclosure-disclaimer">
                       All investments involve risks, including the loss of
                       principal. Securities trading offered through Robinhoot
