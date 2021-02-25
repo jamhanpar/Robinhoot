@@ -6,6 +6,7 @@ class Search extends React.Component {
     super(props);
 
     this.state = { searchTerm: "", showResults: false };
+    this.showResultsClass = "hide";
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderSearchResults = this.renderSearchResults.bind(this);
@@ -17,6 +18,9 @@ class Search extends React.Component {
         if (this.state.searchTerm !== "")
           this.props.fetchSearch(this.state.searchTerm, window.iexcloudAPIKey);
       });
+
+      this.showResults = true;
+      if (this.showResults = true) this.showResultsClass = "search-results-container";
     };
   }
 
@@ -33,9 +37,7 @@ class Search extends React.Component {
       this.props.searchResults.length === 0
     ) {
       return (
-        <div className="no-stock-result-message">
-          We were unable to find any results for your search.
-        </div>
+        <div className="no-stock-result-message">We were unable to find any results for your search.</div>
       );
     }
 
@@ -75,7 +77,7 @@ class Search extends React.Component {
             onChange={this.update("searchTerm")}
           />
         </form>
-        <div className="search-results-container">
+        <div className={`search-results-container ${this.showResultsClass}`}>
           {this.renderSearchResults()}
         </div>
       </div>

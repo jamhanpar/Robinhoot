@@ -3,16 +3,16 @@
     border: 1px solid lightgray;
     border-top: none;
     background-color: white;
-    width: 526px;
+    width: 481px;
     position: absolute;
     top: 34px;
     left: -1px;
     padding: 15px 0px;
 }
 
-/* .idle-search-results-container {
+.hide {
     display: none;
-} */
+}
 
 .search-title {
     font-size: 13px;
