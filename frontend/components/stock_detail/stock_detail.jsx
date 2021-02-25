@@ -18,7 +18,7 @@ class StockDetail extends React.Component {
                     <div className="dashboard-content-container">
                         <div className="portfolio-and-relevant-info-container">
                             <div className="spacing">
-                                <h1 className="stock-name">Apple</h1>
+                                <h1 className="stock-name">Stock</h1>
                                 <StockGraphContainer />
                             </div>
                             <NewsContainer />
