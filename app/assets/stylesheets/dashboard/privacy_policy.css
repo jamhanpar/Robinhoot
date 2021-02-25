@@ -14,3 +14,16 @@
     font-size: 13px;
     color: rgb(3, 201, 9);
 }
+
+.full-disclosure-disclaimer {
+    margin-left: 5px;
+    font-size  : 13px;
+    line-height: 20px;
+    color      : #6F787E;
+}
+
+.full-disclosure-link {
+    font-size  : 13px;
+    font-weight: bold;
+    color      : rgb(3, 201, 9);
+}
