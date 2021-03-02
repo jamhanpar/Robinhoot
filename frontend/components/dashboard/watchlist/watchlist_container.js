@@ -1,15 +1,22 @@
 import { connect } from 'react-redux';
 import WatchlistIndex from './watchlist_index';
-import { fetchPrices } from '../../../actions/price_actions';
+import { fetchBatchPrices } from '../../../actions/price_actions';
+import { fetchUser } from '../../../actions/user_actions';
+import { fetchStocks } from '../../../actions/stock_actions';
 
 const mStP = (state, ownProps) => {
     return {
-    data: state.entities.prices
+    stocks: state.entities.stocks,
+    stocksOwned: state.entities.users.stock_ids,
+    data: state.entities.prices,
+    userId: state.session.currentUser.id
 }};
 
 const mDtP = dispatch => {
     return {
-    iexFetchData: (symbol, range, interval, apiKey) => dispatch(fetchPrices(symbol, range, interval, apiKey))
+    fetchStocks: () => dispatch(fetchStocks()),
+    getOwnedStocks: userId => dispatch(fetchUser(userId)),
+    iexFetchData: (symbols, range, interval, apiKey) => dispatch(fetchBatchPrices(symbols, range, interval, apiKey))
 }};
 
-export default connect(mStP, mDtP)(WatchlistIndex)
+export default connect(mStP, mDtP)(WatchlistIndex);

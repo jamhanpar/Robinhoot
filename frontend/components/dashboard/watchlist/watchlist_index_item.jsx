@@ -16,17 +16,19 @@ export default class WatchlistIndexItem extends React.Component {
     }
 
     render() {
+        const { symbol, data } = this.props;
+
         return (
             <div className="stock-info-card">
                 <div className="ticker-and-shares-owned">
-                    <p className="stock-info-item stock-info-symbol">AAPL</p>
+                    <p className="stock-info-item stock-info-symbol"></p>
                     <p className="stock-info-item">2 Shares</p>
                 </div>
                 <div className="stock-graph">
                     {/* want to get stock symbol from stock-info-symbol */}
                     <MiniStockChart
-                        symbol={'AAPL'}
-                        data={this.props.data}    
+                        symbol={symbol}
+                        data={data.symbol}    
                     />
                 </div>
                 <div className="stock-price-and-percent">

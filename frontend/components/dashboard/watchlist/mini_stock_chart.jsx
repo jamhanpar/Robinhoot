@@ -3,7 +3,6 @@ import React, { PureComponent } from 'react';
 // code below is for testing purposes
 import { LineChart, Line } from 'recharts';
 
-
 // DATA TEMPLATE
 // const data = [
 //   { name: 'AAPL', date: 'JAN 3, 2021', time:'9:00 AM', price: 10000, amt: 10000 },
