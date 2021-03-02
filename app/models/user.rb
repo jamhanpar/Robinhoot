@@ -7,6 +7,10 @@ class User < ApplicationRecord
         foreign_key: :user_id,
         class_name: :Portfolio
 
+    has_many :watchlists,
+        foreign_key: :user_id,
+        class_name: :Watchlist
+
     has_many :stocks,
         through: :portfolios,
         source: :stock

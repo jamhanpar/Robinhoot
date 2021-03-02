@@ -1,2 +1,0 @@
-class WatchedStock < ApplicationRecord
-end
