@@ -68,3 +68,6 @@ portfolio_3 = Portfolio.create!(
     stock_id: 2,
     qty_owned: 4,
 )
+
+watchlist = Watchlist.create!(watchlist_name: "My First List", user_id: 1)
+watchlist = Watchlist.create!(watchlist_name: "My First List", user_id: 2)
