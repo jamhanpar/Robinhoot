@@ -1,0 +1,1 @@
+json.extract! watched_stock, :id, :watchlist_id, :stock_symbol

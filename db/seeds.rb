@@ -12,12 +12,14 @@ User.delete_all
 Stock.delete_all
 Portfolio.delete_all
 Watchlist.delete_all
+WatchedStock.delete_all
 
 # reset id to 1 before seeding
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('stocks')
 ActiveRecord::Base.connection.reset_pk_sequence!('portfolios')
 ActiveRecord::Base.connection.reset_pk_sequence!('watchlists')
+ActiveRecord::Base.connection.reset_pk_sequence!('watched_stocks')
 
 demo = User.create!(
     first_name: 'John',
@@ -47,4 +49,11 @@ portfolio_3 = Portfolio.create!(user_id: 2, stock_id: 1, qty_owned: 2)
 portfolio_3 = Portfolio.create!(user_id: 2, stock_id: 2, qty_owned: 4)
 
 watchlist = Watchlist.create!(watchlist_name: "My First List", user_id: 1)
-watchlist = Watchlist.create!(watchlist_name: "My First List", user_id: 2)
+watchlist_1 = Watchlist.create!(watchlist_name: "My First List", user_id: 2)
+
+watchedStocks = WatchedStock.create!(watchlist_id: "1", stock_symbol: "AAPL")
+watchedStocks_1 = WatchedStock.create!(watchlist_id: "1", stock_symbol: "TSLA")
+watchedStocks_3 = WatchedStock.create!(watchlist_id: "1", stock_symbol: "NFLX")
+watchedStocks_4 = WatchedStock.create!(watchlist_id: "2", stock_symbol: "MSFT")
+watchedStocks_5 = WatchedStock.create!(watchlist_id: "2", stock_symbol: "DIS")
+watchedStocks_6 = WatchedStock.create!(watchlist_id: "2", stock_symbol: "GME")

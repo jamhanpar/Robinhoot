@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :stocks, only: [:index, :show]
     resources :watchlists, only: [:create, :index, :show, :update, :destroy]
+    resources :watched_stocks, only: [:create, :index, :show, :update, :destroy]
   end
 
   root to: "static_pages#root"
