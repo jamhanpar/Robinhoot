@@ -10,6 +10,10 @@ class User < ApplicationRecord
     has_many :stocks,
         through: :portfolios,
         source: :stock
+
+    has_many :watchlists,
+        foreign_key: :user_id,
+        class_name: :Watchlist
     
     attr_reader :password
 
