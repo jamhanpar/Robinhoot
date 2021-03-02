@@ -4,8 +4,9 @@ import { fetchPrices } from '../../../actions/price_actions';
 
 const mStP = (state, ownProps) => {
     return {
-    data: state.entities.prices
-}};
+      data: state.entities.prices,
+      watchlists: state.session.currentUser.watchlists,
+    };};
 
 const mDtP = dispatch => {
     return {
