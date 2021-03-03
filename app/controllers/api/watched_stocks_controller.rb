@@ -4,8 +4,7 @@ class Api::WatchedStocksController < ApplicationController
         @watchlist[:user_id] = current_user.id
 
         if @watchlist.save
-            # login(@user)
-            # render "api/users/show"
+            render "api/users/show"
         else
             # render json: [
             #     "Please enter your first name.",

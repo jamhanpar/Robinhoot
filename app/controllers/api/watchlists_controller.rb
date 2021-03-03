@@ -35,19 +35,11 @@ class Api::WatchlistsController < ApplicationController
     end
 
     def destroy
-        # @user = current_user
-
-        # if @user
-        #     logout
-        #     render "api/users/show"
-        # else
-        #     render json: ["No one is logged in"], status: 404
-        # end
     end
 
     private
 
     def watchlist_params
-        params.require(:watchlist).permit(:watchlist_name)
+        params.require(:watchlist).permit(:watchlist_name, :user_id)
     end
 end
