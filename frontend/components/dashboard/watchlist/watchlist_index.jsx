@@ -13,25 +13,42 @@ export default class WatchlistIndex extends React.Component {
         this.props.fetchWatchlists();
     }
 
-    // componentDidUpdate() {
-    //     this.props.fetchWatchlists();
+    // componentDidUpdate(prevProps, prevStates) {
+    //     debugger
+    //     if (this.props.watchlists !== prevProps.watchlists) {
+    //         this.props.fetchWatchlists();
+    //     }
     // }
 
     iexFetchData() {
         this.props.iexFetchData('AAPL', this.state.range, this.state.interval, window.iexcloudAPIKey)
     }
 
-    renderWatchlists() {
-
-    }
+    // renderWatchlists() {
+        
+    // }
 
     render() {
         const {watchlists, currentUserID} = this.props;
-        if (watchlists === {}) return null;
-
-        const currentUserWatchlist = Object.values(watchlists).filter(watchlist => {return watchlist.user_id === currentUserID})
+        let currentUserWatchlist = Object.values(watchlists).filter(watchlist => {return watchlist.user_id === parseInt(currentUserID)})
 
         debugger
+        if (!watchlists) return null;
+
+        let renderWatchlists = currentUserWatchlist.map((watchlist, i) => (
+            <div>
+              <div>{watchlist.watchlist_name}</div>
+              {watchlist.watched_stocks.map((stock, i) => (
+                <Link to={`/stocks/${stock.stock_symbol}`}>
+                  <WatchlistIndexItem
+                    key={`${stock.stock_symbol}-${i}`}
+                    symbol={stock.stock_symbol}
+                    data={this.props.data}
+                  />
+                </Link>
+              ))}
+            </div>
+          ));
         
         return (
             <div className="watchlist-container">
@@ -43,20 +60,7 @@ export default class WatchlistIndex extends React.Component {
                 <div className="watchlist-title-container">
                     <h1 className="watchlist-title">Lists</h1>
                 </div>
-                {
-                    currentUserWatchlist.map((watchlist, i) => (
-                        <div>
-                            <div>{watchlist.watchlist_name}</div>
-                            { 
-                                watchlist.watched_stocks.map((stock, i) => (
-                                    <Link to={`/stocks/${stock.stock_symbol}`}>
-                                        <WatchlistIndexItem key={`${stock.stock_symbol}-${i}`}symbol={stock.stock_symbol} data={this.props.data}/>
-                                    </Link>
-                                ))
-                            }
-                        </div>
-                    ))
-                }
+                {renderWatchlists}
             </div>
         )
     }

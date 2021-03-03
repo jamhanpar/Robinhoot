@@ -17,14 +17,14 @@ class Api::WatchlistsController < ApplicationController
     end
 
     def index
-        @watchlists = Watchlist.all;
+        @watchlists = current_user.watchlists;
 
-        # render "api/watchlist/index"
+        render "api/watchlists/index"
     end
     
     def show
         @watchlist = Watchlist.where(user_id: 1);
-        render "api/watchlist/show"
+        render "api/watchlists/show"
         # @stock = Stock.find_by( id: params[:id] )
 
         # if @stock
@@ -40,6 +40,6 @@ class Api::WatchlistsController < ApplicationController
     private
 
     def watchlist_params
-        params.require(:watchlist).permit(:watchlist_name, :user_id)
+        params.require(:watchlist).permit(:watchlist_name)
     end
 end
