@@ -13,12 +13,16 @@ export default class WatchlistIndex extends React.Component {
         this.props.fetchWatchlists();
     }
 
+    // componentDidUpdate() {
+    //     this.props.fetchWatchlists();
+    // }
+
     iexFetchData() {
         this.props.iexFetchData('AAPL', this.state.range, this.state.interval, window.iexcloudAPIKey)
     }
 
     renderWatchlists() {
-        
+
     }
 
     render() {
@@ -34,8 +38,8 @@ export default class WatchlistIndex extends React.Component {
                 <div className="watchlist-title-container">
                     <h1 className="watchlist-title">Stocks</h1>
                 </div>
-                <Link to={`/stocks/symbol`}><WatchlistIndexItem data={this.props.data}/></Link>
-                <Link to={`/stocks/symbol`}><WatchlistIndexItem data={this.props.data}/></Link>
+                {/* <Link to={`/stocks/symbol`}><WatchlistIndexItem data={this.props.data}/></Link>
+                <Link to={`/stocks/symbol`}><WatchlistIndexItem data={this.props.data}/></Link> */}
                 <div className="watchlist-title-container">
                     <h1 className="watchlist-title">Lists</h1>
                 </div>
@@ -44,11 +48,11 @@ export default class WatchlistIndex extends React.Component {
                         <div>
                             <div>{watchlist.watchlist_name}</div>
                             { 
-                                watchlist.watched_stocks.map((stock, i) => {
+                                watchlist.watched_stocks.map((stock, i) => (
                                     <Link to={`/stocks/${stock.stock_symbol}`}>
-                                        <WatchlistIndexItem symbol={stock.stock_symbol} data={this.props.data}/>
+                                        <WatchlistIndexItem key={`${stock.stock_symbol}-${i}`}symbol={stock.stock_symbol} data={this.props.data}/>
                                     </Link>
-                                })
+                                ))
                             }
                         </div>
                     ))
