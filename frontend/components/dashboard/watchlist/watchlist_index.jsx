@@ -9,12 +9,18 @@ export default class WatchlistIndex extends React.Component {
         this.state = { showToggle: "dropdown-content", range: '1D', interval: "5"}
     }
 
+    componentDidMount() {
+        debugger
+        this.props.fetchWatchlists();
+    }
+
     iexFetchData() {
         this.props.iexFetchData('AAPL', this.state.range, this.state.interval, window.iexcloudAPIKey)
     }
 
     render() {
         const {watchlists} = this.props;
+        debugger
         if (watchlists === undefined) return null;
         
         return (
@@ -27,11 +33,11 @@ export default class WatchlistIndex extends React.Component {
                 <div className="watchlist-title-container">
                     <h1 className="watchlist-title">Lists</h1>
                 </div>
-                {
+                {/* {
                     watchlists.map((watchlist, i) => (
-                        <div>{watchlist.watchlist_name}</div>
+                        <div key={i}>{watchlist.watchlist_name}</div>
                     ))
-                }
+                } */}
             </div>
         )
     }
