@@ -1,19 +1,14 @@
-import { RECEIVE_STOCKS, RECEIVE_STOCK } from '../../actions/stock_actions';
-import usersReducer from './users_reducer';
+import { RECEIVE_WATCHLISTS } from '../../actions/watchlist_actions';
 
-const stocksReducer = (state = {}, action) => {
+const watchlistReducer = (state = {}, action) => {
     Object.freeze(state);
-    let newState = Object.assign({}, state);
 
     switch (action.type) {
-        case RECEIVE_STOCKS:
-            return action.stocks;
-        case RECEIVE_STOCK:
-            newState[action.stock.id] = action.stock;
-            return newState;    
+        case RECEIVE_WATCHLISTS:
+            return action.watchlists; 
         default:
             return state;
     }
 }
 
-export default stocksReducer;
+export default watchlistReducer;
