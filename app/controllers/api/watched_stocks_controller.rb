@@ -24,24 +24,9 @@ class Api::WatchedStocksController < ApplicationController
     end
     
     def show
-        # @stock = Stock.find_by( id: params[:id] )
-
-        # if @stock
-        #     render "api/stocks/show"
-        # else
-        #     render json: @stock.errors.full_messages, status: 401
-        # end
     end
 
     def destroy
-        # @user = current_user
-
-        # if @user
-        #     logout
-        #     render "api/users/show"
-        # else
-        #     render json: ["No one is logged in"], status: 404
-        # end
     end
 
     private

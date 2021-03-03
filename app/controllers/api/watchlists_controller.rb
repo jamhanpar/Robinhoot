@@ -19,10 +19,12 @@ class Api::WatchlistsController < ApplicationController
     def index
         @watchlists = Watchlist.all;
 
-        # render "api/stocks/index"
+        # render "api/watchlist/index"
     end
     
     def show
+        @watchlist = Watchlist.where(user_id: 1);
+        render "api/watchlist/show"
         # @stock = Stock.find_by( id: params[:id] )
 
         # if @stock
