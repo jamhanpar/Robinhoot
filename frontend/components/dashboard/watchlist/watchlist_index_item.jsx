@@ -16,10 +16,11 @@ export default class WatchlistIndexItem extends React.Component {
     }
 
     render() {
+        debugger
         return (
             <div className="stock-info-card">
                 <div className="ticker-and-shares-owned">
-                    <p className="stock-info-item stock-info-symbol">AAPL</p>
+                    <p className="stock-info-item stock-info-symbol">{this.state.symbol}</p>
                     <p className="stock-info-item">2 Shares</p>
                 </div>
                 <div className="stock-graph">
