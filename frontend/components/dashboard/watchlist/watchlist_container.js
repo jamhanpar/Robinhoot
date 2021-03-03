@@ -4,10 +4,10 @@ import { fetchPrices } from '../../../actions/price_actions';
 import { fetchWatchlists } from "../../../actions/watchlist_actions";
 
 const mStP = (state, ownProps) => {
-  debugger
     return {
       data: state.entities.prices,
-      watchlists: state.entities.watchlist
+      watchlists: state.entities.watchlist,
+      currentUserID: state.session.currentUser.id
     };};
 
 const mDtP = dispatch => {

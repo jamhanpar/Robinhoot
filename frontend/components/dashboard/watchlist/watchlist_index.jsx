@@ -10,7 +10,6 @@ export default class WatchlistIndex extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         this.props.fetchWatchlists();
     }
 
@@ -19,7 +18,7 @@ export default class WatchlistIndex extends React.Component {
     }
 
     render() {
-        const {watchlists} = this.props;
+        const {watchlists, currentUserID} = this.props;
         if (watchlists === {}) return null;
         
         return (
@@ -32,11 +31,14 @@ export default class WatchlistIndex extends React.Component {
                 <div className="watchlist-title-container">
                     <h1 className="watchlist-title">Lists</h1>
                 </div>
-                {/* {
-                    watchlists.map((watchlist, i) => (
-                        <div key={i}>{watchlist.watchlist_name}</div>
-                    ))
-                } */}
+                {
+                    watchlists.map((watchlist, i) => {
+                        if (watchlist.user_id === currentUserID) {
+                            <div>{watchlist.watchlist_name}</div>
+                            watchlist.watched_stocks.map((stock, i) => <WatchlistIndexItem symbol={stock.stock_symbol} />)
+                        }
+                    })
+                }
             </div>
         )
     }
