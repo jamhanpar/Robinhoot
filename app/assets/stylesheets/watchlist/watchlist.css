@@ -62,3 +62,21 @@
     justify-content: center;
     align-items: center;
 }
+
+.list-title-container {
+    font-size: 13px;
+    padding: 20px 26px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.lightning-icon {
+    color: #FDDD92;
+    font-size: 20px;
+    padding-right: 15px;
+}
+
+.list-title {
+    font-size: 13px;
+}
