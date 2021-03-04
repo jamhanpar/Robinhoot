@@ -115,7 +115,7 @@ class StockDetail extends React.Component {
                   </div>
                 </div>
 
-                <TransactionFormContainer />
+                <TransactionFormContainer symbol={this.state.symbol} />
               </div>
             </div>
           </div>

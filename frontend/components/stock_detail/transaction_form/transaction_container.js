@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import TransactionForm from './transaction_form';
-import { fetchPrices } from '../../../actions/price_actions';
+import { addToWatchlist } from '../../../util/watchlist_api_util';
 
 const mStP = (state, ownProps) => ({
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaPlus, FaCheck } from "react-icons/fa";
+import { addToWatchlist } from '../../../util/watchlist_api_util';
 
 class TransactionForm extends React.Component {
     constructor(props) {
@@ -13,7 +14,13 @@ class TransactionForm extends React.Component {
     }
 
     addToList() {
-        this.setState({ addToList: this.state.addToList === true ? false : true });
+        debugger
+        this.setState({ addToList: this.state.addToList === true ? false : true }, () => {
+            if (this.state.addToList === true) {
+                debugger
+                addToWatchlist({watchlist_id: 1, stock_symbol: this.props.symbol})
+            }
+        });
     }
 
     handleClick(field, option) {     
@@ -48,10 +55,10 @@ class TransactionForm extends React.Component {
                 <div className="transaction-form">
                     <div className="buy-sell-options-container">
                         <div className={`${this.buySelected}`}>
-                            <h1 className="buy-option" onClick={() => this.handleClick('status', 'buy')}>Buy AAPL</h1>
+                            <h1 className="buy-option" onClick={() => this.handleClick('status', 'buy')}>Buy {this.props.symbol}</h1>
                         </div>
                         <div className={`sell-option-container ${this.sellSelected}`}>
-                            <h1 className="sell-option" onClick={() => this.handleClick('status', 'sell')}>Sell AAPL</h1>
+                            <h1 className="sell-option" onClick={() => this.handleClick('status', 'sell')}>Sell {this.props.symbol}</h1>
                         </div>
                     </div>
                     <div className="transaction-inputs-container">
