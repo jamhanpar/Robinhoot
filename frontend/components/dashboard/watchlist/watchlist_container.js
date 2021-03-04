@@ -6,7 +6,7 @@ import { fetchWatchlists } from "../../../actions/watchlist_actions";
 const mStP = (state, ownProps) => {
     return {
       data: state.entities.prices,
-      watchlists: state.entities.watchlist,
+      watchlists: state.entities.watchlists,
       currentUserID: state.session.currentUser.id
     };};
 

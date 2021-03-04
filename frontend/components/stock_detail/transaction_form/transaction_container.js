@@ -3,7 +3,7 @@ import TransactionForm from './transaction_form';
 import { fetchWatchlists } from '../../../actions/watchlist_actions';
 
 const mStP = (state, ownProps) => ({
-    watched_stocks: state.entities.watchlist.watched_stocks
+    watchlists: state.entities.watchlist,
 });
 
 const mDtP = dispatch => ({

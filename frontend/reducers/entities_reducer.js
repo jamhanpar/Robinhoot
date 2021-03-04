@@ -14,5 +14,5 @@ export default combineReducers({
     prices,
     search,
     company,
-    watchlist,
+    watchlists,
 });

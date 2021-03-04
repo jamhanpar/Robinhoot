@@ -14,7 +14,11 @@ class TransactionForm extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchWatchlists();
+        this.props.fetchWatchlists()
+
+        // if (this.props.watched_stocks.includes(this.props.symbol)) {
+        //     this.setState({ addToList: true });
+        // }
     }
 
     addToList() {
@@ -52,6 +56,9 @@ class TransactionForm extends React.Component {
             default:
                 break;
         }
+
+        let watchlists = Object.values(this.props.watchlists);
+        debugger
 
         this.addToListIcon = this.state.addToList === false ? <FaPlus className="add-to-list-icon" /> : <FaCheck className="add-to-list-icon" />;
 
