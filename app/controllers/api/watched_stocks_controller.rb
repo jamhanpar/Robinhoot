@@ -1,17 +1,11 @@
 class Api::WatchedStocksController < ApplicationController
     def create
-        @watchlist = Watchlist.new(watchlist_params)
-        @watchlist[:user_id] = current_user.id
+        @watched_stock = WatchedStock.new(watched_stocks_params)
 
-        if @watchlist.save
-            render "api/users/show"
+        if @watched_stock.save
+            render "api/watched_stocks/show"
         else
-            # render json: [
-            #     "Please enter your first name.",
-            #     "Please enter your last name.",
-            #     "Please enter your email.",
-            #     "Your password must be at least 10 characters."
-            # ], status: 422
+            render json: "Stock was not added to the list", status: 422
         end
     end
 
@@ -25,12 +19,19 @@ class Api::WatchedStocksController < ApplicationController
     def show
     end
 
+    # used to remove a stock from a watchlist
     def destroy
+        @watched_stock = WatchedStock.find_by( stock_symbol: params[:stock_symbol] )
+        if @watched_stock.destroy
+            render "api/watched_stocks/show"
+        else
+            render json: "Stock was not removed from the watchlist", status: 422
+        end        
     end
 
     private
 
-    def watchlist_params
-        params.require(:watchlist).permit(:watchlist_name)
+    def watched_stocks_params
+        params.require(:watched_stocks.permit(:watchlist_id, :stock_symbol)
     end
 end

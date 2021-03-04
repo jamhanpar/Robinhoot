@@ -4,15 +4,9 @@ class Api::WatchlistsController < ApplicationController
         @watchlist[:user_id] = current_user.id
 
         if @watchlist.save
-            # login(@user)
-            # render "api/users/show"
+            render "api/watchlists/show"
         else
-            # render json: [
-            #     "Please enter your first name.",
-            #     "Please enter your last name.",
-            #     "Please enter your email.",
-            #     "Your password must be at least 10 characters."
-            # ], status: 422
+            render json: "Watchlist was not created", status: 422
         end
     end
 
@@ -21,20 +15,14 @@ class Api::WatchlistsController < ApplicationController
 
         render "api/watchlists/index"
     end
-    
-    def show
-        @watchlist = Watchlist.where(user_id: 1);
-        render "api/watchlists/show"
-        # @stock = Stock.find_by( id: params[:id] )
 
-        # if @stock
-        #     render "api/stocks/show"
-        # else
-        #     render json: @stock.errors.full_messages, status: 401
-        # end
+    # add if time permits, used to rename a list
+    def update
     end
 
+    # add if time permits, used to delete a list
     def destroy
+        
     end
 
     private
