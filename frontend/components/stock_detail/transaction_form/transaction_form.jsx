@@ -11,20 +11,36 @@ class TransactionForm extends React.Component {
         this.sellSelected = ''
         // needs to check if this stock is included in the user's list
         this.addToListIcon = <FaPlus className="add-to-list-icon" />;
+
+        this.updateAddToList = this.updateAddToList.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchWatchlists()
+    }
 
-        // if (this.props.watched_stocks.includes(this.props.symbol)) {
-        //     this.setState({ addToList: true });
-        // }
+    componentDidUpdate(prevProps, prevStates) {
+        if (this.props.watchlists !== prevProps.watchlists) {
+            this.updateAddToList();
+        }
+    }
+
+    updateAddToList() {
+        let watchlist = Object.values(this.props.watchlists)[0];
+        let that = this
+
+        const stockIncludedInWatchlist = watchlist.watched_stocks.some(watched_stock => {
+            return watched_stock.stock_symbol === that.props.symbol
+        })
+        
+        if(stockIncludedInWatchlist) {
+            this.setState({ addToList: true });
+        }
     }
 
     addToList() {
         this.setState({ addToList: this.state.addToList === true ? false : true }, () => {
             if (this.state.addToList === true) {
-                debugger
                 addToWatchlist({watchlist_id: 1, stock_symbol: this.props.symbol})
             } else {
                 removeFromWatchlist({watchlist_id: 1, stock_symbol: this.props.symbol})
@@ -39,6 +55,8 @@ class TransactionForm extends React.Component {
     render() {
         let costOrCredit = 'Cost'
         let buyingPowerOrOwnedShares = 'Buying Power Available';
+
+        if (Object.values(this.props.watchlists).length === 0) return null;
 
         switch(this.state.status) {
             case 'buy':
@@ -56,9 +74,6 @@ class TransactionForm extends React.Component {
             default:
                 break;
         }
-
-        let watchlists = Object.values(this.props.watchlists);
-        debugger
 
         this.addToListIcon = this.state.addToList === false ? <FaPlus className="add-to-list-icon" /> : <FaCheck className="add-to-list-icon" />;
 
