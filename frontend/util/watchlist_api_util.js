@@ -3,12 +3,18 @@ export const fetchWatchlists = () =>
     url: "/api/watchlists",
   });
 
-
 export const addToWatchlist = (watched_stock) => {
-  debugger
   $.ajax({
     method: 'POST',
     url: '/api/watched_stocks',
     data: { watched_stock }
   });
 }
+
+export const removeFromWatchlist = (watched_stock) => {
+  $.ajax({
+    method: "DELETE",
+    url: "/api/watched_stocks/:id",
+    data: { watched_stock },
+  });
+};

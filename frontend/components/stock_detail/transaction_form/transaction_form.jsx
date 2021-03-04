@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaPlus, FaCheck } from "react-icons/fa";
-import { addToWatchlist } from '../../../util/watchlist_api_util';
+import { addToWatchlist, removeFromWatchlist } from '../../../util/watchlist_api_util';
 
 class TransactionForm extends React.Component {
     constructor(props) {
@@ -13,12 +13,17 @@ class TransactionForm extends React.Component {
         this.addToListIcon = <FaPlus className="add-to-list-icon" />;
     }
 
+    componentDidMount() {
+        this.props.fetchWatchlists();
+    }
+
     addToList() {
-        debugger
         this.setState({ addToList: this.state.addToList === true ? false : true }, () => {
             if (this.state.addToList === true) {
                 debugger
                 addToWatchlist({watchlist_id: 1, stock_symbol: this.props.symbol})
+            } else {
+                removeFromWatchlist({watchlist_id: 1, stock_symbol: this.props.symbol})
             }
         });
     }
