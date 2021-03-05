@@ -1,13 +1,12 @@
 import { RECEIVE_QUOTE } from '../../actions/stock_actions';
 
-const quotesReducer = (state = [], action) => {
+const quotesReducer = (state = {}, action) => {
     Object.freeze(state);
-    let newState = Object.assign([], state);
+    let newState = Object.assign({}, state);
 
     switch (action.type) {
         case RECEIVE_QUOTE:
-            debugger
-            newState[action.stock.id] = action.quote;
+            newState[action.quote.symbol] = action.quote;
             return newState;    
         default:
             return state;

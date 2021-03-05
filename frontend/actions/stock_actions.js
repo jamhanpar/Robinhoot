@@ -3,7 +3,7 @@ import * as iexCloudStockAPI from "../util/iex_cloud_stock_api_util";
 
 export const RECEIVE_STOCKS = 'RECEIVE_STOCKS';
 export const RECEIVE_STOCK = 'RECEIVE_STOCK';
-export const RECEIVE_QUOTES = 'RECEIVE_QUOTES';
+export const RECEIVE_QUOTE = 'RECEIVE_QUOTES';
 
 const receiveStocks = stocks => ({
     type: RECEIVE_STOCKS,

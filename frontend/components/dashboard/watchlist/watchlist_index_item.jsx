@@ -7,39 +7,53 @@ export default class WatchlistIndexItem extends React.Component {
         super(props)
 
         this.state = { showToggle: "dropdown-content", range: '1D', interval: "5"}
-        
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
 
-    // handleSubmit(e) {
-    //     e.preventDefault()
-    // }
+        this.getProperty = this.getProperty.bind(this);
+    }
 
     componentDidMount() {
         this.props.iexFetchQuote(this.props.symbol, window.iexcloudAPIKey)
     }
 
+    getProperty(key) {
+        const { quotes } = this.props;
+        const stocksArray = Object.values(quotes)
+
+        for (let i = 0; i < stocksArray.length; i++) {
+            if (stocksArray[i]["symbol"] === this.props.symbol) {
+                if (key !== "changePercent") {
+                    return `$${stocksArray[i][key].toFixed(2)}`
+                } else {
+                    return `${(stocksArray[i][key] * 100).toFixed(2)}%`;
+                }
+            }
+        }
+    }
+
     render() {
-        debugger
+        const { symbol, data } = this.props
+
         return (
-            <div className="stock-info-card">
-                <div className="ticker-and-shares-owned">
-                    <p className="stock-info-item stock-info-symbol">{this.props.symbol}</p>
-                    {/* only show if stock is owned */}
-                    <p className="stock-info-item">2 Shares</p>
+            <Link to={`/stocks/${symbol}`}>
+                <div className="stock-info-card">
+                    <div className="ticker-and-shares-owned">
+                        <p className="stock-info-item stock-info-symbol">{symbol}</p>
+                        {/* only show if stock is owned */}
+                        <p className="stock-info-item">2 Shares</p>
+                    </div>
+                    <div className="stock-graph">
+                        {/* want to get stock symbol from stock-info-symbol */}
+                        <MiniStockChart
+                            symbol={symbol}
+                            data={data}    
+                        />
+                    </div>
+                    <div className="stock-price-and-percent">
+                        <p className="stock-info-item">{this.getProperty("iexClose")}</p>
+                        <p className="stock-info-item stock-info-pct">{this.getProperty("changePercent")}</p>
+                    </div>
                 </div>
-                <div className="stock-graph">
-                    {/* want to get stock symbol from stock-info-symbol */}
-                    <MiniStockChart
-                        symbol={this.props.symbol}
-                        data={this.props.data}    
-                    />
-                </div>
-                <div className="stock-price-and-percent">
-                    <p className="stock-info-item">$355.06</p>
-                    <p className="stock-info-item stock-info-pct">+0.33%</p>
-                </div>
-            </div>
+            </Link>
         )
     }
 }

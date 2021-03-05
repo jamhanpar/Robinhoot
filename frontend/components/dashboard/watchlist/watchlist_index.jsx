@@ -18,20 +18,13 @@ export default class WatchlistIndex extends React.Component {
 
         return (
             currentUserWatchlist.map((watchlist, i) => (
-                <div className="list-container">
+                <div className="list-container" key={i}>
                     <div className="list-title-container">
                         <FaBolt className="lightning-icon"/>
-                        <div className="list-title" key={i}>{watchlist.watchlist_name}</div>
+                        <div className="list-title">{watchlist.watchlist_name}</div>
                     </div>
                     {
-                        watchlist.watched_stocks.map((stock, i) => (
-                            <Link to={`/stocks/${stock.stock_symbol}`}>
-                                <WatchlistIndexItemContainer
-                                    key={`${stock.stock_symbol}-${i}`}
-                                    symbol={stock.stock_symbol}
-                                />
-                            </Link>
-                        ))
+                        watchlist.watched_stocks.map((stock, i) => (<WatchlistIndexItemContainer symbol={stock.stock_symbol} />))
                     }
                 </div>
             ))
