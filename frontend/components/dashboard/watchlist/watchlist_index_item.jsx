@@ -11,12 +11,12 @@ export default class WatchlistIndexItem extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit(e) {
-        e.preventDefault()
-    }
+    // handleSubmit(e) {
+    //     e.preventDefault()
+    // }
 
     componentDidMount() {
-        this.props.iexFetchData(this.props.symbol, this.state.range, this.state.interval, window.iexcloudAPIKey)
+        this.props.iexFetchQuote(this.props.symbol, window.iexcloudAPIKey)
     }
 
     render() {

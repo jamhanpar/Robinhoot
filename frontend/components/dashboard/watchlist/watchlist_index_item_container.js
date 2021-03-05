@@ -4,6 +4,7 @@ import { iexFetchQuote } from "../../../actions/stock_actions";
 
 const mStP = state => ({
     data: state.entities.prices,
+    quote: state.entities.quotes
 });
 
 const mDtP = dispatch => ({

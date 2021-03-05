@@ -6,6 +6,7 @@ const quotesReducer = (state = [], action) => {
 
     switch (action.type) {
         case RECEIVE_QUOTE:
+            debugger
             newState[action.stock.id] = action.quote;
             return newState;    
         default:
