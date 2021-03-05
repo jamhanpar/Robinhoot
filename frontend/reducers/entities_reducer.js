@@ -6,6 +6,7 @@ import prices from './entities/price_reducer';
 import search from './entities/search_reducer';
 import company from "./entities/company_reducer";
 import watchlists from "./entities/watchlists_reducer";
+import quotes from "./entities/quotes_reducer";
 
 export default combineReducers({
     users,
@@ -15,4 +16,5 @@ export default combineReducers({
     search,
     company,
     watchlists,
+    quotes,
 });

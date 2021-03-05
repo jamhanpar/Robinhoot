@@ -1,15 +1,15 @@
 import { iexUrl, filter } from './iex_cloud_api_util';
 
 // test - rename to test
-export const fetchCompany = (stockSymbol, apiKey) => (
+export const iexFetchStockQuote = (stockSymbol, apiKey) => (
     $.ajax({
         method: 'GET',
-        url: iexUrl + `/stock/${stockSymbol}/company?token=${apiKey}`,
+        url: iexUrl + `/stock/${stockSymbol}/quote?token=${apiKey}`,
     })
 );
 
 // dynamic chart quotes (i.e. range = 5m)
-export const iexFetchSymbolQuote = (stockSymbol, range, interval, apiKey) => (
+export const iexFetchSymbolPrices = (stockSymbol, range, interval, apiKey) => (
     $.ajax({
         method: 'GET',
         url: iexUrl + `/stock/${stockSymbol}/chart/${range}?${filter}&chartInterval=${interval}&token=${apiKey}`,
@@ -18,7 +18,7 @@ export const iexFetchSymbolQuote = (stockSymbol, range, interval, apiKey) => (
 );
 
 // requesting chart data for multiple stock symbols
-export const iexFetchBatchQuotes = (stockSymbols, range, interval, apiKey) => (
+export const iexFetchBatchPrices = (stockSymbols, range, interval, apiKey) => (
     $.ajax({
         method: 'GET',
         url: iexUrl + `/stock/market/batch?
@@ -40,3 +40,9 @@ export const fetchSearch = (fragment, apiKey) => (
 );
 
 // stock company info
+export const fetchCompany = (stockSymbol, apiKey) => (
+    $.ajax({
+        method: 'GET',
+        url: iexUrl + `/stock/${stockSymbol}/company?token=${apiKey}`,
+    })
+);

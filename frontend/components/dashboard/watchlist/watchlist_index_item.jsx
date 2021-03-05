@@ -6,13 +6,17 @@ export default class WatchlistIndexItem extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = { showToggle: "dropdown-content" }
+        this.state = { showToggle: "dropdown-content", range: '1D', interval: "5"}
         
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault()
+    }
+
+    componentDidMount() {
+        this.props.iexFetchData(this.props.symbol, this.state.range, this.state.interval, window.iexcloudAPIKey)
     }
 
     render() {
