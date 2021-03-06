@@ -13,11 +13,36 @@ class StockDetail extends React.Component {
 
     componentDidMount() {
         this.setState({ symbol: this.props.match.params.symbol }, () => {
-            this.props.fetchCompany(this.state.symbol, window.iexcloudAPIKey)
+            this.props.fetchCompany(this.state.symbol, window.iexcloudAPIKey);
+            debugger
+            this.props.iexFetchQuote(this.state.symbol, window.iexcloudAPIKey);
+            debugger
         });
     }
 
+    getProperty(key) {
+        const { quotes } = this.props;
+        const stocksArray = Object.values(quotes)
+
+        debugger
+        for (let i = 0; i < stocksArray.length; i++) {
+            if (stocksArray[i]["symbol"] === this.state.symbol) {
+                debugger
+                if (key !== "changePercent") {
+                    return `$${stocksArray[i][key].toFixed(2)}`
+                } else {
+                    return `${(stocksArray[i][key] * 100).toFixed(2)}%`;
+                }
+            }
+        }
+    }
+
     render() {
+        debugger
+
+        if (this.props.quotes) return null;
+
+        debugger
         return (
           <div>
             <MainNavContainer />
@@ -31,21 +56,15 @@ class StockDetail extends React.Component {
                   </div>
                   <div className="company-info-container">
                     <h1 className="company-about">About</h1>
-                    <div className="company-description">
-                      {this.props.companyInfo.description}
-                    </div>
+                    <div className="company-description">{this.props.companyInfo.description}</div>
                     <div className="company-info-cards-list">
                       <div className="company-info-card">
                         <div className="company-title">CEO</div>
-                        <div className="company-info">
-                          {this.props.companyInfo.CEO}
-                        </div>
+                        <div className="company-info">{this.props.companyInfo.CEO}</div>
                       </div>
                       <div className="company-info-card">
                         <div className="company-title">Employees</div>
-                        <div className="company-info">
-                          {this.props.companyInfo.employees}
-                        </div>
+                        <div className="company-info">{this.props.companyInfo.employees}</div>
                       </div>
                       <div className="company-info-card">
                         <div className="company-title">Headquarters</div>
@@ -63,10 +82,8 @@ class StockDetail extends React.Component {
                         <div className="company-info">Market Cap</div>
                       </div>
                       <div className="company-info-card">
-                        <div className="company-title">
-                          Price-Earnings Ratio
-                        </div>
-                        <div className="company-info">Price-Earnings Ratio</div>
+                        <div className="company-title">Price-Earnings Ratio</div>
+                        <div className="company-info">{this.getProperty("peRatio")}</div>
                       </div>
                       <div className="company-info-card">
                         <div className="company-title">Dividend Yield</div>
@@ -74,31 +91,31 @@ class StockDetail extends React.Component {
                       </div>
                       <div className="company-info-card">
                         <div className="company-title">Average Volume</div>
-                        <div className="company-info">Average Volume</div>
+                        <div className="company-info">{this.getProperty("avgTotalVolume")}</div>
                       </div>
                       <div className="company-info-card">
                         <div className="company-title">High Today</div>
-                        <div className="company-info">High Today</div>
+                        <div className="company-info">{this.getProperty("high")}</div>
                       </div>
                       <div className="company-info-card">
                         <div className="company-title">Low Today</div>
-                        <div className="company-info">Low Today</div>
+                        <div className="company-info">{this.getProperty("low")}</div>
                       </div>
                       <div className="company-info-card">
                         <div className="company-title">Open Price</div>
-                        <div className="company-info">Open Price</div>
+                        <div className="company-info">{this.getProperty("open")}</div>
                       </div>
                       <div className="company-info-card">
                         <div className="company-title">Volume</div>
-                        <div className="company-info">Volume</div>
+                        <div className="company-info">{this.getProperty("volume")}</div>
                       </div>
                       <div className="company-info-card">
                         <div className="company-title">52 Week High</div>
-                        <div className="company-info">52 Week High</div>
+                        <div className="company-info">{this.getProperty("week52High")}</div>
                       </div>
                       <div className="company-info-card">
                         <div className="company-title">52 Week Low</div>
-                        <div className="company-info">52 Week Low</div>
+                        <div className="company-info">{this.getProperty("week52Low")}</div>
                       </div>
                     </div>
                   </div>
