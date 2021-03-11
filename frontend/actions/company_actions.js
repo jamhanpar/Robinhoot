@@ -3,7 +3,6 @@ import * as IEXCloudAPIUtil from "../util/iex_cloud_stock_api_util";
 export const RECEIVE_COMPANY = "RECEIVE_COMPANY";
 
 const receiveCompany = (companyResults) => {
-  debugger
   return {
     type: RECEIVE_COMPANY,
     companyResults,

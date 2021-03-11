@@ -10,7 +10,6 @@ const mStP = ({ entities }) => {
 }};
 
 const mDtP = dispatch => {
-  debugger
   return {
   fetchCompany: (symbol, apiKey) => dispatch(fetchCompany(symbol, apiKey)),
   iexFetchQuote: (symbol, apiKey) => dispatch(iexFetchQuote(symbol, apiKey)),

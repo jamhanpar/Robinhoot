@@ -17,8 +17,6 @@ class TransactionForm extends React.Component {
 
     componentDidMount() {
         this.props.fetchWatchlists()
-
-        debugger
     }
 
     componentDidUpdate(prevProps, prevStates) {
@@ -48,8 +46,6 @@ class TransactionForm extends React.Component {
                 removeFromWatchlist({watchlist_id: 1, stock_symbol: this.props.symbol})
             }
         });
-
-        debugger
     }
 
     handleClick(field, option) {     
@@ -57,7 +53,6 @@ class TransactionForm extends React.Component {
     }
 
     render() {
-        debugger
         let costOrCredit = 'Cost'
         let buyingPowerOrOwnedShares = 'Buying Power Available';
 

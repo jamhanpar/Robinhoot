@@ -14,7 +14,6 @@ class StockDetail extends React.Component {
     }
 
     componentDidMount() {
-      debugger
         this.setState({ symbol: this.props.match.params.symbol }, () => {
             this.props.fetchCompany(this.state.symbol, window.iexcloudAPIKey);
             this.props.iexFetchQuote(this.state.symbol, window.iexcloudAPIKey);
@@ -25,15 +24,12 @@ class StockDetail extends React.Component {
         const { quotes } = this.props;
         const stocksArray = Object.values(quotes)
 
-        debugger
         for (let i = 0; i < stocksArray.length; i++) {
             if (stocksArray[i]["symbol"] === this.state.symbol) {
-                debugger
                 const stockValue = stocksArray[i][key]
 
                 switch (key) {
                   case "peRatio":
-                    debugger
                     return `${stockValue}`
                     break;
                   case "avgTotalVolume":
@@ -48,11 +44,8 @@ class StockDetail extends React.Component {
     }
 
     render() {
-        debugger
-
         if (Object.keys(this.props.quotes).length === 0) return null;
 
-        debugger
         return (
           <div>
             <MainNavContainer />
