@@ -6,26 +6,38 @@ class TransactionForm extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = { status: 'buy', addToList: false }
+        this.state = { status: 'buy', addToList: false, shareCount: 0, estimatedCost: 0.00, purchaseType: "Shares" }
         this.buySelected = 'highlight-selected'
         this.sellSelected = ''
         // needs to check if this stock is included in the user's list
         this.addToListIcon = <FaPlus className="add-to-list-icon" />;
 
         this.updateAddToList = this.updateAddToList.bind(this);
+        this.updateShareCount = this.updateShareCount.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchWatchlists()
+
+        this.props.iexFetchQuote(this.props.symbol, window.iexcloudAPIKey)
     }
 
     componentDidUpdate(prevProps, prevStates) {
         if (this.props.watchlists !== prevProps.watchlists) {
             this.updateAddToList();
         }
+    }
 
+    updateShareCount(field) {
+        return (e) => {
+            this.setState({ [field]: e.currentTarget.value === "" ? 0 : parseInt(e.currentTarget.value) }, () => this.updateEstimatedCost())
+        }
+    }
+
+    updateEstimatedCost() {
+        const costPerShare = parseFloat(this.props.quotes[this.props.symbol].iexClose.toFixed(2))
         debugger
-        this.props.iexFetchQuote(this.props.symbol, window.iexcloudAPIKey)
+        this.setState({ estimatedCost: (this.state.shareCount * costPerShare).toFixed(2) })
     }
 
     updateAddToList() {
@@ -94,21 +106,21 @@ class TransactionForm extends React.Component {
                     <div className="transaction-inputs-container">
                         <div className="form-elements investing-option-container">
                             <h1 className="transaction-title">Invest In</h1>
-                            <input className="dollar-shares-input" type="text" placeholder="Shares"/>
+                            <input className="dollar-shares-input" type="text" placeholder="Shares" value={this.state.purchaseType}/>
                         </div>
                         <div className="form-elements desired-shares-container">
                             <h1 className="transaction-title">Shares</h1>
-                            <input className="shares-input" type="text" placeholder="0"/>
+                            <input className="shares-input" type="text" placeholder="0" onChange={this.updateShareCount("shareCount")}/>
                         </div>
                         <div className="form-elements market-price-container">
                             <div className="market-price-title-container">
                                 <h1 className="transaction-title-green market-price">Market Price</h1>
                             </div>
-                            <p className="transaction-title-bold">$136.60</p>
+                            <p className="transaction-title-bold">${this.props.quotes[this.props.symbol].iexClose.toFixed(2)}</p>
                         </div>
                         <div className="form-elements estimated-cost-container">
                             <h1 className="transaction-title-bold estimated-cost">Estimated {costOrCredit}</h1>
-                            <p className="transaction-title-bold">$0.00</p>
+                            <p className="transaction-title-bold">${this.state.estimatedCost}</p>
                         </div>
                         <div className="review-btn-container">
                             <button type="submit" className="transaction-btn transaction-submit-btn">Review Order</button>
