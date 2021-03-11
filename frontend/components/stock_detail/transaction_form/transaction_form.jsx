@@ -57,6 +57,7 @@ class TransactionForm extends React.Component {
     }
 
     render() {
+        debugger
         let costOrCredit = 'Cost'
         let buyingPowerOrOwnedShares = 'Buying Power Available';
 

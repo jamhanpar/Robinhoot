@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import WatchlistIndexItemContainer from './watchlist_index_item_container';
 import { FaBolt } from "react-icons/fa";
+import WatchlistIndexItemContainer from './watchlist_index_item_container';
 
 export default class WatchlistIndex extends React.Component {
     constructor(props) {

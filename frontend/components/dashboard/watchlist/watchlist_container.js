@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import WatchlistIndex from './watchlist_index';
-import { fetchPrices } from '../../../actions/price_actions';
 import { fetchWatchlists } from "../../../actions/watchlist_actions";
 
 const mStP = (state, ownProps) => ({
