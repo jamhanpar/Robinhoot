@@ -23,6 +23,9 @@ class TransactionForm extends React.Component {
         if (this.props.watchlists !== prevProps.watchlists) {
             this.updateAddToList();
         }
+
+        debugger
+        this.props.iexFetchQuote(this.props.symbol, window.iexcloudAPIKey)
     }
 
     updateAddToList() {
