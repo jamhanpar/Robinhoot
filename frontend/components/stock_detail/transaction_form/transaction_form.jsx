@@ -6,7 +6,7 @@ class TransactionForm extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = { status: 'buy', addToList: false, shareCount: 0, estimatedCost: 0.00, purchaseType: "Shares" }
+        this.state = { status: 'buy', addToList: false, shareCount: "", estimatedCost: 0.00.toFixed(2), purchaseType: "Shares" }
         this.buySelected = 'highlight-selected'
         this.sellSelected = ''
         // needs to check if this stock is included in the user's list
@@ -18,7 +18,6 @@ class TransactionForm extends React.Component {
 
     componentDidMount() {
         this.props.fetchWatchlists()
-
         this.props.iexFetchQuote(this.props.symbol, window.iexcloudAPIKey)
     }
 
@@ -110,7 +109,7 @@ class TransactionForm extends React.Component {
                         </div>
                         <div className="form-elements desired-shares-container">
                             <h1 className="transaction-title">Shares</h1>
-                            <input className="shares-input" type="text" placeholder="0" onChange={this.updateShareCount("shareCount")}/>
+                            <input className="shares-input" type="text" placeholder="0" onChange={this.updateShareCount("shareCount")} value={this.state.shareCount}/>
                         </div>
                         <div className="form-elements market-price-container">
                             <div className="market-price-title-container">
