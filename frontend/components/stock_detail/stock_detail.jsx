@@ -30,11 +30,17 @@ class StockDetail extends React.Component {
 
                 switch (key) {
                   case "peRatio":
-                    return `${stockValue}`
+                    return `${stockValue.toFixed(2)}`
                     break;
                   case "avgTotalVolume":
-                    return `${stockValue}`
-                    break;                
+                    return `${stockValue.toLocaleString()}`
+                    break;
+                  case "week52High":
+                    return `$${stockValue}`
+                    break;
+                  case "week52Low":
+                    return `$${stockValue}`
+                    break;                    
                   default:
                     return stockValue === null ? "N/A" : `${stockValue}`
                     break;
@@ -67,13 +73,12 @@ class StockDetail extends React.Component {
                       </div>
                       <div className="company-info-card">
                         <div className="company-title">Employees</div>
-                        <div className="company-info">{this.props.companyInfo.employees}</div>
+                        <div className="company-info">{this.props.companyInfo.employees.toLocaleString()}</div>
                       </div>
                       <div className="company-info-card">
                         <div className="company-title">Headquarters</div>
                         <div className="company-info">
-                          {this.props.companyInfo.city},{" "}
-                          {this.props.companyInfo.state}
+                          {this.props.companyInfo.city + ", " + this.props.companyInfo.state}
                         </div>
                       </div>
                       <div className="company-info-card">
