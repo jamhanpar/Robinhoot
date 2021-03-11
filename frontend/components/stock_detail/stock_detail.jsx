@@ -9,14 +9,15 @@ class StockDetail extends React.Component {
         super(props)
         
         this.state = { symbol: '' };
+
+        this.getProperty = this.getProperty.bind(this);
     }
 
     componentDidMount() {
+      debugger
         this.setState({ symbol: this.props.match.params.symbol }, () => {
             this.props.fetchCompany(this.state.symbol, window.iexcloudAPIKey);
-            debugger
             this.props.iexFetchQuote(this.state.symbol, window.iexcloudAPIKey);
-            debugger
         });
     }
 
@@ -28,11 +29,15 @@ class StockDetail extends React.Component {
         for (let i = 0; i < stocksArray.length; i++) {
             if (stocksArray[i]["symbol"] === this.state.symbol) {
                 debugger
+                const stockValue = stocksArray[i][key]
+
                 if (key !== "changePercent") {
-                    return `$${stocksArray[i][key].toFixed(2)}`
+                    // return `$${stockValue.toFixed(2)}`
+                } else if (key === "changePercent") {
+                    // return `${(stockValue * 100).toFixed(2)}%`;
                 } else {
-                    return `${(stocksArray[i][key] * 100).toFixed(2)}%`;
-                }
+                    return `${stockValue}`;
+                } 
             }
         }
     }
@@ -40,7 +45,7 @@ class StockDetail extends React.Component {
     render() {
         debugger
 
-        if (this.props.quotes) return null;
+        if (Object.keys(this.props.quotes).length === 0) return null;
 
         debugger
         return (
@@ -132,7 +137,7 @@ class StockDetail extends React.Component {
                   </div>
                 </div>
 
-                <TransactionFormContainer symbol={this.state.symbol} />
+                <TransactionFormContainer symbol={this.state.symbol} price={""}/>
               </div>
             </div>
           </div>

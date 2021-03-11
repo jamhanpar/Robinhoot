@@ -7,7 +7,7 @@ import configureStore from './store/store';
 import { signup, login, logout } from './util/session_api_util';
 import { fetchStocks, fetchStock } from './util/stocks_api_util';
 import { iexFetchStock, iexFetchCompany, iexFetchNews, iexFetchGeneralNews } from './util/iex_cloud_api_util';
-import { iexFetchBatchQuotes } from './util/iex_cloud_stock_api_util';
+import { iexFetchBatchPrices } from './util/iex_cloud_stock_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById('root');
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.iexStock = iexFetchStock;
     window.iexCompany = iexFetchCompany;
     window.iexNews = iexFetchNews;
-    window.iexQuote = iexFetchBatchQuotes;
+    window.iexQuote = iexFetchBatchPrices;
     window.iexGeneralNews = iexFetchGeneralNews;
     // DELETE
     

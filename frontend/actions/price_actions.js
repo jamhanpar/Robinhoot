@@ -1,6 +1,7 @@
 import * as iexCloudStockApiUtil from '../util/iex_cloud_stock_api_util';
 
 export const RECEIVE_SYMBOL_PRICES = "RECEIVE_PRICES";
+export const RECEIVE_BATCH_PRICES = "RECEIVE_BATCH_PRICES";
 
 const receiveSymbolPrices = prices => ({
     type: RECEIVE_SYMBOL_PRICES,
