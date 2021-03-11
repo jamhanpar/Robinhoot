@@ -1,4 +1,6 @@
-import { iexUrl, filter } from './iex_cloud_api_util';
+import { iexUrl } from './iex_cloud_api_util';
+
+const filter = "filter=symbol,close,date,minute,label";
 
 // test - rename to test
 export const iexFetchStockQuote = (stockSymbol, apiKey) => (

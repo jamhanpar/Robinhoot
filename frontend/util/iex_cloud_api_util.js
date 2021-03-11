@@ -1,57 +1,10 @@
 export const iexUrl = "https://sandbox.iexapis.com/stable";
-export const filter = "filter=symbol,close,date,minute,label";
-export const includeToday = "includeToday=true";
 
-// testing IEX Cloud API
-export const iexFetchStock = (stockSymbol, apiKey) => (
-    $.ajax({
-        method: 'GET',
-        url: iexUrl + `/stock/${stockSymbol}/batch?types=quote,news,chart&range=1m&last=10&token=${apiKey}`,
-        dataType: 'JSON',
-    })
-);
-
-// quotes (i.e. range = 5m)
-export const iexFetchQuote = (stockSymbol, range, apiKey) => (
-    $.ajax({
-        method: 'GET',
-        url: iexUrl + `/stock/${stockSymbol}/chart/${range}?token=${apiKey}`,
-        dataType: 'JSON',
-    })
-);
-
-// company info
-export const iexFetchCompany = (stockSymbol, apiKey) => (
-    $.ajax({
-        method: 'GET',
-        url: iexUrl + `/stock/${stockSymbol}/company?token=${apiKey}`,
-        dataType: 'JSON',
-    })
-);
-
-// news with symbol
-export const iexFetchNews = (stockSymbol, apiKey) => (
-    $.ajax({
-        method: 'GET',
-        url: iexUrl + `/stock/${stockSymbol}/batch?filter=datetime,headline,source,url,related,image&types=news&range=1m&last=10&token=${apiKey}`,
-        dataType: 'JSON',
-    })
-);
-
-// news
+// General news
 export const iexFetchGeneralNews = (apiKey) => (
     $.ajax({
         method: 'GET',
         url: iexUrl + `/stock/market/batch?types=news&range=1m&last=10&token=${apiKey}`,
-        dataType: 'JSON',
-    })
-);
-
-// prices
-export const iexFetchPrices = (stockSymbol, apiKey) => (
-    $.ajax({
-        method: 'GET',
-        url: iexUrl + `/stock/${stockSymbol}/batch?types=news&range=1m&last=15&token=${apiKey}`,
         dataType: 'JSON',
     })
 );
