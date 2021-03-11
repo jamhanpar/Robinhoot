@@ -31,13 +31,18 @@ class StockDetail extends React.Component {
                 debugger
                 const stockValue = stocksArray[i][key]
 
-                if (key !== "changePercent") {
-                    // return `$${stockValue.toFixed(2)}`
-                } else if (key === "changePercent") {
-                    // return `${(stockValue * 100).toFixed(2)}%`;
-                } else {
-                    return `${stockValue}`;
-                } 
+                switch (key) {
+                  case "peRatio":
+                    debugger
+                    return `${stockValue}`
+                    break;
+                  case "avgTotalVolume":
+                    return `${stockValue}`
+                    break;                
+                  default:
+                    return stockValue === null ? "N/A" : `${stockValue}`
+                    break;
+                }
             }
         }
     }
