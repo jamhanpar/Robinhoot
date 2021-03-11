@@ -18,7 +18,7 @@ export default class MiniStockChart extends PureComponent {
 
   render() {
     return (
-      <LineChart width={this.state.width} height={this.state.height} data={this.props.data}>
+      <LineChart className="watchlist-mini-graph" width={this.state.width} height={this.state.height} data={this.props.data} cursor="pointer">
         <Line type="monotone" dataKey="close" stroke="#00C805" strokeWidth={2} dot={false} />
       </LineChart>
     );

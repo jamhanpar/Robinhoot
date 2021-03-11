@@ -61,7 +61,7 @@ class StockDetail extends React.Component {
                 <div className="portfolio-and-relevant-info-container">
                   <div className="spacing">
                     <h1 className="stock-name">{this.state.symbol}</h1>
-                    <StockGraphContainer />
+                    <StockGraphContainer/>
                   </div>
                   <div className="company-info-container">
                     <h1 className="company-about">About</h1>
