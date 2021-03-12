@@ -24,23 +24,23 @@ const receiveQuote = quote => ({
 export const fetchStocks = () => dispatch => (
     StockAPIUtil.fetchStocks()
         .then(
-            stocks => (dispatch(receiveStocks(stocks))),
-            error => (dispatch(receiveErrors(error.responseJSON)))
+            stocks => dispatch(receiveStocks(stocks)),
+            error => dispatch(receiveErrors(error.responseJSON))
         )
 );
 
 export const fetchStock = stockId => dispatch => (
     StockAPIUtil.fetchStock(stockId)
         .then(
-            stock => (dispatch(receiveStock(stock))),
-            error => (dispatch(receiveErrors(error.responseJSON)))
+            stock => dispatch(receiveStock(stock)),
+            error => dispatch(receiveErrors(error.responseJSON))
         )
 );
 
 export const iexFetchQuote = (symbol, apiKey) => dispatch => (
     iexCloudStockAPI.iexFetchStockQuote(symbol, apiKey)
         .then(
-            (quote) => dispatch(receiveQuote(quote)),
-            (error) => dispatch(receiveErrors(error.responseJSON))
+            quote => dispatch(receiveQuote(quote)),
+            error => dispatch(receiveErrors(error.responseJSON))
         )
 );
