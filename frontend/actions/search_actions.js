@@ -12,7 +12,6 @@ const receiveSearch = (searchResults) => {
 export const fetchSearch = (fragment, apiKey) => (dispatch) => (
   IEXCloudAPIUtil.fetchSearch(fragment, apiKey)
     .then(
-      searchResults => dispatch(receiveSearch(searchResults)),
-      error => dispatch(receiveErrors(error.responseJSON))
+      searchResults => dispatch(receiveSearch(searchResults))
     )
 )

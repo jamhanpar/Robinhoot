@@ -4,13 +4,12 @@ export const RECEIVE_WATCHLISTS = "RECEIVE_WATCHLISTS";
 
 const receiveWatchlists = (watchlists) => ({
   type: RECEIVE_WATCHLISTS,
-  watchlists,
+  watchlists
 });
 
 export const fetchWatchlists = () => (dispatch) => (
   WatchlistAPIUtil.fetchWatchlists()
     .then(
-        watchlists => dispatch(receiveWatchlists(watchlists)),
-        error => dispatch(receiveErrors(error.responseJSON))
+        watchlists => dispatch(receiveWatchlists(watchlists))
     )
 )
