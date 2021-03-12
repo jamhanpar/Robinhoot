@@ -21,6 +21,15 @@ class StockDetail extends React.Component {
         });
     }
 
+    componentDidUpdate(prevProps, prevStates) {
+      if (this.props.match.params.symbol !== prevProps.match.params.symbol) {
+        this.setState({ symbol: this.props.match.params.symbol }, () => {
+          this.props.fetchCompany(this.state.symbol, window.iexcloudAPIKey);
+          this.props.iexFetchQuote(this.state.symbol, window.iexcloudAPIKey);
+        }); 
+      }
+  }
+
     getProperty(key) {
         const stocksArray = Object.values(this.props.quotes)
 

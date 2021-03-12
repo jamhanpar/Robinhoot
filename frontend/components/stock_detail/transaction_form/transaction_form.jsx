@@ -69,7 +69,8 @@ class TransactionForm extends React.Component {
         let costOrCredit = 'Cost'
         let buyingPowerOrOwnedShares = 'Buying Power Available';
 
-        if (Object.values(this.props.watchlists).length === 0) return null;
+        if (Object.values(this.props.watchlists).length === 0 || this.props.quotes[this.props.symbol] === undefined) return null;
+        debugger
 
         switch(this.state.status) {
             case 'buy':
@@ -104,7 +105,7 @@ class TransactionForm extends React.Component {
                     <div className="transaction-inputs-container">
                         <div className="form-elements investing-option-container">
                             <h1 className="transaction-title">Invest In</h1>
-                            <input className="dollar-shares-input" type="text" placeholder="Shares" value={this.state.purchaseType} readonly/>
+                            <input className="dollar-shares-input" type="text" placeholder="Shares" value={this.state.purchaseType} readOnly/>
                         </div>
                         <div className="form-elements desired-shares-container">
                             <h1 className="transaction-title">Shares</h1>
