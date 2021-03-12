@@ -32,9 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.logout = logout;
     window.stocks = fetchStocks;
     window.stock = fetchStock;
-    window.iexStock = iexFetchStock;
-    window.iexCompany = iexFetchCompany;
-    window.iexNews = iexFetchNews;
     window.iexQuote = iexFetchBatchPrices;
     window.iexGeneralNews = iexFetchGeneralNews;
     // DELETE
