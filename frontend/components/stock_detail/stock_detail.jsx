@@ -33,7 +33,6 @@ class StockDetail extends React.Component {
                     return `${stockValue.toFixed(2)}`
                     break;
                   case "avgTotalVolume":
-                    debugger
                     return `${stockValue.toLocaleString()}`
                     break;
                   case "high":
@@ -64,8 +63,6 @@ class StockDetail extends React.Component {
 
     render() {
         if (Object.keys(this.props.quotes).length === 0 || this.props.companyInfo.length === 0 ) return null;
-
-        debugger
 
         return (
           <div>
