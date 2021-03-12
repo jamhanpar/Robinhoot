@@ -6,10 +6,9 @@ class TransactionForm extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = { status: 'buy', addToList: false, shareCount: "", estimatedCost: 0.00.toFixed(2), purchaseType: "Shares" }
+        this.state = { status: 'buy', addToList: false, shareCount: "", estimatedCost: (0.00).toFixed(2), purchaseType: "Shares" }
         this.buySelected = 'highlight-selected'
         this.sellSelected = ''
-        // needs to check if this stock is included in the user's list
         this.addToListIcon = <FaPlus className="add-to-list-icon" />;
 
         this.updateAddToList = this.updateAddToList.bind(this);
