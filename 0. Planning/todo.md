@@ -12,7 +12,7 @@
 9. Fix all images - <mark>completed</mark>
 10. Sign up for IEX Cloud Stock API and get an API Key - <mark>completed</mark>
 11. Hide API keys using Figaro
-12. Bug: Stock details page does not refresh when another stock is searched
+12. Bug: Stock details page does not refresh when another stock is searched <mark>completed</mark>
 13. Bug: Search menu does not disappear when unclicked or window is clicked
 13. Show transactions on portfolio page
 14. Update share count in watchlist index item
