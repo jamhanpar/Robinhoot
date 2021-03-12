@@ -33,6 +33,19 @@ class StockDetail extends React.Component {
                     return `${stockValue.toFixed(2)}`
                     break;
                   case "avgTotalVolume":
+                    debugger
+                    return `${stockValue.toLocaleString()}`
+                    break;
+                  case "high":
+                    return `$${stockValue}`
+                    break;
+                  case "low":
+                    return `$${stockValue}`
+                    break;
+                  case "open":
+                    return `$${stockValue}`
+                    break;
+                  case "volume":
                     return `${stockValue.toLocaleString()}`
                     break;
                   case "week52High":
@@ -50,7 +63,9 @@ class StockDetail extends React.Component {
     }
 
     render() {
-        if (Object.keys(this.props.quotes).length === 0) return null;
+        if (Object.keys(this.props.quotes).length === 0 || this.props.companyInfo.length === 0 ) return null;
+
+        debugger
 
         return (
           <div>
@@ -83,11 +98,11 @@ class StockDetail extends React.Component {
                       </div>
                       <div className="company-info-card">
                         <div className="company-title">Founded</div>
-                        <div className="company-info">1976</div>
+                        <div className="company-info">N/A</div>
                       </div>
                       <div className="company-info-card">
                         <div className="company-title">Market Cap</div>
-                        <div className="company-info">Market Cap</div>
+                        <div className="company-info">N/A</div>
                       </div>
                       <div className="company-info-card">
                         <div className="company-title">Price-Earnings Ratio</div>
@@ -95,7 +110,7 @@ class StockDetail extends React.Component {
                       </div>
                       <div className="company-info-card">
                         <div className="company-title">Dividend Yield</div>
-                        <div className="company-info">Dividend Yield</div>
+                        <div className="company-info">N/A</div>
                       </div>
                       <div className="company-info-card">
                         <div className="company-title">Average Volume</div>

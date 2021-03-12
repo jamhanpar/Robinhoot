@@ -105,7 +105,7 @@ class TransactionForm extends React.Component {
                     <div className="transaction-inputs-container">
                         <div className="form-elements investing-option-container">
                             <h1 className="transaction-title">Invest In</h1>
-                            <input className="dollar-shares-input" type="text" placeholder="Shares" value={this.state.purchaseType}/>
+                            <input className="dollar-shares-input" type="text" placeholder="Shares" value={this.state.purchaseType} readonly/>
                         </div>
                         <div className="form-elements desired-shares-container">
                             <h1 className="transaction-title">Shares</h1>

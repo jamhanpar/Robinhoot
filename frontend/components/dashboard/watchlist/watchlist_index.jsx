@@ -23,7 +23,7 @@ export default class WatchlistIndex extends React.Component {
                         <div className="list-title">{watchlist.watchlist_name}</div>
                     </div>
                     {
-                        watchlist.watched_stocks.map((stock, i) => (<WatchlistIndexItemContainer symbol={stock.stock_symbol} />))
+                        watchlist.watched_stocks.map((stock, i) => (<WatchlistIndexItemContainer key={i} symbol={stock.stock_symbol} />))
                     }
                 </div>
             ))
