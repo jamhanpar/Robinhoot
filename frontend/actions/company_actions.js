@@ -9,10 +9,10 @@ const receiveCompany = (companyResults) => {
   };
 };
 
-export const fetchCompany = (stockSymbol, apiKey) => (dispatch) => {
-  return IEXCloudAPIUtil.fetchCompany(stockSymbol, apiKey)
+export const fetchCompany = (stockSymbol, apiKey) => (dispatch) => (
+  IEXCloudAPIUtil.fetchCompany(stockSymbol, apiKey)
     .then(
       companyResults => dispatch(receiveCompany(companyResults)),
       error => dispatch(receiveErrors(error.responseJSON))
-  );
-};
+    )
+)
