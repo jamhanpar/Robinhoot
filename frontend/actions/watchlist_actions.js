@@ -7,9 +7,10 @@ const receiveWatchlists = (watchlists) => ({
   watchlists,
 });
 
-export const fetchWatchlists = () => (dispatch) =>
+export const fetchWatchlists = () => (dispatch) => (
   WatchlistAPIUtil.fetchWatchlists()
     .then(
         watchlists => dispatch(receiveWatchlists(watchlists)),
         error => dispatch(receiveErrors(error.responseJSON))
-    );
+    )
+)

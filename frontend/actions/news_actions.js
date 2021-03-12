@@ -8,9 +8,10 @@ const receiveNews = news => {
     news
 }}
 
-export const fetchNews = apiKey => dispatch => {
-    return IEXCloudAPIUtil.iexFetchGeneralNews(apiKey)
-            .then(
-                news => (dispatch(receiveNews(news)))
-            )
-}
+export const fetchNews = apiKey => dispatch => (
+    IEXCloudAPIUtil.iexFetchGeneralNews(apiKey)
+        .then(
+            news => dispatch(receiveNews(news)),
+            error => dispatch(receiveErrors(error.responseJSON))
+        )
+)

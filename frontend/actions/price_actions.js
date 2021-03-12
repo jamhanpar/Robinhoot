@@ -13,16 +13,16 @@ const receiveBatchPrices = prices => ({
     prices
 });
 
-export const fetchPrices = (symbol, range, interval, apiKey) => dispatch => {
-    return iexCloudStockApiUtil.iexFetchSymbolPrices(symbol, range, interval, apiKey)
+export const fetchPrices = (symbol, range, interval, apiKey) => dispatch => (
+    iexCloudStockApiUtil.iexFetchSymbolPrices(symbol, range, interval, apiKey)
         .then(
             prices => (dispatch(receiveSymbolPrices(prices)))
         )
-}
+)
 
-export const fetchBatchPrices = (symbols, range, interval, apiKey) => dispatch => {
-    return iexCloudStockApiUtil.iexFetchBatchPrices(symbols, range, interval, apiKey)
+export const fetchBatchPrices = (symbols, range, interval, apiKey) => dispatch => (
+    iexCloudStockApiUtil.iexFetchBatchPrices(symbols, range, interval, apiKey)
         .then(
             prices => (dispatch(receiveBatchPrices(prices)))
         )
-}
+)
