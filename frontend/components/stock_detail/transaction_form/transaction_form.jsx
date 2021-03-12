@@ -70,7 +70,6 @@ class TransactionForm extends React.Component {
         let buyingPowerOrOwnedShares = 'Buying Power Available';
 
         if (Object.values(this.props.watchlists).length === 0 || this.props.quotes[this.props.symbol] === undefined) return null;
-        debugger
 
         switch(this.state.status) {
             case 'buy':

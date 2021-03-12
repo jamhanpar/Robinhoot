@@ -14,7 +14,6 @@ class StockDetail extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         this.setState({ symbol: this.props.match.params.symbol }, () => {
             this.props.fetchCompany(this.state.symbol, window.iexcloudAPIKey);
             this.props.iexFetchQuote(this.state.symbol, window.iexcloudAPIKey);
@@ -44,7 +43,6 @@ class StockDetail extends React.Component {
                     return `${stockValue.toFixed(2)}`
                     break;
                   case "avgTotalVolume":
-                    debugger
                     return `${stockValue.toLocaleString()}`
                     break;
                   case "high":
@@ -57,7 +55,6 @@ class StockDetail extends React.Component {
                     return `$${stockValue}`
                     break;
                   case "volume":
-                    debugger
                     return `${stockValue.toLocaleString()}`
                     break;
                   case "week52High":
@@ -75,9 +72,7 @@ class StockDetail extends React.Component {
     }
 
     render() {
-        debugger
         if (Object.keys(this.props.quotes).length === 0 || this.props.companyInfo.length === 0 ) return null;
-        debugger
 
         return (
           <div>
