@@ -13,7 +13,9 @@ class Dashboard extends React.Component {
         this.state = { showToggle: "dropdown-content"}
     }
 
-    render() {        
+    render() {
+        debugger
+                
         return (
             <div>
                 <MainNavContainer />

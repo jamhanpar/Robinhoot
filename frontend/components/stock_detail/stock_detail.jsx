@@ -14,6 +14,7 @@ class StockDetail extends React.Component {
     }
 
     componentDidMount() {
+        debugger
         this.setState({ symbol: this.props.match.params.symbol }, () => {
             this.props.fetchCompany(this.state.symbol, window.iexcloudAPIKey);
             this.props.iexFetchQuote(this.state.symbol, window.iexcloudAPIKey);
@@ -21,18 +22,20 @@ class StockDetail extends React.Component {
     }
 
     getProperty(key) {
-        const { quotes } = this.props;
-        const stocksArray = Object.values(quotes)
+        const stocksArray = Object.values(this.props.quotes)
 
         for (let i = 0; i < stocksArray.length; i++) {
             if (stocksArray[i]["symbol"] === this.state.symbol) {
                 const stockValue = stocksArray[i][key]
+
+                if (stockValue === null) return "N/A"
 
                 switch (key) {
                   case "peRatio":
                     return `${stockValue.toFixed(2)}`
                     break;
                   case "avgTotalVolume":
+                    debugger
                     return `${stockValue.toLocaleString()}`
                     break;
                   case "high":
@@ -45,6 +48,7 @@ class StockDetail extends React.Component {
                     return `$${stockValue}`
                     break;
                   case "volume":
+                    debugger
                     return `${stockValue.toLocaleString()}`
                     break;
                   case "week52High":
@@ -54,7 +58,7 @@ class StockDetail extends React.Component {
                     return `$${stockValue}`
                     break;                    
                   default:
-                    return stockValue === null ? "N/A" : `${stockValue}`
+                    return `${stockValue}`
                     break;
                 }
             }
@@ -62,7 +66,9 @@ class StockDetail extends React.Component {
     }
 
     render() {
+        debugger
         if (Object.keys(this.props.quotes).length === 0 || this.props.companyInfo.length === 0 ) return null;
+        debugger
 
         return (
           <div>
