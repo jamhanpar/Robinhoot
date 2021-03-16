@@ -49,8 +49,6 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        debugger
-
         if (Object.values(this.state).some((val) => val === "")) {
             this.props.processForm(this.state)
                 .then(() => this.errors = this.renderErrors());
@@ -58,10 +56,8 @@ class SignupForm extends React.Component {
         } else {
             this.props.processForm(this.state)
                 .then(() => this.props.history.push('/dashboard'));
-    
-            debugger
+
             createWatchlist({watchlist_name: "My First List"})
-            debugger
         }
     }
 

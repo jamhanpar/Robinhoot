@@ -20,7 +20,6 @@ export const removeFromWatchlist = (watched_stock) => {
 };
 
 export const createWatchlist = (watchlist) => {
-  debugger
   $.ajax({
     method: 'POST',
     url: '/api/watchlists',
