@@ -31,8 +31,10 @@ export default class WatchlistIndex extends React.Component {
     }
 
     render() {
+        debugger
         if (!this.props.watchlists) return null;
 
+        debugger
         return (
             <div className="watchlist-container">
                 <div className="watchlist-title-container">
