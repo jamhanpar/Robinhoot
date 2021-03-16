@@ -22,7 +22,6 @@ class Api::WatchlistsController < ApplicationController
 
     # add if time permits, used to delete a list
     def destroy
-        
     end
 
     private

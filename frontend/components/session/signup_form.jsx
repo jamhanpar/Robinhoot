@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { createWatchlist } from '../../util/watchlist_api_util';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -54,7 +55,11 @@ class SignupForm extends React.Component {
             this.errors = this.renderErrors();
         } else {
             this.props.processForm(this.state)
-                .then(() => this.props.history.push('/dashboard'));
+                .then(() => {
+                    debugger
+                    createWatchlist({watchlist_name: "My First List"});
+                    this.props.history.push('/dashboard');
+                });
         }
     }
 

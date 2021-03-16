@@ -42,12 +42,17 @@ class TransactionForm extends React.Component {
         let watchlist = Object.values(this.props.watchlists)[0];
         let that = this
 
-        const stockIncludedInWatchlist = watchlist.watched_stocks.some(watched_stock => {
-            return watched_stock.stock_symbol === that.props.symbol
-        })
-        
-        if(stockIncludedInWatchlist) {
-            this.setState({ addToList: true });
+        debugger
+        if (watchlist === undefined) {
+            this.setState({ addToList: false })
+        } else {
+            debugger
+            
+            const stockIncludedInWatchlist = watchlist.watched_stocks.some(watched_stock => {
+                return watched_stock.stock_symbol === that.props.symbol
+            })
+            
+            if(stockIncludedInWatchlist) this.setState({ addToList: true });
         }
     }
 
@@ -69,7 +74,12 @@ class TransactionForm extends React.Component {
         let costOrCredit = 'Cost'
         let buyingPowerOrOwnedShares = 'Buying Power Available';
 
-        if (Object.values(this.props.watchlists).length === 0 || this.props.quotes[this.props.symbol] === undefined) return null;
+        debugger
+
+        // if (Object.values(this.props.watchlists).length === 0 || this.props.quotes[this.props.symbol] === undefined) return null;
+        if (this.props.quotes[this.props.symbol] === undefined) return null;
+
+        debugger
 
         switch(this.state.status) {
             case 'buy':

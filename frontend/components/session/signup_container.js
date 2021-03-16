@@ -21,7 +21,8 @@ const mStP = ({ errors }) => {
 }};
 
 const mDtP = dispatch => ({
-    processForm: formUser => dispatch(signup(formUser)),
+    createWatchlist: (watchlist) => dispatch(createWatchlist(watchlist)),
+    processForm: (formUser) => dispatch(signup(formUser)),
     resetErrors: () => dispatch(reset())
 });
 
