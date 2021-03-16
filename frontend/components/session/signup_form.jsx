@@ -58,6 +58,7 @@ class SignupForm extends React.Component {
                 .then(() => this.props.history.push('/dashboard'));
 
             createWatchlist({watchlist_name: "My First List"})
+            debugger
         }
     }
 

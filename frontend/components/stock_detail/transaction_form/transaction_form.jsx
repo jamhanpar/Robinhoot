@@ -57,11 +57,13 @@ class TransactionForm extends React.Component {
     }
 
     addToList() {
+        debugger
+
         this.setState({ addToList: this.state.addToList === true ? false : true }, () => {
             if (this.state.addToList === true) {
-                addToWatchlist({watchlist_id: 1, stock_symbol: this.props.symbol})
+                addToWatchlist({watchlist_id: Object.values(this.props.watchlists)[0].id, stock_symbol: this.props.symbol})
             } else {
-                removeFromWatchlist({watchlist_id: 1, stock_symbol: this.props.symbol})
+                removeFromWatchlist({watchlist_id: Object.values(this.props.watchlists)[0].id, stock_symbol: this.props.symbol})
             }
         });
     }
@@ -80,6 +82,7 @@ class TransactionForm extends React.Component {
         if (this.props.quotes[this.props.symbol] === undefined) return null;
 
         debugger
+    
 
         switch(this.state.status) {
             case 'buy':

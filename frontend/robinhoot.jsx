@@ -8,6 +8,7 @@ import { signup, login, logout } from './util/session_api_util';
 import { fetchStocks, fetchStock } from './util/stocks_api_util';
 import { iexFetchGeneralNews } from './util/iex_cloud_api_util';
 import { iexFetchBatchPrices } from './util/iex_cloud_stock_api_util';
+import { fetchWatchlists, createWatchlist } from './util/watchlist_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById('root');
@@ -34,6 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.stock = fetchStock;
     window.iexQuote = iexFetchBatchPrices;
     window.iexGeneralNews = iexFetchGeneralNews;
+    window.fetchWatchlists = fetchWatchlists;
+    window.createWatchlist = createWatchlist;
     // DELETE
     
     // ReactDOM.render(<div>React is working</div>, root)
