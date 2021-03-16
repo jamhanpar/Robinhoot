@@ -10,6 +10,6 @@ const receiveWatchlists = (watchlists) => ({
 export const fetchWatchlists = () => (dispatch) => (
   WatchlistAPIUtil.fetchWatchlists()
     .then(
-        watchlists => { if (watchlists !== undefined) dispatch(receiveWatchlists(watchlists)) }
+      watchlists => dispatch(receiveWatchlists(watchlists))
     )
 )

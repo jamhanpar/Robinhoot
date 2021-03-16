@@ -1,8 +1,7 @@
-export const fetchWatchlists = () => {
+export const fetchWatchlists = () => 
   $.ajax({
     url: "/api/watchlists",
   });
-}
 
 export const addToWatchlist = (watched_stock) => {
   $.ajax({
@@ -21,6 +20,7 @@ export const removeFromWatchlist = (watched_stock) => {
 };
 
 export const createWatchlist = (watchlist) => {
+  debugger
   $.ajax({
     method: 'POST',
     url: '/api/watchlists',
