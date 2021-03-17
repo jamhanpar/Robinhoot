@@ -9,7 +9,8 @@ export default class WatchlistIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchWatchlists();
-        this.props.iexFetchQuotes();
+        debugger
+        this.props.iexFetchQuotes(this.props.watchlists.watched_stocks.join(','), window.iexcloudAPIKey);
     }
 
     renderWatchlists() {
