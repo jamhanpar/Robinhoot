@@ -75,7 +75,6 @@ class StockDetail extends React.Component {
         if (Object.keys(this.props.quotes).length === 0 || this.props.companyInfo.length === 0 ) return null;
 
         const employeeCount = this.props.companyInfo.employees ? this.props.companyInfo.employees.toLocaleString() : "N/A"
-        debugger
 
         return (
           <div>

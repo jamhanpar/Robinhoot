@@ -56,10 +56,8 @@ class TransactionForm extends React.Component {
     addToList() {
         this.setState({ addToList: this.state.addToList === true ? false : true }, () => {
             if (this.state.addToList === true) {
-                debugger
                 addToWatchlist({watchlist_id: Object.values(this.props.watchlists)[0].id, stock_symbol: this.props.symbol})
             } else {
-                debugger
                 removeFromWatchlist({watchlist_id: Object.values(this.props.watchlists)[0].id, stock_symbol: this.props.symbol})
             }
         });
