@@ -22,7 +22,7 @@ class News extends React.Component {
                 <div className="news-list">
                     <h1 className="news-title">News</h1>
                     {
-                        entities.news.map((news_data, i) => <NewsCard 
+                        entities.news.filter(newsArticle => {return newsArticle.lang === "en"}).map((news_data, i) => <NewsCard 
                             news={news_data}
                             key={i}
                         />)

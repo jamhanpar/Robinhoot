@@ -93,6 +93,7 @@ class TransactionForm extends React.Component {
 
         this.addToListIcon = this.state.addToList === false ? <FaPlus className="add-to-list-icon" /> : <FaCheck className="add-to-list-icon" />;
 
+        debugger
         return (
             <div className="transaction-form-container">
                 <div className="transaction-form">

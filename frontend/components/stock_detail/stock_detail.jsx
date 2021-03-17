@@ -30,11 +30,13 @@ class StockDetail extends React.Component {
   }
 
     getProperty(key) {
-        const stocksArray = Object.values(this.props.quotes)
+        const stocksInfo = this.props.quotes[this.state.symbol]
+        debugger
 
-        for (let i = 0; i < stocksArray.length; i++) {
-            if (stocksArray[i]["symbol"] === this.state.symbol) {
-                const stockValue = stocksArray[i][key]
+        for (let i = 0; i < 50; i++) {
+            if (stocksInfo["symbol"] === this.state.symbol) {
+                debugger
+                const stockValue = stocksInfo[key]
 
                 if (stockValue === null) return "N/A"
 
