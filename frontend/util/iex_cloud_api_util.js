@@ -10,7 +10,7 @@ export const iexFetchGeneralNews = (apiKey) => (
     })
 );
 
-// General news
+// Sandbox - General news
 // export const iexFetchGeneralNews = (apiKey) => (
 //     $.ajax({
 //         method: 'GET',
