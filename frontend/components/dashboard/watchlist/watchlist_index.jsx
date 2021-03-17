@@ -23,7 +23,6 @@ export default class WatchlistIndex extends React.Component {
         const {watchlists, currentUserID} = this.props;
         let currentUserWatchlist = Object.values(watchlists).filter(watchlist => {return watchlist.user_id === parseInt(currentUserID)})
 
-        debugger
         return (
             currentUserWatchlist.map((watchlist, i) => (
                 <div className="list-container" key={i}>
@@ -41,7 +40,6 @@ export default class WatchlistIndex extends React.Component {
 
     render() {
         if (Object.keys(this.props.watchlists).length === 0) return null;
-        debugger
         
         return (
             <div className="watchlist-container">

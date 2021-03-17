@@ -11,14 +11,9 @@ export default class WatchlistIndexItem extends React.Component {
         this.getProperty = this.getProperty.bind(this);
     }
 
-    componentDidMount() {
-        // this.props.iexFetchQuote(this.props.symbol, window.iexcloudAPIKey)
-    }
-
     getProperty(key) {
         const { quotes } = this.props;
         const stocksArray = Object.values(quotes).map(quote => Object.values(quote))
-        debugger
 
         for (let i = 0; i < stocksArray.length; i++) {
             if (stocksArray[i][0].symbol === this.props.symbol) {
