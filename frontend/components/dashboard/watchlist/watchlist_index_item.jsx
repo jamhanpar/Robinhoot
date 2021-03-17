@@ -13,11 +13,14 @@ export default class WatchlistIndexItem extends React.Component {
 
     componentDidMount() {
         this.props.iexFetchQuote(this.props.symbol, window.iexcloudAPIKey)
+        debugger
     }
 
     getProperty(key) {
         const { quotes } = this.props;
         const stocksArray = Object.values(quotes)
+
+        debugger
 
         for (let i = 0; i < stocksArray.length; i++) {
             if (stocksArray[i]["symbol"] === this.props.symbol) {
@@ -32,6 +35,7 @@ export default class WatchlistIndexItem extends React.Component {
 
     render() {
         const { symbol, data } = this.props
+        debugger
 
         return (
             <Link to={`/stocks/${symbol}`}>

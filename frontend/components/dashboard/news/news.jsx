@@ -8,7 +8,7 @@ class News extends React.Component {
     }
 
     componentDidMount() {
-        this.props.iexFetchNews(window.iexcloudAPIKey);
+        this.props.iexFetchNews(window.iexcloudLiveAPIKey);
     }
 
     render() {
