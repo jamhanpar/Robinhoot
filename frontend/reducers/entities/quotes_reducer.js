@@ -1,4 +1,4 @@
-import { RECEIVE_QUOTE } from '../../actions/stock_actions';
+import { RECEIVE_QUOTES, RECEIVE_QUOTE } from '../../actions/stock_actions';
 
 const quotesReducer = (state = {}, action) => {
     Object.freeze(state);
