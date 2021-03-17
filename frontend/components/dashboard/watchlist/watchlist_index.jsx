@@ -9,6 +9,7 @@ export default class WatchlistIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchWatchlists();
+        this.props.iexFetchQuotes();
     }
 
     renderWatchlists() {
@@ -24,7 +25,7 @@ export default class WatchlistIndex extends React.Component {
                         <div className="list-title">{watchlist.watchlist_name}</div>
                     </div>
                     {
-                        watchlist.watched_stocks.map((stock, i) => (<WatchlistIndexItemContainer key={i} symbol={stock.stock_symbol} />))
+                        watchlist.watched_stocks.map((stock, i) => (<WatchlistIndexItemContainer key={i} symbol={stock.stock_symbol} quotes={this.props.quotes} />))
                     }
                 </div>
             ))

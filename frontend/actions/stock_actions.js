@@ -1,9 +1,11 @@
 import * as StockAPIUtil from '../util/stocks_api_util';
 import * as iexCloudStockAPI from "../util/iex_cloud_stock_api_util";
+import * as iexCloudAPI from "../util/iex_cloud_api_util";
 
 export const RECEIVE_STOCKS = 'RECEIVE_STOCKS';
 export const RECEIVE_STOCK = 'RECEIVE_STOCK';
-export const RECEIVE_QUOTE = 'RECEIVE_QUOTES';
+export const RECEIVE_QUOTES = 'RECEIVE_QUOTES';
+export const RECEIVE_QUOTE = 'RECEIVE_QUOTE';
 
 const receiveStocks = stocks => ({
     type: RECEIVE_STOCKS,
@@ -13,6 +15,11 @@ const receiveStocks = stocks => ({
 const receiveStock = stock => ({
     type: RECEIVE_STOCK,
     stock
+});
+
+const receiveQuotes = quotes => ({
+    type: RECEIVE_QUOTES,
+    quotes
 });
 
 const receiveQuote = quote => ({
@@ -32,6 +39,13 @@ export const fetchStock = stockId => dispatch => (
     StockAPIUtil.fetchStock(stockId)
         .then(
             stock => dispatch(receiveStock(stock))
+        )
+);
+
+export const iexFetchQuotes = (symbol, apiKey) => dispatch => (
+    iexCloudAPI.iexFetchBatchQuotes(symbols, apiKey)
+        .then(
+            quotes => dispatch(receiveQuotes(quotes))
         )
 );
 

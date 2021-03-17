@@ -10,6 +10,15 @@ export const iexFetchGeneralNews = (apiKey) => (
     })
 );
 
+// Batch Quotes
+export const iexFetchBatchQuotes = (symbols, apiKey) => (
+    $.ajax({
+        method: 'GET',
+        url: iexLiveUrl + `/stock/market/batch?symbols=${symbols}&types=quote&range=1m&last=10&token=${apiKey}`,
+        dataType: 'JSON',
+    })
+);
+
 // Sandbox - General news
 // export const iexFetchGeneralNews = (apiKey) => (
 //     $.ajax({

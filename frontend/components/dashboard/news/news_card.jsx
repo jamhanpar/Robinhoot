@@ -13,7 +13,7 @@ const NewsCard = ({ news }) => {
                     <div className="news-image-container">
                         <img className="source-menu-icon" src={window.newsDots} />
                         <div className="news-card-image">
-                            <img className="news-image" src={window.newsFiller} />
+                            <img className="news-image" src={news.image} />
                         </div>
                     </div>
                 </div>

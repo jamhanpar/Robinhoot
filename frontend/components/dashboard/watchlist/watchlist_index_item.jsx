@@ -12,7 +12,7 @@ export default class WatchlistIndexItem extends React.Component {
     }
 
     componentDidMount() {
-        this.props.iexFetchQuote(this.props.symbol, window.iexcloudAPIKey)
+        // this.props.iexFetchQuote(this.props.symbol, window.iexcloudAPIKey)
         debugger
     }
 
