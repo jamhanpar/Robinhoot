@@ -74,6 +74,9 @@ class StockDetail extends React.Component {
     render() {
         if (Object.keys(this.props.quotes).length === 0 || this.props.companyInfo.length === 0 ) return null;
 
+        const employeeCount = this.props.companyInfo.employees ? this.props.companyInfo.employees.toLocaleString() : "N/A"
+        debugger
+
         return (
           <div>
             <MainNavContainer />
@@ -95,7 +98,7 @@ class StockDetail extends React.Component {
                       </div>
                       <div className="company-info-card">
                         <div className="company-title">Employees</div>
-                        <div className="company-info">{this.props.companyInfo.employees.toLocaleString()}</div>
+                        <div className="company-info">{employeeCount}</div>
                       </div>
                       <div className="company-info-card">
                         <div className="company-title">Headquarters</div>

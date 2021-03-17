@@ -55,9 +55,12 @@ class SignupForm extends React.Component {
             this.errors = this.renderErrors();
         } else {
             this.props.processForm(this.state)
-                .then(() => this.props.history.push('/dashboard'));
+                .then(() => {
+                    createWatchlist({watchlist_name: "My First List"});
+                    this.props.history.push('/dashboard')
+                });
 
-            createWatchlist({watchlist_name: "My First List"})
+            // createWatchlist({watchlist_name: "My First List"})
             debugger
         }
     }
