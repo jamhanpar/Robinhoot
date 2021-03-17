@@ -42,7 +42,7 @@ export const fetchStock = stockId => dispatch => (
         )
 );
 
-export const iexFetchQuotes = (symbol, apiKey) => dispatch => (
+export const iexFetchQuotes = (symbols, apiKey) => dispatch => (
     iexCloudAPI.iexFetchBatchQuotes(symbols, apiKey)
         .then(
             quotes => dispatch(receiveQuotes(quotes))
