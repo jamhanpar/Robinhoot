@@ -17,14 +17,15 @@ export default class WatchlistIndexItem extends React.Component {
 
     getProperty(key) {
         const { quotes } = this.props;
-        const stocksArray = Object.values(quotes)
+        const stocksArray = Object.values(quotes).map(quote => Object.values(quote))
+        debugger
 
         for (let i = 0; i < stocksArray.length; i++) {
-            if (stocksArray[i]["symbol"] === this.props.symbol) {
+            if (stocksArray[i][0].symbol === this.props.symbol) {
                 if (key !== "changePercent") {
-                    return `$${stocksArray[i][key].toFixed(2)}`
+                    return `$${stocksArray[i][0][key].toFixed(2)}`
                 } else {
-                    return `${(stocksArray[i][key] * 100).toFixed(2)}%`;
+                    return `${(stocksArray[i][0][key] * 100).toFixed(2)}%`;
                 }
             }
         }

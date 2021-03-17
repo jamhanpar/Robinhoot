@@ -16,13 +16,14 @@ export default class WatchlistIndex extends React.Component {
             const defaultWatchlist = Object.values(this.props.watchlists)[0].watched_stocks
             const watchedStocksArray = Object.values(defaultWatchlist).map(stock => stock.stock_symbol)
             const stockSymbols = watchedStocksArray.join(",")
-            this.props.iexFetchQuotes(stockSymbols, window.iexcloudAPIKey)
+            this.props.iexFetchQuotes(stockSymbols, window.iexcloudLiveAPIKey)
         }
     }
     renderWatchlists() {
         const {watchlists, currentUserID} = this.props;
         let currentUserWatchlist = Object.values(watchlists).filter(watchlist => {return watchlist.user_id === parseInt(currentUserID)})
 
+        debugger
         return (
             currentUserWatchlist.map((watchlist, i) => (
                 <div className="list-container" key={i}>
@@ -40,6 +41,7 @@ export default class WatchlistIndex extends React.Component {
 
     render() {
         if (Object.keys(this.props.watchlists).length === 0) return null;
+        debugger
         
         return (
             <div className="watchlist-container">
