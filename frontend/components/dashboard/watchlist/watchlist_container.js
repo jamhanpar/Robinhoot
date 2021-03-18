@@ -3,11 +3,13 @@ import WatchlistIndex from './watchlist_index';
 import { iexFetchQuotes } from "../../../actions/stock_actions";
 import { fetchWatchlists } from "../../../actions/watchlist_actions";
 
-const mStP = (state, ownProps) => ({
+const mStP = (state, ownProps) => {
+    debugger
+    return {
     watchlists: state.entities.watchlists,
     currentUserID: state.session.currentUser.id,
     quotes: state.entities.quotes    
-});
+}};
 
 const mDtP = dispatch => ({
     fetchWatchlists: () => dispatch(fetchWatchlists()),
