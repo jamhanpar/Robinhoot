@@ -12,7 +12,8 @@ export default class WatchlistIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevStates) {
-        if (Object.keys(this.props.watchlists).length !== 0) {
+        if (JSON.stringify(this.props.watchlists) !== JSON.stringify(prevProps.watchlists)) {
+        // if (Object.keys(this.props.watchlists) !== Object.keys(prevProps)) {
             const defaultWatchlist = Object.values(this.props.watchlists)[0].watched_stocks
             const watchedStocksArray = Object.values(defaultWatchlist).map(stock => stock.stock_symbol)
             const stockSymbols = watchedStocksArray.join(",")
