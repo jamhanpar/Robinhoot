@@ -1,4 +1,4 @@
-import { iexUrl } from './iex_cloud_api_util';
+import { iexUrl, iexLiveUrl } from './iex_cloud_api_util';
 
 const filter = "filter=symbol,close,date,minute,label";
 
@@ -45,6 +45,6 @@ export const fetchSearch = (fragment, apiKey) => (
 export const fetchCompany = (stockSymbol, apiKey) => (
     $.ajax({
         method: 'GET',
-        url: iexUrl + `/stock/${stockSymbol}/company?token=${apiKey}`,
+        url: iexLiveUrl + `/stock/${stockSymbol}/company?token=${apiKey}`,
     })
 );

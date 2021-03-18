@@ -15,7 +15,7 @@ class StockDetail extends React.Component {
 
     componentDidMount() {
         this.setState({ symbol: this.props.match.params.symbol }, () => {
-            this.props.fetchCompany(this.state.symbol, window.iexcloudAPIKey);
+            this.props.fetchCompany(this.state.symbol, window.iexcloudLiveAPIKey);
             this.props.iexFetchQuote(this.state.symbol, window.iexcloudAPIKey);
         });
     }
@@ -23,7 +23,7 @@ class StockDetail extends React.Component {
     componentDidUpdate(prevProps, prevStates) {
       if (this.props.match.params.symbol !== prevProps.match.params.symbol) {
         this.setState({ symbol: this.props.match.params.symbol }, () => {
-          this.props.fetchCompany(this.state.symbol, window.iexcloudAPIKey);
+          this.props.fetchCompany(this.state.symbol, window.iexcloudLiveAPIKey);
           this.props.iexFetchQuote(this.state.symbol, window.iexcloudAPIKey);
         }); 
       }
