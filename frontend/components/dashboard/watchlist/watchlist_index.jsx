@@ -13,12 +13,15 @@ export default class WatchlistIndex extends React.Component {
 
     componentDidUpdate(prevProps, prevStates) {
         if (this.props.watchlists !== prevProps.watchlists) {
+            debugger
             const defaultWatchlist = Object.values(this.props.watchlists)[0].watched_stocks
+            debugger
             const watchedStocksArray = Object.values(defaultWatchlist).map(stock => stock.stock_symbol)
             const stockSymbols = watchedStocksArray.join(",")
             this.props.iexFetchQuotes(stockSymbols, window.iexcloudLiveAPIKey)
         }
     }
+    
     renderWatchlists() {
         const {watchlists, currentUserID} = this.props;
         let currentUserWatchlist = Object.values(watchlists).filter(watchlist => {return watchlist.user_id === parseInt(currentUserID)})

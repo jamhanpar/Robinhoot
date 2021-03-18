@@ -17,7 +17,7 @@ class TransactionForm extends React.Component {
 
     componentDidMount() {
         this.props.fetchWatchlists()
-        this.props.iexFetchQuote(this.props.symbol, window.iexcloudAPIKey)
+        // this.props.iexFetchQuote(this.props.symbol, window.iexcloudAPIKey)
     }
 
     componentDidUpdate(prevProps, prevStates) {
@@ -33,7 +33,8 @@ class TransactionForm extends React.Component {
     }
 
     updateEstimatedCost() {
-        const costPerShare = parseFloat(this.props.quotes[this.props.symbol].iexClose.toFixed(2))
+        // const costPerShare = parseFloat(this.props.quotes[this.props.symbol].iexClose.toFixed(2))
+        const costPerShare = parseFloat(this.props.quotes.iexClose.toFixed(2))
         
         this.setState({ estimatedCost: (this.state.shareCount * costPerShare).toFixed(2) })
     }
@@ -72,7 +73,7 @@ class TransactionForm extends React.Component {
         let buyingPowerOrOwnedShares = 'Buying Power Available';
 
         // if (Object.values(this.props.watchlists).length === 0 || this.props.quotes[this.props.symbol] === undefined) return null;
-        if (this.props.quotes[this.props.symbol] === undefined) return null;
+        if (this.props.quote === undefined) return null;
   
         switch(this.state.status) {
             case 'buy':
@@ -93,7 +94,6 @@ class TransactionForm extends React.Component {
 
         this.addToListIcon = this.state.addToList === false ? <FaPlus className="add-to-list-icon" /> : <FaCheck className="add-to-list-icon" />;
 
-        debugger
         return (
             <div className="transaction-form-container">
                 <div className="transaction-form">
@@ -118,7 +118,7 @@ class TransactionForm extends React.Component {
                             <div className="market-price-title-container">
                                 <h1 className="transaction-title-green market-price">Market Price</h1>
                             </div>
-                            <p className="transaction-title-bold">${this.props.quotes[this.props.symbol].iexClose.toFixed(2)}</p>
+                            <p className="transaction-title-bold">${this.props.quote.iexClose.toFixed(2)}</p>
                         </div>
                         <div className="form-elements estimated-cost-container">
                             <h1 className="transaction-title-bold estimated-cost">Estimated {costOrCredit}</h1>

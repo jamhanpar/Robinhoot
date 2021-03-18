@@ -4,6 +4,7 @@ import { iexFetchQuote } from "../../actions/stock_actions";
 import StockDetail from './stock_detail';
 
 const mStP = ({ entities }) => {
+  debugger
   return {
   companyInfo: entities.company,
   quotes: entities.quotes

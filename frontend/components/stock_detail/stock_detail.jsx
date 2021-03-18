@@ -14,6 +14,7 @@ class StockDetail extends React.Component {
     }
 
     componentDidMount() {
+      debugger
         this.setState({ symbol: this.props.match.params.symbol }, () => {
             this.props.fetchCompany(this.state.symbol, window.iexcloudAPIKey);
             this.props.iexFetchQuote(this.state.symbol, window.iexcloudAPIKey);
@@ -30,12 +31,11 @@ class StockDetail extends React.Component {
   }
 
     getProperty(key) {
-        const stocksInfo = this.props.quotes[this.state.symbol]
+        const stocksInfo = this.props.quotes[this.state.symbol].quote
         debugger
 
         for (let i = 0; i < 50; i++) {
             if (stocksInfo["symbol"] === this.state.symbol) {
-                debugger
                 const stockValue = stocksInfo[key]
 
                 if (stockValue === null) return "N/A"
@@ -74,7 +74,8 @@ class StockDetail extends React.Component {
     }
 
     render() {
-        if (Object.keys(this.props.quotes).length === 0 || this.props.companyInfo.length === 0 ) return null;
+        debugger
+        if (!Object.keys(this.props.quotes).includes(this.state.symbol) || this.props.companyInfo.length === 0 ) return null;
 
         const employeeCount = this.props.companyInfo.employees ? this.props.companyInfo.employees.toLocaleString() : "N/A"
 
@@ -166,7 +167,7 @@ class StockDetail extends React.Component {
                   </div>
                 </div>
 
-                <TransactionFormContainer symbol={this.state.symbol} price={""}/>
+                <TransactionFormContainer symbol={this.state.symbol} price={""} quote={this.props.quotes[this.state.symbol].quote}/>
               </div>
             </div>
           </div>
