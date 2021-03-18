@@ -12,6 +12,7 @@ export default class WatchlistIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevStates) {
+        debugger
         if (Object.keys(this.props.watchlists).length !== 0) {
             debugger
             const defaultWatchlist = Object.values(this.props.watchlists)[0].watched_stocks
@@ -43,7 +44,8 @@ export default class WatchlistIndex extends React.Component {
     }
 
     render() {
-        if (Object.keys(this.props.watchlists).length === 0) return null;
+        debugger
+        // if (Object.keys(this.props.watchlists).length === 0) return null;
         
         return (
             <div className="watchlist-container">
