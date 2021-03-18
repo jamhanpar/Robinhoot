@@ -129,7 +129,7 @@ class TransactionForm extends React.Component {
                         </div>
                     </div>
                     <div className="buying-power-show-container">
-                        <p className="transaction-title-green buying-power-available">$100.00 {buyingPowerOrOwnedShares}</p>
+                        <p className="transaction-title-green buying-power-available">$10000.00 {buyingPowerOrOwnedShares}</p>
                     </div>
                 </div>
                 <div className="stock-detail-button-container">
