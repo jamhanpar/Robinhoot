@@ -12,9 +12,7 @@ export default class WatchlistIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevStates) {
-        debugger
         if (Object.keys(this.props.watchlists).length !== 0) {
-            debugger
             const defaultWatchlist = Object.values(this.props.watchlists)[0].watched_stocks
             const watchedStocksArray = Object.values(defaultWatchlist).map(stock => stock.stock_symbol)
             const stockSymbols = watchedStocksArray.join(",")
@@ -43,10 +41,7 @@ export default class WatchlistIndex extends React.Component {
         )
     }
 
-    render() {
-        debugger
-        // if (Object.keys(this.props.watchlists).length === 0) return null;
-        
+    render() {      
         return (
             <div className="watchlist-container">
                 <div className="watchlist-title-container">
