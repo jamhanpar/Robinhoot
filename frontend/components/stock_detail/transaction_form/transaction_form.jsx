@@ -34,7 +34,7 @@ class TransactionForm extends React.Component {
 
     updateEstimatedCost() {
         // const costPerShare = parseFloat(this.props.quotes[this.props.symbol].iexClose.toFixed(2))
-        const costPerShare = parseFloat(this.props.quotes.iexClose.toFixed(2))
+        const costPerShare = parseFloat(this.props.quote.iexClose.toFixed(2))
         
         this.setState({ estimatedCost: (this.state.shareCount * costPerShare).toFixed(2) })
     }
