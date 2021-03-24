@@ -8,6 +8,7 @@ class Search extends React.Component {
     this.state = { searchTerm: "", showResults: false };
     this.showResultsClass = "hide";
 
+    this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderSearchResults = this.renderSearchResults.bind(this);
   }
@@ -16,9 +17,10 @@ class Search extends React.Component {
     return (e) => {
       this.setState({ [field]: e.currentTarget.value }, () => {
         if (this.state.searchTerm !== "")
-          this.props.fetchSearch(this.state.searchTerm, window.iexcloudAPIKey);
+          this.props.fetchSearch(this.state.searchTerm.toUpperCase(), window.iexcloudAPIKey);
       });
 
+      debugger
       this.showResults = true;
       if (this.showResults = true) this.showResultsClass = "search-results-container";
     };
@@ -27,7 +29,9 @@ class Search extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    this.props.history.push({ pathname: `/stocks/${this.state.searchTerm}` });
+    debugger
+    const searchTerm = this.state.searchTerm.toUpperCase()
+    this.props.history.push({ pathname: `/stocks/${searchTerm}` });
   }
 
   renderSearchResults() {
@@ -64,6 +68,7 @@ class Search extends React.Component {
   }
 
   render() {
+    debugger
     return (
       <div className="search-form-container">
         <div className="search-icon-container">
