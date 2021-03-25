@@ -29,7 +29,7 @@ export default class StockGraph extends PureComponent {
   }
 
   componentDidMount() {
-    this.props.iexFetchData('AAPL', this.state.range, this.state.interval, window.iexcloudAPIKey)
+    this.props.iexFetchData(this.props.quote.symbol, this.state.range, this.state.interval, window.iexcloudAPIKey)
   }
 
   updateRange(timeframe) {
@@ -86,7 +86,7 @@ export default class StockGraph extends PureComponent {
     })
 
     this.updateClass(toggleShowUpdate)
-    this.props.iexFetchData('AAPL', this.state.range, this.state.interval, window.iexcloudAPIKey)
+    this.props.iexFetchData(this.props.quote.symbol, this.state.range, this.state.interval, window.iexcloudAPIKey)
   }
 
   updateClass(toggleIdx) {
