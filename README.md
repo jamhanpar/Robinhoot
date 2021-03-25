@@ -29,8 +29,8 @@ Users can search by typing out a stock symbol or company name, and the search re
 ### Stock Details Page - Work in Progress
 The stock details page will display a graphical representation of the stocks real-time price action based on a selected timeframe (default being 1D). Users can access company information as well as relevant news for the current stock.
 
-![alt text](https://github.com/jamhanpar/Robinhoot/blob/main//0.%20Planning0.%20Features/stock_details_page.PNG?raw=true)
-<img width="1000px" src="https://github.com/jamhanpar/Robinhoot/blob/main//0.%20Planning0.%20Features/stock_details_page.PNG?raw=true">
+![alt text](https://github.com/jamhanpar/Robinhoot/blob/main/0.%20Planning/0.%20Features/stock_details_page.PNG?raw=true)
+<img width="1000px" src="https://github.com/jamhanpar/Robinhoot/blob/main/0.%20Planning/0.%20Features/stock_details_page.PNG?raw=true">
 
 ### Trade Simulation - Work in Progress
 On the stocks details page, users can simulating buying shares in dollars or shares based on current stock price. If the user owns any shares, the user can simulate selling the stocks they own.
