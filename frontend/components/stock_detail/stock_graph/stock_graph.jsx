@@ -101,7 +101,6 @@ export default class StockGraph extends PureComponent {
     const changePercent = this.props.quote.changePercent > 0 
       ? (this.props.quote.changePercent * 100).toFixed(2) + "%" 
       : "(" + (this.props.quote.changePercent * 100).toFixed(2) + "%)"
-    debugger
 
     return (
         <div className="portfolio-graph-container">
