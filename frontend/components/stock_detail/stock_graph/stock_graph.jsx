@@ -8,9 +8,8 @@ class CustomizedLabel extends React.Component {
   }
 
   render () {
-    const { label } = this.props;
+    const { label} = this.props;
 		return <span x={0} y={0}>{label}</span>
-
   }
 };
 
@@ -97,6 +96,7 @@ export default class StockGraph extends PureComponent {
 
   render() {
     const { data } = this.props;
+    debugger
 
     const changePercent = this.props.quote.changePercent > 0 
       ? (this.props.quote.changePercent * 100).toFixed(2) + "%" 
