@@ -96,7 +96,6 @@ export default class StockGraph extends PureComponent {
 
   render() {
     const { data } = this.props;
-    debugger
 
     const changePercent = this.props.quote.changePercent > 0 
       ? (this.props.quote.changePercent * 100).toFixed(2) + "%" 

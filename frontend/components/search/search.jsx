@@ -20,7 +20,6 @@ class Search extends React.Component {
           this.props.fetchSearch(this.state.searchTerm.toUpperCase(), window.iexcloudAPIKey);
       });
 
-      debugger
       this.showResults = true;
       if (this.showResults = true) this.showResultsClass = "search-results-container";
     };
@@ -29,7 +28,6 @@ class Search extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    debugger
     const searchTerm = this.state.searchTerm.toUpperCase()
     if (searchTerm !== "") this.props.history.push({ pathname: `/stocks/${searchTerm}` });
   }
@@ -68,7 +66,6 @@ class Search extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div className="search-form-container">
         <div className="search-icon-container">
