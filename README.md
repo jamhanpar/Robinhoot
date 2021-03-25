@@ -35,7 +35,11 @@ The stock details page will display a graphical representation of the stocks rea
 On the stocks details page, users can simulating buying shares in dollars or shares based on current stock price. If the user owns any shares, the user can simulate selling the stocks they own.
 
 # Features in the Works
-* Risk analysis based on % of funds allocated to each stock sectors 
+* Risk analysis based on % of funds allocated to each stock sectors
+* Add funds
+* Portfolio graph shows updates based on # of shares owned and stocks owned
+* Buy and sell simulation of stocks
+* Adds owned stocks to stocks list in portfolio
 
 # Dependencies & Version
 * Ruby 2.5.1
