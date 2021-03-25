@@ -34,7 +34,7 @@ class PortfolioGraph extends PureComponent {
   }
   
   iexFetchGraphDate() {
-    this.props.iexFetchData('AAPL', this.state.range, this.state.interval, window.iexcloudAPIKey)
+    this.props.iexFetchData('VOO', this.state.range, this.state.interval, window.iexcloudAPIKey)
   }
 
   updateRange(timeframe) {
@@ -120,7 +120,7 @@ class PortfolioGraph extends PureComponent {
           </div>
           <ul className="chart-display-list">
               {/* remove LIVE and ALL feed */}
-              <button className={this.state.toggleShow[0] ? "chart-display-item-active" : "chart-display-item"} onClick={() => this.updateRange('LIVE')}>LIVE</button>
+              {/* <button className={this.state.toggleShow[0] ? "chart-display-item-active" : "chart-display-item"} onClick={() => this.updateRange('LIVE')}>LIVE</button> */}
               <button className={this.state.toggleShow[1] ? "chart-display-item-active" : "chart-display-item"} onClick={() => this.updateRange('1D')}>1D</button>
               <button className={this.state.toggleShow[2] ? "chart-display-item-active" : "chart-display-item"} onClick={() => this.updateRange('1W')}>1W</button>
               <button className={this.state.toggleShow[3] ? "chart-display-item-active" : "chart-display-item"} onClick={() => this.updateRange('1M')}>1M</button>

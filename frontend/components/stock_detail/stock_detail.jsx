@@ -75,11 +75,7 @@ class StockDetail extends React.Component {
         if (!Object.keys(this.props.quotes).includes(this.state.symbol) || this.props.companyInfo.length === 0 ) return null;
 
         const employeeCount = this.props.companyInfo.employees ? this.props.companyInfo.employees.toLocaleString() : "N/A"
-        const changePercent = this.props.quotes[this.state.symbol].quote.changePercent > 0 
-          ? (this.props.quotes[this.state.symbol].quote.changePercent * 100).toFixed(2) + "%" 
-          : "(" + (this.props.quotes[this.state.symbol].quote.changePercent * 100).toFixed(2) + "%)"
-        debugger
-
+        
         return (
           <div>
             <MainNavContainer />
@@ -89,13 +85,7 @@ class StockDetail extends React.Component {
                 <div className="portfolio-and-relevant-info-container">
                   <div className="spacing">
                     <h1 className="stock-name">{this.state.symbol}</h1>
-                    <h1 className="account-balance">${this.props.quotes[this.state.symbol].quote.iexClose.toFixed(2)}</h1>
-                    <ul className="portfolio-stats-list">
-                        <li className="portfolio-stats-item">{this.props.quotes[this.state.symbol].quote.change}</li>
-                        <li className="portfolio-stats-item">{changePercent}</li>
-                        <li className="portfolio-stats-item">{this.state.dateDesc}</li>
-                    </ul>
-                    <StockGraphContainer/>
+                    <StockGraphContainer symbol={this.state.symbol} quote={this.props.quotes[this.state.symbol].quote}/>
                   </div>
                   <div className="company-info-container">
                     <h1 className="company-about">About</h1>

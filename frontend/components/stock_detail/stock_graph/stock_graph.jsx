@@ -98,8 +98,19 @@ export default class StockGraph extends PureComponent {
   render() {
     const { data } = this.props;
 
+    const changePercent = this.props.quote.changePercent > 0 
+      ? (this.props.quote.changePercent * 100).toFixed(2) + "%" 
+      : "(" + (this.props.quote.changePercent * 100).toFixed(2) + "%)"
+    debugger
+
     return (
         <div className="portfolio-graph-container">
+          <h1 className="account-balance">${this.props.quote.iexClose.toFixed(2)}</h1>
+          <ul className="portfolio-stats-list">
+              <li className="portfolio-stats-item">{this.props.quote.change}</li>
+              <li className="portfolio-stats-item">{changePercent}</li>
+              <li className="portfolio-stats-item">{this.state.dateDesc}</li>
+          </ul>
           <div className="portfolio-graph">
             <LineChart width={690} height={260} data={data}>
               <Line type="monotone" dataKey="close" stroke="#00C805" strokeWidth={2} dot={false}/>
@@ -110,7 +121,7 @@ export default class StockGraph extends PureComponent {
           </div>
           <ul className="chart-display-list">
               {/* remove LIVE and ALL feed */}
-              <button className={this.state.toggleShow[0] ? "chart-display-item-active" : "chart-display-item"} onClick={() => this.updateRange('LIVE')}>LIVE</button>
+              {/* <button className={this.state.toggleShow[0] ? "chart-display-item-active" : "chart-display-item"} onClick={() => this.updateRange('LIVE')}>LIVE</button> */}
               <button className={this.state.toggleShow[1] ? "chart-display-item-active" : "chart-display-item"} onClick={() => this.updateRange('1D')}>1D</button>
               <button className={this.state.toggleShow[2] ? "chart-display-item-active" : "chart-display-item"} onClick={() => this.updateRange('1W')}>1W</button>
               <button className={this.state.toggleShow[3] ? "chart-display-item-active" : "chart-display-item"} onClick={() => this.updateRange('1M')}>1M</button>
