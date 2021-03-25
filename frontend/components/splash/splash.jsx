@@ -14,7 +14,7 @@ class Splash extends React.Component {
                     <nav className="main-nav">
                         <ul className="nav-list">
                             <li className="nav-list-item"><a href="https://www.linkedin.com/in/jameshansungpark/">LinkedIn</a></li>
-                            <li className="nav-list-item"><a href="https://github.com/jamhanpar">Github</a></li>
+                            <li className="nav-list-item"><a href="https://github.com/jamhanpar/Robinhoot">Github</a></li>
                             <li className="nav-list-item"><a href="https://angel.co/u/jameshansungpark">AngelList</a></li>
                             <li className="nav-list-item"><a href="mailto:james.hansung.park@gmail.com">Email</a></li>
                         </ul>
