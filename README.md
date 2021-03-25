@@ -48,6 +48,7 @@ On the stocks details page, users can simulating buying shares in dollars or sha
 * Babel Loader 8.2.2
 * PostgresSQL
 * Webpack 4.44.2
+* Node v10.13.0
 * Heroku
 
 # Languages / Libraries
@@ -64,14 +65,14 @@ On the stocks details page, users can simulating buying shares in dollars or sha
 * FreeLogoDesign.org - logos and icons
 * Unsplash.com - site images
 
-# Configuration
-
 # Database creation
-
-# Database initialization
+- bundle exec rails db:reset
+- bundle exec rails db:seed
 
 # How to run the test suite
+- bundle install
+- npm install
+- bundle exec rails db:migrate
+- bundle exec rails db:seed
 - bundle exec rails s
 - npm run webpack
-
-# Deployment instructions
