@@ -31,7 +31,7 @@ class Search extends React.Component {
 
     debugger
     const searchTerm = this.state.searchTerm.toUpperCase()
-    this.props.history.push({ pathname: `/stocks/${searchTerm}` });
+    if (searchTerm !== "") this.props.history.push({ pathname: `/stocks/${searchTerm}` });
   }
 
   renderSearchResults() {

@@ -100,12 +100,6 @@ export default class StockGraph extends PureComponent {
 
     return (
         <div className="portfolio-graph-container">
-          <h1 className="account-balance">$10,000.00</h1>
-          <ul className="portfolio-stats-list">
-              <li className="portfolio-stats-item">$200</li>
-              <li className="portfolio-stats-item">2.00%</li>
-              <li className="portfolio-stats-item">{this.state.dateDesc}</li>
-          </ul>
           <div className="portfolio-graph">
             <LineChart width={690} height={260} data={data}>
               <Line type="monotone" dataKey="close" stroke="#00C805" strokeWidth={2} dot={false}/>
