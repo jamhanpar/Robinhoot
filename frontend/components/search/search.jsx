@@ -29,7 +29,9 @@ class Search extends React.Component {
     e.preventDefault();
 
     const searchTerm = this.state.searchTerm.toUpperCase()
-    if (searchTerm !== "") this.props.history.push({ pathname: `/stocks/${searchTerm}` });
+    const searchTermExists = Object.values(this.props.searchResults).filter(search => {return search.symbol === searchTerm})
+    debugger
+    if (searchTerm !== "" && searchTermExists.length > 0) this.props.history.push({ pathname: `/stocks/${searchTerm}` });
   }
 
   renderSearchResults() {
