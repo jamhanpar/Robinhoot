@@ -1,1 +1,1 @@
-json.partial! "api/watchlists/watchlist", watchlist: @watchlist
+json.partial! "api/watched_stocks/watched_stock", watched_stock: @watched_stock

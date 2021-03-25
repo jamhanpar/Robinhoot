@@ -1,6 +1,6 @@
 export const fetchWatchlists = () => 
   $.ajax({
-    url: "/api/watchlists",
+    url: '/api/watchlists',
   });
 
 export const addToWatchlist = (watched_stock) => {
@@ -13,8 +13,8 @@ export const addToWatchlist = (watched_stock) => {
 
 export const removeFromWatchlist = (watched_stock) => {
   $.ajax({
-    method: "DELETE",
-    url: "/api/watched_stocks/:id",
+    method: 'DELETE',
+    url: '/api/watched_stocks/:id',
     data: { watched_stock },
   });
 };

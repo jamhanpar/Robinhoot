@@ -1,6 +1,8 @@
 import React from 'react';
 
 const NewsCard = ({ news }) => {
+    const newsImage = news.image === undefined ? window.newsFiller : news.image
+
     return (
         <a href={news.url}>
             <div className="news-card">
@@ -13,7 +15,7 @@ const NewsCard = ({ news }) => {
                     <div className="news-image-container">
                         <img className="source-menu-icon" src={window.newsDots} />
                         <div className="news-card-image">
-                            <img className="news-image" src={news.image} />
+                            <img className="news-image" src={newsImage} />
                         </div>
                     </div>
                 </div>
