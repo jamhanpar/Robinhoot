@@ -6,8 +6,6 @@ class Search extends React.Component {
     super(props);
 
     this.state = { searchTerm: "", showResults: false };
-    this.showResultsClass = this === document.activeElement ? "show" : "hide";
-    debugger
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,9 +18,6 @@ class Search extends React.Component {
         if (this.state.searchTerm !== "")
           this.props.fetchSearch(this.state.searchTerm.toUpperCase(), window.iexcloudAPIKey);
       });
-
-      this.showResults = true;
-      if (this.showResults = true) this.showResultsClass = "search-results-container";
     };
   }
 
@@ -79,7 +74,7 @@ class Search extends React.Component {
             onChange={this.update("searchTerm")}
           />
         </form>
-        <div id="search-results" className={`search-results-container ${this.showResultsClass}`}>
+        <div id="search-results" className={this.state.searchTerm !== '' ? 'search-results-container' : 'hide'}>
           {this.renderSearchResults()}
         </div>
       </div>

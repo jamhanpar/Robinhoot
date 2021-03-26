@@ -13,11 +13,12 @@
 
 .dashboard-logo-container {
     padding-left: 50px;
+    margin-right: 10px;
     height: auto;
 }
 
 .dashboard-logo {
-    width: 40px;
+    width: 35px;
     height: auto;
 }
 
