@@ -8,3 +8,7 @@
     height: 14px;
     color : #6F787E;
 }
+
+.hide {
+    visibility: hidden;
+}

@@ -6,7 +6,8 @@ class Search extends React.Component {
     super(props);
 
     this.state = { searchTerm: "", showResults: false };
-    this.showResultsClass = "hide";
+    this.showResultsClass = this === document.activeElement ? "show" : "hide";
+    debugger
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,16 +31,13 @@ class Search extends React.Component {
 
     const searchTerm = this.state.searchTerm.toUpperCase()
     const searchTermExists = Object.values(this.props.searchResults).filter(search => {return search.symbol === searchTerm})
-    debugger
+
     if (searchTerm !== "" && searchTermExists.length > 0) this.props.history.push({ pathname: `/stocks/${searchTerm}` });
   }
 
   renderSearchResults() {
     // refactor
-    if (
-      this.props.searchResults === undefined ||
-      this.props.searchResults.length === 0
-    ) {
+    if ( this.props.searchResults === undefined || this.props.searchResults.length === 0 ) {
       return (
         <div className="no-stock-result-message">We were unable to find any results for your search.</div>
       );
