@@ -62,7 +62,7 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div className="search-form-container">
+      <div className={this.state.searchTerm === '' ? "search-form-container" : "search-form-container-with-text"}>
         <div className="search-icon-container">
           <img className="search-icon" src={window.searchIcon} />
         </div>
