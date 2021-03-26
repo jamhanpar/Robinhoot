@@ -51,6 +51,11 @@
     font-size: 13px;
 }
 
+.stock-info-item-shares {
+    font-size: 13px;
+    visibility: hidden;
+}
+
 .stock-info-symbol {
     font-weight: bold;
 }
