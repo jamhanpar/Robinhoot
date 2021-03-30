@@ -101,6 +101,8 @@ export default class StockGraph extends PureComponent {
       ? (this.props.quote.changePercent * 100).toFixed(2) + "%" 
       : "(" + (this.props.quote.changePercent * 100).toFixed(2) + "%)"
 
+    debugger
+
     return (
         <div className="portfolio-graph-container">
           <h1 className="account-balance">${this.props.quote.iexClose.toFixed(2)}</h1>
@@ -114,7 +116,8 @@ export default class StockGraph extends PureComponent {
               <Line type="monotone" dataKey="close" stroke="#00C805" strokeWidth={2} dot={false}/>
               <YAxis domain={['auto']} hide={true}/>
               <XAxis dataKey="label" hide={true}></XAxis>
-              <Tooltip content={<CustomizedLabel label={data.label}/>} />
+              {/* <Tooltip content={<CustomizedLabel label={data.label} />} /> */}
+              <Tooltip label={data.label} labelFormatter={(label) => 'time : ' + label} />
             </LineChart>
           </div>
           <ul className="chart-display-list">
