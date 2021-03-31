@@ -31,6 +31,13 @@ class Search extends React.Component {
   }
 
   renderSearchResults() {
+    debugger
+    // const searchInput = React.useRef(null)
+
+    // if (document.activeElement === searchInput.current) {
+    //   debugger
+    // }
+
     // refactor
     if ( this.props.searchResults === undefined || this.props.searchResults.length === 0 ) {
       return (
