@@ -7,8 +7,11 @@ class Search extends React.Component {
 
     this.state = { searchTerm: "", showResults: false };
 
+    this.searchInput = React.createRef();
+
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.focusInput = this.focusInput.bind(this);
     this.renderSearchResults = this.renderSearchResults.bind(this);
   }
 
@@ -30,41 +33,41 @@ class Search extends React.Component {
     if (searchTerm !== "" && searchTermExists.length > 0) this.props.history.push({ pathname: `/stocks/${searchTerm}` });
   }
 
+  focusInput() {
+    this.searchInput.current.focus();
+  }
+
   renderSearchResults() {
-    debugger
-    // const searchInput = React.useRef(null)
-
-    // if (document.activeElement === searchInput.current) {
-    //   debugger
-    // }
-
-    // refactor
-    if ( this.props.searchResults === undefined || this.props.searchResults.length === 0 ) {
+    if (document.activeElement === this.searchInput.current) {
+      // if searched stock does not appear in search list
+      if ( this.props.searchResults === undefined || this.props.searchResults.length === 0 ) {
+        return (
+          <div className="no-stock-result-message">We were unable to find any results for your search.</div>
+        );
+      }
+  
+      // if searched stock appears in search list
       return (
-        <div className="no-stock-result-message">We were unable to find any results for your search.</div>
+        <div className="search-results">
+          <h1 className="search-title">Stocks</h1>
+          <div className="search-results-list">
+            {this.props.searchResults.map((stock, i) => (
+              <Link
+                  className="search-results-item"
+                  key={i}
+                  to={{
+                    pathname: `/stocks/${stock.symbol}`,
+                    state: { ticker: stock.symbol, name: stock.securityName },
+                  }}
+                >
+                  <div className="search-stock-symbol">{stock.symbol}</div>
+                  <div className="search-stock-name">{stock.securityName}</div>
+              </Link>
+            ))}
+          </div>
+        </div>
       );
     }
-
-    return (
-      <div className="search-results">
-        <h1 className="search-title">Stocks</h1>
-        <div className="search-results-list">
-          {this.props.searchResults.map((stock, i) => (
-            <Link
-                className="search-results-item"
-                key={i}
-                to={{
-                  pathname: `/stocks/${stock.symbol}`,
-                  state: { ticker: stock.symbol, name: stock.securityName },
-                }}
-              >
-                <div className="search-stock-symbol">{stock.symbol}</div>
-                <div className="search-stock-name">{stock.securityName}</div>
-            </Link>
-          ))}
-        </div>
-      </div>
-    );
   }
 
   render() {
@@ -78,7 +81,9 @@ class Search extends React.Component {
             className="search-bar"
             type="text"
             placeholder="Search"
+            ref={this.searchInput}
             onChange={this.update("searchTerm")}
+            onMouseOver={this.focusInput}
           />
         </form>
         <div id="search-results" className={this.state.searchTerm !== '' ? 'search-results-container' : 'hide'}>
