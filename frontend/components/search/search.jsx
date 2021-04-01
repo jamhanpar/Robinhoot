@@ -5,24 +5,22 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { searchTerm: "", showResults: false, searchSelected: false };
-
-    // alternative 1: reference works, but search does not disappear
-    this.prevRef = null
-    this.searchInputRef = React.createRef();
-    // this.focusInput = this.focusInput.bind(this);
+    this.state = { searchTerm: "", showResults: false, showResultsClass: "hidden" };
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.updateShowResults = this.updateShowResults.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
     this.renderSearchResults = this.renderSearchResults.bind(this);
   }
 
   update(field) {
     return (e) => {
       this.setState({ [field]: e.currentTarget.value }, () => {
-        if (this.state.searchTerm !== "")
+        if (this.state.searchTerm !== "") {
+          // this.updateShowResults("show");
           this.props.fetchSearch(this.state.searchTerm.toUpperCase(), window.iexcloudAPIKey);
+        }
       });
     };
   }
@@ -36,21 +34,17 @@ class Search extends React.Component {
     if (searchTerm !== "" && searchTermExists.length > 0) this.props.history.push({ pathname: `/stocks/${searchTerm}` });
   }
 
-  updateShowResults(toggle) {
-    debugger
+  handleBlur() {
+    this.setState({showResultsClass: "hidden"})
+  }
 
-    if (toggle === "show") {
-      this.setState({ showResults: true, searchSelected: true })
-    } else {
-      this.setState({ showResults: false, searchSelected: false })
-    }
+  handleFocus() {
+    this.setState({showResultsClass: "search-results-container"})
   }
 
   renderSearchResults() {
-    if (document.activeElement === this.searchInputRef.current) {}
-
     debugger
-    if (this.state.showResults === true ) {
+    if (this.state.searchTerm !== "") {
       // if searched stock does not appear in search list
       if ( this.props.searchResults === undefined || this.props.searchResults.length === 0 ) {
         return (
@@ -93,12 +87,15 @@ class Search extends React.Component {
             className="search-bar"
             type="text"
             placeholder="Search"
-            ref={this.searchInputRef}
+            // ref={this.searchInputRef}
             onChange={this.update("searchTerm")}
-            onClick={() => this.updateShowResults("show")}
+            onBlur={this.handleBlur}
+            onFocus={this.handleFocus}
+            // onClick={() => this.updateShowResults("show")}
+            // onMouseOut={() => this.updateShowResults("hide")}
           />
         </form>
-        <div id="search-results" className={this.state.searchTerm !== '' ? 'search-results-container' : 'hide'}>
+        <div id="search-results" className={this.state.showResultsClass}>
           {this.renderSearchResults()}
         </div>
       </div>

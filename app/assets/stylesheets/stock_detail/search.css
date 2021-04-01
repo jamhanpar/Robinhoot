@@ -12,10 +12,6 @@
     overflow: hidden;
 }
 
-.hide {
-    display: none;
-}
-
 .search-title {
     font-size: 13px;
     color: grey;
