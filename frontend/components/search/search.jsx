@@ -5,13 +5,16 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { searchTerm: "", showResults: false };
+    this.state = { searchTerm: "", showResults: false, searchSelected: false };
 
-    this.searchInput = React.createRef();
+    // alternative 1: reference works, but search does not disappear
+    this.prevRef = null
+    this.searchInputRef = React.createRef();
+    // this.focusInput = this.focusInput.bind(this);
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.focusInput = this.focusInput.bind(this);
+    this.updateShowResults = this.updateShowResults.bind(this);
     this.renderSearchResults = this.renderSearchResults.bind(this);
   }
 
@@ -33,12 +36,21 @@ class Search extends React.Component {
     if (searchTerm !== "" && searchTermExists.length > 0) this.props.history.push({ pathname: `/stocks/${searchTerm}` });
   }
 
-  focusInput() {
-    this.searchInput.current.focus();
+  updateShowResults(toggle) {
+    debugger
+
+    if (toggle === "show") {
+      this.setState({ showResults: true, searchSelected: true })
+    } else {
+      this.setState({ showResults: false, searchSelected: false })
+    }
   }
 
   renderSearchResults() {
-    if (document.activeElement === this.searchInput.current) {
+    if (document.activeElement === this.searchInputRef.current) {}
+
+    debugger
+    if (this.state.showResults === true ) {
       // if searched stock does not appear in search list
       if ( this.props.searchResults === undefined || this.props.searchResults.length === 0 ) {
         return (
@@ -81,9 +93,9 @@ class Search extends React.Component {
             className="search-bar"
             type="text"
             placeholder="Search"
-            ref={this.searchInput}
+            ref={this.searchInputRef}
             onChange={this.update("searchTerm")}
-            onMouseOver={this.focusInput}
+            onClick={() => this.updateShowResults("show")}
           />
         </form>
         <div id="search-results" className={this.state.searchTerm !== '' ? 'search-results-container' : 'hide'}>
