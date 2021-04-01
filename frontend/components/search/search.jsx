@@ -5,7 +5,7 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { searchTerm: "", showResults: false, showResultsClass: "hidden" };
+    this.state = { searchTerm: "", showResultsToggle: "hidden" };
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,8 +18,10 @@ class Search extends React.Component {
     return (e) => {
       this.setState({ [field]: e.currentTarget.value }, () => {
         if (this.state.searchTerm !== "") {
-          // this.updateShowResults("show");
+          this.handleFocus();
           this.props.fetchSearch(this.state.searchTerm.toUpperCase(), window.iexcloudAPIKey);
+        } else {
+          this.handleBlur();
         }
       });
     };
@@ -35,17 +37,15 @@ class Search extends React.Component {
   }
 
   handleBlur() {
-    this.setState({showResultsClass: "hidden"})
+    this.setState({showResultsToggle: "hidden"})
   }
 
   handleFocus() {
-    this.setState({showResultsClass: "search-results-container"})
+    if(this.state.searchTerm !== "") this.setState({showResultsToggle: "search-results-container"})
   }
 
   renderSearchResults() {
-    debugger
     if (this.state.searchTerm !== "") {
-      // if searched stock does not appear in search list
       if ( this.props.searchResults === undefined || this.props.searchResults.length === 0 ) {
         return (
           <div className="no-stock-result-message">We were unable to find any results for your search.</div>
@@ -87,15 +87,12 @@ class Search extends React.Component {
             className="search-bar"
             type="text"
             placeholder="Search"
-            // ref={this.searchInputRef}
             onChange={this.update("searchTerm")}
             onBlur={this.handleBlur}
             onFocus={this.handleFocus}
-            // onClick={() => this.updateShowResults("show")}
-            // onMouseOut={() => this.updateShowResults("hide")}
           />
         </form>
-        <div id="search-results" className={this.state.showResultsClass}>
+        <div className={this.state.showResultsToggle}>
           {this.renderSearchResults()}
         </div>
       </div>
