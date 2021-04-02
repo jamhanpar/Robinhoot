@@ -53,6 +53,10 @@
 
 .stock-info-item-shares {
     font-size: 13px;
+}
+
+.shares-hidden {
+    font-size: 13px;
     visibility: hidden;
 }
 

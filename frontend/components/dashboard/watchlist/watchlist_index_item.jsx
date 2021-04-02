@@ -6,6 +6,8 @@ export default class WatchlistIndexItem extends React.Component {
     constructor(props) {
         super(props)
 
+        this.showShareCount = this.props.symbol === "VOO" ? true : false;
+
         this.state = { showToggle: "dropdown-content", range: '1D', interval: "5"}
 
         this.getProperty = this.getProperty.bind(this);
@@ -35,7 +37,7 @@ export default class WatchlistIndexItem extends React.Component {
                     <div className="ticker-and-shares-owned">
                         <p className="stock-info-item stock-info-symbol">{symbol}</p>
                         {/* only show if stock is owned */}
-                        <p className="stock-info-item-shares">1 Share</p>
+                        <p className={`${this.showShareCount ? "stock-info-item-shares" : "shares-hidden"}`}>1 Share</p>
                     </div>
                     <div className="stock-graph">
                         {/* want to get stock symbol from stock-info-symbol */}
