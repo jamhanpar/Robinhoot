@@ -1,11 +1,12 @@
 import React, { PureComponent } from 'react';
 
-// code below is for testing purposes
 import { LineChart, Line } from 'recharts';
 
 // DATA TEMPLATE
 // const data = [
-//   { name: 'AAPL', date: 'JAN 3, 2021', time:'9:00 AM', price: 10000, amt: 10000 },
+//   { name: 'AAPL', date: 'JAN 3, 2021', time:'9:00 AM', price: 100.00, amt: 10000 },
+//   { name: 'AAPL', date: 'JAN 4, 2021', time:'9:00 AM', price: 105.00, amt: 10000 },
+//   { name: 'AAPL', date: 'JAN 5, 2021', time:'9:00 AM', price: 120.00, amt: 10000 },
 // ];
 
 export default class MiniStockChart extends PureComponent {

@@ -19,6 +19,7 @@ export default class WatchlistIndex extends React.Component {
             const defaultWatchlist = Object.values(this.props.watchlists)[0].watched_stocks
             const watchedStocksArray = Object.values(defaultWatchlist).map(stock => stock.stock_symbol)
             const stockSymbols = watchedStocksArray.join(",")
+            
             if (stockSymbols !== "") {
                 this.props.iexFetchQuotes(stockSymbols, window.iexcloudLiveAPIKey)
             }
