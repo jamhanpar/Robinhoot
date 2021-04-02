@@ -49,15 +49,10 @@ export default class WatchlistIndex extends React.Component {
         const tempSymbol = "VOO";
         const tempQuote = { VOO: { quote: { symbol: "VOO", iexClose: 368.80, changePercent: 0.0124 }}};
 
-        debugger
-
-        return (
-            <WatchlistIndexItemContainer symbol={tempSymbol} quotes={tempQuote} />
-        )
+        return ( <WatchlistIndexItemContainer symbol={tempSymbol} quotes={tempQuote} /> )
     }
 
     render() {            
-        debugger
         return (
             <div className="watchlist-container">
                 <div className="watchlist-title-container">
