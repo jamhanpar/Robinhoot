@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-
 import { LineChart, Line } from 'recharts';
 
 // DATA TEMPLATE
