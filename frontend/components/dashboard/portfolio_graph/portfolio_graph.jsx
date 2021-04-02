@@ -126,7 +126,7 @@ class PortfolioGraph extends PureComponent {
               <button className={this.state.toggleShow[3] ? "chart-display-item-active" : "chart-display-item"} onClick={() => this.updateRange('1M')}>1M</button>
               <button className={this.state.toggleShow[4] ? "chart-display-item-active" : "chart-display-item"} onClick={() => this.updateRange('3M')}>3M</button>
               <button className={this.state.toggleShow[5] ? "chart-display-item-active" : "chart-display-item"} onClick={() => this.updateRange('1Y')}>1Y</button>
-              <button className={this.state.toggleShow[6] ? "chart-display-item-active" : "chart-display-item"} onClick={() => this.updateRange('ALL')}>ALL</button>
+              {/* <button className={this.state.toggleShow[6] ? "chart-display-item-active" : "chart-display-item"} onClick={() => this.updateRange('ALL')}>ALL</button> */}
           </ul>
       </div>
     );
