@@ -29,7 +29,7 @@
     height: auto;
     display: flex;
     flex-direction: row;
-    /* margin-left: -230px; */
+    margin-left: -230px;
     transition: ease 0.3s;
     position: relative;
 }
