@@ -12,8 +12,7 @@
 }
 
 .dashboard-logo-container {
-    padding-left: 50px;
-    margin-right: 10px;
+    padding-left: 20px;
     height: auto;
 }
 
@@ -30,7 +29,7 @@
     height: auto;
     display: flex;
     flex-direction: row;
-    margin-left: -230px;
+    /* margin-left: -230px; */
     transition: ease 0.3s;
     position: relative;
 }
@@ -88,6 +87,7 @@
     height: 100%;
     display: flex;
     justify-content: center;
+    padding-right: 20px;
 }
 
 .dashboard-menu-list {
