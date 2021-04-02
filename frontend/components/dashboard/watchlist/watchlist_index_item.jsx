@@ -35,14 +35,11 @@ export default class WatchlistIndexItem extends React.Component {
                     <div className="ticker-and-shares-owned">
                         <p className="stock-info-item stock-info-symbol">{symbol}</p>
                         {/* only show if stock is owned */}
-                        <p className="stock-info-item-shares">2 Shares</p>
+                        <p className="stock-info-item-shares">1 Share</p>
                     </div>
                     <div className="stock-graph">
                         {/* want to get stock symbol from stock-info-symbol */}
-                        <MiniStockChart
-                            symbol={symbol}
-                            data={data}    
-                        />
+                        <MiniStockChart symbol={symbol} data={data} />
                     </div>
                     <div className="stock-price-and-percent">
                         <p className="stock-info-item">{this.getProperty("iexClose")}</p>
