@@ -37,7 +37,7 @@ class Search extends React.Component {
   }
 
   handleBlur() {
-    this.setState({showResultsToggle: "hidden"})
+    setTimeout(() => this.setState({showResultsToggle: "hidden"}), 2000)
   }
 
   handleFocus() {
