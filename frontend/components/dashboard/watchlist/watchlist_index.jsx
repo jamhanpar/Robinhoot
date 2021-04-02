@@ -5,6 +5,9 @@ import WatchlistIndexItemContainer from './watchlist_index_item_container';
 export default class WatchlistIndex extends React.Component {
     constructor(props) {
         super(props)
+  
+        this.renderWatchlists = this.renderWatchlists.bind(this);
+        this.renderOwnedStocks = this.renderOwnedStocks.bind(this);
     }
 
     componentDidMount() {
@@ -13,7 +16,6 @@ export default class WatchlistIndex extends React.Component {
 
     componentDidUpdate(prevProps, prevStates) {
         if (JSON.stringify(this.props.watchlists) !== JSON.stringify(prevProps.watchlists)) {
-        // if (Object.keys(this.props.watchlists) !== Object.keys(prevProps)) {
             const defaultWatchlist = Object.values(this.props.watchlists)[0].watched_stocks
             const watchedStocksArray = Object.values(defaultWatchlist).map(stock => stock.stock_symbol)
             const stockSymbols = watchedStocksArray.join(",")
@@ -43,7 +45,15 @@ export default class WatchlistIndex extends React.Component {
     }
 
     renderOwnedStocks() {
-        
+        // static information for VOO on 4/1/2021
+        const tempSymbol = "VOO";
+        const tempQuote = { VOO: { quote: { symbol: "VOO", iexClose: 368.80, changePercent: 0.0124 }}};
+
+        debugger
+
+        return (
+            <WatchlistIndexItemContainer symbol={tempSymbol} quotes={tempQuote} />
+        )
     }
 
     render() {            
@@ -53,7 +63,7 @@ export default class WatchlistIndex extends React.Component {
                 <div className="watchlist-title-container">
                     <h1 className="watchlist-title">Stocks</h1>
                 </div>
-                <WatchlistIndexItemContainer symbol={"VOO"} quotes={this.props.quotes} />
+                {this.renderOwnedStocks()}
                 <div className="watchlist-title-container">
                     <h1 className="watchlist-title">Lists</h1>
                 </div>

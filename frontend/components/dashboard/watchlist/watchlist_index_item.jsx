@@ -12,6 +12,7 @@ export default class WatchlistIndexItem extends React.Component {
     }
 
     getProperty(key) {
+        debugger
         const { quotes } = this.props;
         const stocksArray = Object.values(quotes).map(quote => Object.values(quote))
 
