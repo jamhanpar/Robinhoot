@@ -38,10 +38,10 @@ class MainNav extends React.Component {
                         <li className="dashboard-menu-list-item">Portfolio</li>
                         <li className="dashboard-menu-list-item">Cash</li>
                         <li className="dashboard-menu-list-item">Messages</li> */}
-                        <a href="https://www.jameshansungpark.com/"><li className="dashboard-menu-list-item">Portfolio</li></a>
-                        <a href="https://www.linkedin.com/in/jameshansungpark/"><li className="dashboard-menu-list-item">LinkedIn</li></a>
-                        <a href="https://github.com/jamhanpar/Robinhoot"><li className="dashboard-menu-list-item">Github</li></a>
-                        <a href="https://angel.co/u/jameshansungpark"><li className="dashboard-menu-list-item">AngelList</li></a>
+                        <a href="https://www.jameshansungpark.com/" target="_blank"><li className="dashboard-menu-list-item">Portfolio</li></a>
+                        <a href="https://www.linkedin.com/in/jameshansungpark/" target="_blank"><li className="dashboard-menu-list-item">LinkedIn</li></a>
+                        <a href="https://github.com/jamhanpar/Robinhoot" target="_blank"><li className="dashboard-menu-list-item">Github</li></a>
+                        <a href="https://angel.co/u/jameshansungpark" target="_blank"><li className="dashboard-menu-list-item">AngelList</li></a>
                         <div className="dropdown-menu">
                             <li className="dashboard-menu-list-item" onClick={this.showDropdown} onBlur={this.showDropdown}>Account</li>
                             <div id="myDropdown" className={this.state.showToggle}>
