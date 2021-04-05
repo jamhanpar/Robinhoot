@@ -115,7 +115,8 @@ class PortfolioGraph extends PureComponent {
               <Line type="monotone" dataKey="close" stroke="#00C805" strokeWidth={2} dot={false}/>
               <YAxis domain={['auto']} hide={true}/>
               <XAxis dataKey="label" hide={true}></XAxis>
-              <Tooltip content={<CustomizedLabel label={data.label}/>} />
+              {/* <Tooltip content={<CustomizedLabel label={data.label}/>} /> */}
+              <Tooltip label={data.label} labelFormatter={(label) => 'time : ' + label} />
             </LineChart>
           </div>
           <ul className="chart-display-list">
