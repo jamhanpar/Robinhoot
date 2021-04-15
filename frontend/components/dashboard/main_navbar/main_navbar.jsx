@@ -16,7 +16,7 @@ class MainNav extends React.Component {
         e.preventDefault();
 
         this.props.logout()
-            // .then(() => this.props.history.push('/'));
+            .then(() => this.props.history.push('/'));
     }
 
     showDropdown() {
