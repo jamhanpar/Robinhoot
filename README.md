@@ -16,17 +16,17 @@ Users can sign up and will return errors if missing critical information necessa
 ![alt text](https://github.com/jamhanpar/Robinhoot/blob/main/0.%20Planning/0.%20Features/frontend_auth.PNG?raw=true)
 ![alt text](https://github.com/jamhanpar/Robinhoot/blob/main/0.%20Planning/0.%20Features/frontend_auth_signup.PNG?raw=true)
 
-### Dynamic Portfolio Dashboard - Work in Progress
+### Dynamic Portfolio Dashboard
 The dashboard displays a graphical representation of the users portfolio based on real-time price adjustments for the stocks the user owns. You can modify the display based on a selected timeframe. Users can increase their current buying power by adding more funds to their account. As for the watchlist on the right, you can view the users currently owned stocks, # of shares, daily price action, price fper share and the daily percent change per share.
 
 ![alt text](https://github.com/jamhanpar/Robinhoot/blob/main/0.%20Planning/0.%20Features/dyanmic_portfolio_dashboard.PNG?raw=true)
 
-### Search Stock Symbols - Work in Progress
+### Search Stock Symbols
 Users can search by typing out a stock symbol or company name, and the search results will update in real-time based on user input.
 
 ![alt text](https://github.com/jamhanpar/Robinhoot/blob/main/0.%20Planning/0.%20Features/search_stock_symbols.PNG?raw=true)
 
-### Stock Details Page - Work in Progress
+### Stock Details Page
 The stock details page will display a graphical representation of the stocks real-time price action based on a selected timeframe (default being 1D). Users can access company information as well as relevant news for the current stock.
 
 <img width="1000px" src="https://github.com/jamhanpar/Robinhoot/blob/main/0.%20Planning/0.%20Features/stock_details_page.PNG?raw=true">
